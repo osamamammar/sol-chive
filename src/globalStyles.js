@@ -45,6 +45,31 @@ img {
   height: auto;
 }
 
+.btn {
+  background-color: var(--color-yellow);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  padding: 4px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s all;
+}
+
+.btn:hover {
+  background-color: var(--color-yellow-dark);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 #root {
   isolation: isolate;
 }
