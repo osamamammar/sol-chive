@@ -29,7 +29,7 @@ export const MainSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 130px);
   gap: 6px;
   position: relative;
 `;
@@ -104,4 +104,9 @@ export const SearchInput = styled.input`
     color: var(--color-placeholder);
     opacity: 0.44;
   }
+`;
+export const IconForInput = styled.div`
+  position: absolute;
+  top: 30px;
+  right: 25px;
 `;

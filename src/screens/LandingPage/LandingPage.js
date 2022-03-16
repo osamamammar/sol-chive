@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/Footer";
 import {
   HeaderContainer,
   LogoTitle,
@@ -14,6 +15,7 @@ import {
   SearchForm,
   LabelForInput,
   SearchInput,
+  IconForInput,
 } from "./LandingPage.styles";
 
 const LandingPage = () => {
@@ -113,7 +115,7 @@ const LandingPage = () => {
             <LabelForInput htmlFor="email">
               find someone problem solver
             </LabelForInput>
-            <div style={{ position: "absolute", top: "30px", right: "25px" }}>
+            <IconForInput>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15.325"
@@ -128,7 +130,7 @@ const LandingPage = () => {
                   fill="rgba(255,255,255,0.39)"
                 />
               </svg>
-            </div>
+            </IconForInput>
             <SearchInput
               type="email"
               name="email"
@@ -142,6 +144,7 @@ const LandingPage = () => {
           </SearchForm>
         </MainSection>
       </MainContainer>
+      <Footer></Footer>
     </>
   );
 };
