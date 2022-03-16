@@ -1,11 +1,7 @@
+import LandingPage from "./screens/LandingPage/LandingPage";
+
 function App() {
-  return (
-    <div className="App">
-      <header darkMode className="App-header">
-        gfhgfh
-      </header>
-    </div>
-  );
+  return <LandingPage></LandingPage>;
 }
 
 export default App;
