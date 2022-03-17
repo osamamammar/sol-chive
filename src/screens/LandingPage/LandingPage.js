@@ -1,6 +1,4 @@
 import React from "react";
-import Footer from "../../components/Footer";
-import { searchIcon } from "../../assets";
 import {
   HeaderContainer,
   LogoTitle,
@@ -9,12 +7,13 @@ import {
   MainSection,
   WelcomeTitle,
   WelcomeDescription,
-  SearchForm,
-  LabelForInput,
-  SearchInput,
-  IconForInput,
 } from "./LandingPage.styles";
-import { LoginMethodsBtns, OrSeperator } from "../../components";
+import {
+  Footer,
+  LoginMethodsBtns,
+  OrSeperator,
+  SearchForm,
+} from "../../components";
 
 const LandingPage = () => {
   return (
@@ -31,25 +30,7 @@ const LandingPage = () => {
           <WelcomeDescription>Login or join us via</WelcomeDescription>
           <LoginMethodsBtns></LoginMethodsBtns>
           <OrSeperator></OrSeperator>
-
-          <SearchForm>
-            <LabelForInput htmlFor="email">
-              find someone problem solver
-            </LabelForInput>
-            <IconForInput>
-              <img src={searchIcon} alt="search-login" width={15} height={15} />
-            </IconForInput>
-            <SearchInput
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter email"
-            />
-
-            <button className="btn" type="submit">
-              Find now
-            </button>
-          </SearchForm>
+          <SearchForm></SearchForm>
         </MainSection>
       </MainContainer>
       <Footer></Footer>
