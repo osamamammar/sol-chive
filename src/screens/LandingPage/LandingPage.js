@@ -9,14 +9,12 @@ import {
   MainSection,
   WelcomeTitle,
   WelcomeDescription,
-  OrSeperator,
-  Line,
   SearchForm,
   LabelForInput,
   SearchInput,
   IconForInput,
 } from "./LandingPage.styles";
-import LoginMethodsBtns from "../../components/LoginMethodsBtns";
+import { LoginMethodsBtns, OrSeperator } from "../../components";
 
 const LandingPage = () => {
   return (
@@ -32,9 +30,7 @@ const LandingPage = () => {
           <WelcomeTitle>Welcome</WelcomeTitle>
           <WelcomeDescription>Login or join us via</WelcomeDescription>
           <LoginMethodsBtns></LoginMethodsBtns>
-          <OrSeperator>
-            <Line>or</Line>
-          </OrSeperator>
+          <OrSeperator></OrSeperator>
 
           <SearchForm>
             <LabelForInput htmlFor="email">
