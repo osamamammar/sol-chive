@@ -1,28 +1,22 @@
 import React from "react";
 import {
-  HeaderContainer,
-  LogoTitle,
   MainContainer,
   MainSection,
-  MarkYellow,
   WelcomeDescription,
   WelcomeTitle,
 } from "./LandingPage.styles";
 import {
-  Footer,
+  LogoHeader,
   LoginMethodsBtns,
   OrSeperator,
   SearchForm,
+  Footer,
 } from "../../components";
 
 const LandingPage = () => {
   return (
     <>
-      <HeaderContainer>
-        <LogoTitle>
-          <MarkYellow>Sol</MarkYellow>-chive
-        </LogoTitle>
-      </HeaderContainer>
+      <LogoHeader></LogoHeader>
 
       <MainContainer>
         <MainSection>
@@ -36,6 +30,7 @@ const LandingPage = () => {
           <SearchForm></SearchForm>
         </MainSection>
       </MainContainer>
+
       <Footer></Footer>
     </>
   );
