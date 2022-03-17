@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const OrSeperator = styled.div`
+export const OrSeperatorContainer = styled.div`
   width: 100%;
 `;
 

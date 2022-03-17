@@ -2,11 +2,11 @@ import React from "react";
 import {
   HeaderContainer,
   LogoTitle,
-  MarkYellow,
   MainContainer,
   MainSection,
-  WelcomeTitle,
+  MarkYellow,
   WelcomeDescription,
+  WelcomeTitle,
 } from "./LandingPage.styles";
 import {
   Footer,
@@ -28,8 +28,11 @@ const LandingPage = () => {
         <MainSection>
           <WelcomeTitle>Welcome</WelcomeTitle>
           <WelcomeDescription>Login or join us via</WelcomeDescription>
+
           <LoginMethodsBtns></LoginMethodsBtns>
+
           <OrSeperator></OrSeperator>
+
           <SearchForm></SearchForm>
         </MainSection>
       </MainContainer>

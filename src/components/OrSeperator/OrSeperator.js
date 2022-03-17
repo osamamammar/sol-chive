@@ -1,11 +1,11 @@
 import React from "react";
-import { Line } from "./OrSeperator.styles";
+import { Line, OrSeperatorContainer } from "./OrSeperator.styles";
 
 const OrSeperator = () => {
   return (
-    <OrSeperator>
+    <OrSeperatorContainer>
       <Line>or</Line>
-    </OrSeperator>
+    </OrSeperatorContainer>
   );
 };
 
