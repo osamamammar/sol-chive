@@ -13,8 +13,9 @@ export const DivWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 0 10px 0;
-  @media (max-width: 370px) {
-    flex-direction: column;
+  @media (max-width: 330px) {
+    width: 95%;
+    justify-content: center;
   }
 `;
 
@@ -73,6 +74,9 @@ export const FindBtn = styled.button`
   :hover {
     background-color: var(--color-yellow-dark);
   }
+  @media (max-width: 330px) {
+    padding: 5px 10px;
+  }
 `;
 
 export const ToggleSearch = styled(FindBtn)`
@@ -80,7 +84,7 @@ export const ToggleSearch = styled(FindBtn)`
   @media (max-width: 540px) {
     display: block;
   }
-  @media (max-width: 370px) {
+  @media (max-width: 275px) {
     order: 1;
   }
 `;
@@ -96,7 +100,7 @@ export const ToggleSearchFormContainer = styled.form`
   @media (min-width: 541px) {
     display: none;
   }
-  @media (max-width: 370px) {
+  @media (max-width: 275px) {
     order: 2;
   }
 `;
@@ -128,7 +132,10 @@ export const JoinBtn = styled.button`
   :hover {
     background-color: var(--color-yellow-dark);
   }
-  @media (max-width: 370px) {
+  @media (max-width: 275px) {
     order: 3;
+  }
+  @media (max-width: 330px) {
+    padding: 5px 10px;
   }
 `;
