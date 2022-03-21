@@ -102,6 +102,8 @@ export const ToggleSearchFormContainer = styled.form`
 `;
 
 export const ToggleEmailInput = styled.input`
+  width: 100%;
+  max-width: 212px;
   background-color: var(--color-gray-dark);
   border: none;
   border-radius: 9px;

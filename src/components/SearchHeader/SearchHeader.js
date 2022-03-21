@@ -44,6 +44,7 @@ const SearchHeader = () => {
         <ToggleSearch onClick={display}>
           <img src={searchIconV2} alt="search-icon" width={15} height={15} />
         </ToggleSearch>
+
         <JoinBtn>Join us or login</JoinBtn>
 
         {toggle && (
