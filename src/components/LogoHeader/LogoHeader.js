@@ -1,12 +1,11 @@
 import React from "react";
-import { HeaderContainer, LogoTitle, MarkYellow } from "./LogoHeader.styles";
+import Logo from "../Logo/Logo";
+import { HeaderContainer } from "./LogoHeader.styles";
 
 const LogoHeader = () => {
   return (
     <HeaderContainer>
-      <LogoTitle>
-        <MarkYellow>Sol</MarkYellow>-chive
-      </LogoTitle>
+      <Logo></Logo>
     </HeaderContainer>
   );
 };

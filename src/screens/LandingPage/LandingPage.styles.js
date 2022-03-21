@@ -12,7 +12,7 @@ export const MainSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 120px);
   gap: 6px;
   position: relative;
 `;
