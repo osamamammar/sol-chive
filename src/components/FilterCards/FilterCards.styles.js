@@ -15,6 +15,7 @@ export const SelectWrapper = styled.div`
 
 export const LabelTitle = styled.label`
   font-weight: 300;
+  width: 55px;
 `;
 
 export const SelectStyled = styled.select`
