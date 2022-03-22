@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const AsideContainer = styled.aside`
-  position: relative;
   background-color: var(--color-gray);
   margin-block-start: 60px;
   border-radius: 9px;
@@ -10,7 +9,11 @@ export const AsideContainer = styled.aside`
   min-height: 275px;
   align-self: flex-start;
   position: sticky;
-  top: 60px;
+  inset-block-start: 60px;
+  @media (max-width: 1080px) {
+    position: relative;
+    inset-block-start: 0;
+  }
 `;
 export const MainWrapper = styled.div`
   display: flex;

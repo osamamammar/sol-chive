@@ -29,6 +29,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul, label {
   font-weight: normal;
   font-family: "Roboto", sans-serif;
   color: var(--color-text-light);
+  word-break: break-word;
 }
 
 body{

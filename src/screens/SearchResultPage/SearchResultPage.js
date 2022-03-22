@@ -1,5 +1,10 @@
 import React from "react";
-import { Footer, ProfileInfoCard, SearchHeader } from "../../components";
+import {
+  Footer,
+  ProfileInfoCard,
+  SearchHeader,
+  SolutionCards,
+} from "../../components";
 import { MainContainer } from "./SearchResultPage.styles";
 
 const SearchResultPage = () => {
@@ -8,8 +13,9 @@ const SearchResultPage = () => {
       <SearchHeader></SearchHeader>
       <MainContainer>
         <ProfileInfoCard></ProfileInfoCard>
+        <SolutionCards></SolutionCards>
       </MainContainer>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 };
