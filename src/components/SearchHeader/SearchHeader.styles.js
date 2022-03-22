@@ -6,6 +6,7 @@ export const HeaderContainer = styled.header`
 
 export const DivWrapper = styled.div`
   width: 85%;
+  max-width: 1344px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;

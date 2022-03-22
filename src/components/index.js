@@ -5,3 +5,4 @@ export { default as OrSeperator } from "./OrSeperator/OrSeperator";
 export { default as SearchForm } from "./SearchForm/SearchForm";
 export { default as Logo } from "./Logo/Logo";
 export { default as SearchHeader } from "./SearchHeader/SearchHeader";
+export { default as ProfileInfoCard } from "./ProfileInfoCard/ProfileInfoCard";
