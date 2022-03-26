@@ -13,6 +13,7 @@ export const AsideContainer = styled.aside`
   @media (max-width: 1080px) {
     position: relative;
     inset-block-start: 0;
+    max-width: 420px;
   }
 `;
 export const MainWrapper = styled.div`

@@ -1,10 +1,13 @@
 import React from "react";
 import {
+  FilterCards,
   Footer,
   ProfileInfoCard,
   SearchHeader,
-  SolutionCards,
+  SolutionCard,
+  SolutionCardsContainer,
 } from "../../components";
+
 import { MainContainer } from "./SearchResultPage.styles";
 
 const SearchResultPage = () => {
@@ -13,7 +16,10 @@ const SearchResultPage = () => {
       <SearchHeader></SearchHeader>
       <MainContainer>
         <ProfileInfoCard></ProfileInfoCard>
-        <SolutionCards></SolutionCards>
+        <SolutionCardsContainer>
+          <FilterCards></FilterCards>
+          <SolutionCard></SolutionCard>
+        </SolutionCardsContainer>
       </MainContainer>
       <Footer></Footer>
     </>

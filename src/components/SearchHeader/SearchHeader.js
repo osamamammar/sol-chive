@@ -45,7 +45,7 @@ const SearchHeader = () => {
           <img src={searchIconV2} alt="search-icon" width={15} height={15} />
         </ToggleSearch>
 
-        <JoinBtn>Join us or login</JoinBtn>
+        <JoinBtn>Join or login</JoinBtn>
 
         {toggle && (
           <ToggleSearchFormContainer>
@@ -60,9 +60,7 @@ const SearchHeader = () => {
               placeholder="Enter email"
             />
 
-            <FindBtn type="submit" style={{ display: "block" }}>
-              search
-            </FindBtn>
+            <FindBtn type="submit">search</FindBtn>
           </ToggleSearchFormContainer>
         )}
       </DivWrapper>

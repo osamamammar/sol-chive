@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  DivWrapper,
   HeaderTitle,
   LabelTitle,
   SelectStyled,
@@ -8,15 +9,15 @@ import {
 
 const FilterCards = () => {
   return (
-    <>
+    <DivWrapper>
       <HeaderTitle>Solutions</HeaderTitle>
 
       <SelectWrapper>
         <SelectWrapper>
           <LabelTitle htmlFor="sortBy">sort by:</LabelTitle>
 
-          <SelectStyled name="sortBy" id="sortBy">
-            <option value="-select-" selected disabled>
+          <SelectStyled name="sortBy" id="sortBy" defaultValue={"-select-"}>
+            <option value="-select-" disabled>
               -select-
             </option>
             <option value="date">Date</option>
@@ -27,8 +28,8 @@ const FilterCards = () => {
         <SelectWrapper>
           <LabelTitle htmlFor="filterBy">filter by:</LabelTitle>
 
-          <SelectStyled name="filterBy" id="filterBy">
-            <option value="-select-" selected disabled>
+          <SelectStyled name="filterBy" id="filterBy" defaultValue={"-select-"}>
+            <option value="-select-" disabled>
               -select-
             </option>
             <option value="sourse">Sourse</option>
@@ -37,7 +38,7 @@ const FilterCards = () => {
           </SelectStyled>
         </SelectWrapper>
       </SelectWrapper>
-    </>
+    </DivWrapper>
   );
 };
 

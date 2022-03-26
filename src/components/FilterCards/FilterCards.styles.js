@@ -8,9 +8,12 @@ export const HeaderTitle = styled.h4`
 export const SelectWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   gap: 8px;
+  @media (max-width: 805px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const LabelTitle = styled.label`
@@ -27,4 +30,8 @@ export const SelectStyled = styled.select`
   width: 97px;
   font-size: 14px;
   cursor: pointer;
+`;
+
+export const DivWrapper = styled.div`
+  display: contents;
 `;

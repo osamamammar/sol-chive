@@ -19,9 +19,7 @@ const Footer = () => {
           target={`_blank`}
         >
           Github
-          <FooterIcon>
-            <img src={githubIcon} alt="github-icon"></img>
-          </FooterIcon>
+          <FooterIcon src={githubIcon} alt="github-icon"></FooterIcon>
         </FooterLink>
       </FooterHeader>
     </FooterWrapper>

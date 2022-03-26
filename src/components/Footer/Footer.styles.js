@@ -15,7 +15,7 @@ export const FooterHeader = styled.p`
 export const FooterLink = styled.a`
   color: var(--color-text-light);
 `;
-export const FooterIcon = styled.div`
+export const FooterIcon = styled.img`
   display: inline-block;
   margin: 0 0 0 5px; ;
 `;
