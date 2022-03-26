@@ -43,6 +43,7 @@ export const SearchInput = styled.input`
   border-radius: 9px;
   padding: 5px 10px;
   font-size: 15px;
+  caret-color: var(--color-text-light);
 
   ::placeholder {
     color: var(--color-placeholder);
@@ -114,6 +115,7 @@ export const ToggleEmailInput = styled.input`
   border-radius: 9px;
   padding: 5px 10px;
   font-size: 15px;
+  caret-color: var(--color-text-light);
 
   ::placeholder {
     color: var(--color-placeholder);

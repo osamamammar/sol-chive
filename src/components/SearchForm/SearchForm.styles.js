@@ -19,6 +19,7 @@ export const SearchInput = styled.input`
   font-size: 16px;
   width: 90%;
   margin-bottom: 10px;
+  caret-color: var(--color-text-light);
 
   ::placeholder {
     color: var(--color-placeholder);

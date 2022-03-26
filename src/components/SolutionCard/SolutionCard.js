@@ -1,5 +1,17 @@
 import React from "react";
-import { Card, CardContainer } from "./SolutionCard.styles";
+import { Link } from "react-router-dom";
+import { externalLink } from "../../assets";
+import {
+  Button,
+  Card,
+  CardContainer,
+  CardExternalLink,
+  CardHeader,
+  CardTitle,
+  ProblemSource,
+  SolvedDate,
+  Tags,
+} from "./SolutionCard.styles";
 
 const SolutionCard = () => {
   const solutions = [
@@ -95,7 +107,37 @@ const SolutionCard = () => {
       date: "2 days ago",
     },
   ];
-  return <CardContainer></CardContainer>;
+  return (
+    <CardContainer>
+      {solutions.map((solution) => (
+        <Card key={solution.id}>
+          <CardHeader>
+            <CardTitle>{solution.title}</CardTitle>
+            <CardExternalLink
+              src={externalLink}
+              alt="external-link"
+              width={21}
+              height={21}
+            />
+          </CardHeader>
+
+          <ProblemSource>source {solution.source}</ProblemSource>
+
+          <Tags>
+            {solution.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </Tags>
+
+          <SolvedDate>solved {solution.date}</SolvedDate>
+
+          <Link to={"/"}>
+            <Button>View</Button>
+          </Link>
+        </Card>
+      ))}
+    </CardContainer>
+  );
 };
 
 export default SolutionCard;
