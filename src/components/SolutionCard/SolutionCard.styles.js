@@ -61,17 +61,11 @@ export const Tags = styled.p`
 `;
 export const SolvedDate = styled(ProblemSource)``;
 
-export const Button = styled.button`
-  background-color: var(--color-yellow);
-  color: var(--color-primary);
-  border: none;
-  border-radius: 6px;
-  padding-inline: 19px;
-  padding-block: 4px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: ease-in-out 0.2s all;
-  :hover {
-    background-color: var(--color-yellow-dark);
+export const ViewLinkWrapper = styled.div`
+  > a {
+    border-radius: 6px;
+    padding-inline: 22px;
+    padding-block: 3px;
+    font-size: 15px;
   }
 `;

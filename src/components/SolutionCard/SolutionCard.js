@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { externalLink } from "../../assets";
 import {
-  Button,
   Card,
   CardContainer,
   CardExternalLink,
@@ -11,6 +10,7 @@ import {
   ProblemSource,
   SolvedDate,
   Tags,
+  ViewLinkWrapper,
 } from "./SolutionCard.styles";
 
 const SolutionCard = () => {
@@ -132,9 +132,14 @@ const SolutionCard = () => {
 
           <SolvedDate>solved {solution.date}</SolvedDate>
 
-          <Link to={"/"}>
-            <Button>View</Button>
-          </Link>
+          <ViewLinkWrapper>
+            <Link
+              className="btn"
+              to={`/solution/${solution.title}/${solution.id}`}
+            >
+              View
+            </Link>
+          </ViewLinkWrapper>
         </Card>
       ))}
     </CardContainer>

@@ -22,7 +22,7 @@ const SearchForm = () => {
         required
       />
 
-      <button className="btn" type="submit">
+      <button className="main-btn" type="submit">
         Find now
       </button>
     </SearchFormContainer>
