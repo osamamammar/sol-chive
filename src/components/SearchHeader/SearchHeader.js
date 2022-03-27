@@ -36,6 +36,7 @@ const SearchHeader = () => {
             name="email"
             id="email"
             placeholder="Enter email"
+            required
           />
 
           <FindBtn type="submit">search</FindBtn>
@@ -58,6 +59,7 @@ const SearchHeader = () => {
               name="email"
               id="email"
               placeholder="Enter email"
+              required
             />
 
             <FindBtn type="submit">search</FindBtn>

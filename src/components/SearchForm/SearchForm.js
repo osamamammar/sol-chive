@@ -19,6 +19,7 @@ const SearchForm = () => {
         name="email"
         id="email"
         placeholder="Enter email"
+        required
       />
 
       <button className="btn" type="submit">

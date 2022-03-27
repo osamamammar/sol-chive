@@ -48,6 +48,7 @@ export const ProblemSource = styled.p`
 export const Tags = styled.p`
   font-size: 10px;
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   color: var(--color-placeholder);
   > span {

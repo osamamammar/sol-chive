@@ -19,7 +19,12 @@ const Footer = () => {
           target={`_blank`}
         >
           Github
-          <FooterIcon src={githubIcon} alt="github-icon"></FooterIcon>
+          <FooterIcon
+            src={githubIcon}
+            alt="github-icon"
+            width={12}
+            height={12}
+          ></FooterIcon>
         </FooterLink>
       </FooterHeader>
     </FooterWrapper>

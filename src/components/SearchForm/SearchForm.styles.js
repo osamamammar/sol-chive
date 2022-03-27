@@ -20,6 +20,7 @@ export const SearchInput = styled.input`
   width: 90%;
   margin-bottom: 10px;
   caret-color: var(--color-text-light);
+  color: var(--color-text-light);
 
   ::placeholder {
     color: var(--color-placeholder);
