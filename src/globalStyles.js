@@ -54,7 +54,8 @@ img {
   color: var(--color-primary);
   border: none;
   border-radius: 8px;
-  padding: 4px 30px;
+  padding-inline: 30px;
+  padding-block: 4px;
   font-size: 20px;
   cursor: pointer;
   transition: ease-in-out 0.2s all;

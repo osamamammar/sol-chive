@@ -17,5 +17,5 @@ export const FooterLink = styled.a`
 `;
 export const FooterIcon = styled.img`
   display: inline-block;
-  margin: 0 0 0 5px; ;
+  margin-inline-start: 5px;
 `;

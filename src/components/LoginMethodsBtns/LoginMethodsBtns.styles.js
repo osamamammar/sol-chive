@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 export const SocialList = styled.ul`
   display: flex;
-  margin: 8px 0;
+  margin-inline: 0;
+  margin-block: 8px;
   gap: 20px;
 `;
 export const SocialBtns = styled.button`
   width: 71px;
   height: 71px;
   border: none;
-  padding: 15px;
+  padding-inline: 15px;
+  padding-block: 15px;
   border-radius: 9px;
   cursor: pointer;
   background-color: var(--color-gray);

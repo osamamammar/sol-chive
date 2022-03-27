@@ -15,10 +15,11 @@ export const SearchInput = styled.input`
   background-color: var(--color-gray);
   border: none;
   border-radius: 9px;
-  padding: 5px 10px;
+  padding-block: 5px;
+  padding-inline: 10px;
   font-size: 16px;
   width: 90%;
-  margin-bottom: 10px;
+  margin-block-end: 10px;
   caret-color: var(--color-text-light);
   color: var(--color-text-light);
 
@@ -29,6 +30,6 @@ export const SearchInput = styled.input`
 `;
 export const IconForInput = styled.div`
   position: absolute;
-  top: 30px;
-  right: 25px;
+  inset-block-start: 30px;
+  inset-inline-end: 25px;
 `;

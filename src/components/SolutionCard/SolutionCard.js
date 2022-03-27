@@ -107,6 +107,7 @@ const SolutionCard = () => {
       date: "2 days ago",
     },
   ];
+
   return (
     <CardContainer>
       {solutions.map((solution) => (
