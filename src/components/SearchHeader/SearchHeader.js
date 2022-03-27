@@ -23,7 +23,6 @@ const SearchHeader = () => {
     <HeaderContainer>
       <DivWrapper>
         <Logo size={"25px"} weight={"bold"} margin={"unset"}></Logo>
-
         <SearchFormContainer>
           <LabelForInput htmlFor="email">find:</LabelForInput>
 
