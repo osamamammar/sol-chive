@@ -49,19 +49,23 @@ img {
   height: auto;
 }
 
-.btn {
+.main-btn,
+.btn{
+
   background-color: var(--color-yellow);
   color: var(--color-primary);
   border: none;
   border-radius: 8px;
-  padding-inline: 30px;
-  padding-block: 4px;
-  font-size: 20px;
   cursor: pointer;
   transition: ease-in-out 0.2s all;
 }
+.main-btn {
+  padding-inline: 30px;
+  padding-block: 4px;
+  font-size: 20px;
+}
 
-.btn:hover {
+.btn:hover,.main-btn:hover {
   background-color: var(--color-yellow-dark);
 }
 

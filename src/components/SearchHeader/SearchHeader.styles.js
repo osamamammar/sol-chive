@@ -18,6 +18,12 @@ export const DivWrapper = styled.div`
     width: 95%;
     justify-content: center;
   }
+  > a {
+    border-radius: 8px;
+    padding-block: 5px;
+    padding-inline: 15px;
+    font-size: 12px;
+  }
 `;
 
 export const SearchFormContainer = styled.form`

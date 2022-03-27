@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { searchIcon, searchIconV2 } from "../../assets";
 import { useToggle } from "../../hooks";
 import Logo from "../Logo/Logo";
@@ -7,7 +8,6 @@ import {
   FindBtn,
   HeaderContainer,
   IconForInput,
-  JoinBtn,
   LabelForInput,
   SearchFormContainer,
   SearchInput,
@@ -23,7 +23,6 @@ const SearchHeader = () => {
     <HeaderContainer>
       <DivWrapper>
         <Logo size={"25px"} weight={"bold"} margin={"unset"}></Logo>
-
         <SearchFormContainer>
           <LabelForInput htmlFor="email">find:</LabelForInput>
 
@@ -46,7 +45,9 @@ const SearchHeader = () => {
           <img src={searchIconV2} alt="search-icon" width={15} height={15} />
         </ToggleSearch>
 
-        <JoinBtn>Join or login</JoinBtn>
+        <Link to={"/"} className="btn">
+          Join or login
+        </Link>
 
         {toggle && (
           <ToggleSearchFormContainer>
