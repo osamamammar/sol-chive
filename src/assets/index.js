@@ -12,3 +12,4 @@ export { default as home } from "./images/home.svg";
 export { default as profilePictureSmall } from "./images/profilePicture-small.png";
 export { default as menu } from "./images/menu.svg";
 export { default as cross } from "./images/cross.svg";
+export { default as blackPen } from "./images/black-pen.svg";

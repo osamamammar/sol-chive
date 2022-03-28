@@ -41,7 +41,9 @@ const FilterCards = ({ title }) => {
         </SelectWrapper>
 
         <SelectWrapper>
-          <LabelTitle htmlFor="filterBy">filter by:</LabelTitle>
+          <LabelTitle width={"unset"} htmlFor="filterBy">
+            filter by:
+          </LabelTitle>
 
           <SelectStyled name="filterBy" id="filterBy" defaultValue={"-select-"}>
             <option value="-select-" disabled>

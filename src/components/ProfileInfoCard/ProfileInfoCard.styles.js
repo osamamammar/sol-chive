@@ -49,6 +49,16 @@ export const DescriptionWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 8px;
+  > a.edit_info {
+    margin-block-start: 2px;
+    margin-inline: auto;
+    padding-inline: 25px;
+    padding-block: 5px;
+    font-size: 14px;
+    > img {
+      margin-inline-start: 8px;
+    }
+  }
 `;
 
 export const TitleDescription = styled.h3`

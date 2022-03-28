@@ -14,7 +14,7 @@ const ProfilePage = () => {
     <>
       <ProfileHeader></ProfileHeader>
       <MainContainer>
-        <ProfileInfoCard></ProfileInfoCard>
+        <ProfileInfoCard buttonDisplay="true"></ProfileInfoCard>
         <SolutionCardsContainer>
           <FilterCards title={"Library"}></FilterCards>
           <SolutionCard></SolutionCard>

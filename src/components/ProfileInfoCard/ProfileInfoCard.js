@@ -1,5 +1,6 @@
 import React from "react";
-import { profilePic } from "../../assets";
+import { Link } from "react-router-dom";
+import { blackPen, profilePic } from "../../assets";
 import {
   AsideContainer,
   BodyDescription,
@@ -13,7 +14,7 @@ import {
   UserEmail,
 } from "./ProfileInfoCard.styles";
 
-const ProfileInfoCard = () => {
+const ProfileInfoCard = ({ buttonDisplay }) => {
   return (
     <AsideContainer>
       <MainWrapper>
@@ -65,6 +66,12 @@ const ProfileInfoCard = () => {
           <TitleDescription>Solved:</TitleDescription>
           <BodyDescription>7 problems</BodyDescription>
         </SolvedWrapper>
+        {buttonDisplay === "true" ? (
+          <Link to={"/edit-info"} className="edit_info btn">
+            Edit info
+            <img src={blackPen} alt="pen-icon" />
+          </Link>
+        ) : null}
       </DescriptionWrapper>
     </AsideContainer>
   );
