@@ -1,5 +1,8 @@
 import React from "react";
+import { copyIcon } from "../../assets";
+import { useCopyURL } from "../../hooks";
 import {
+  DivContainer,
   DivWrapper,
   HeaderTitle,
   LabelTitle,
@@ -7,10 +10,22 @@ import {
   SelectWrapper,
 } from "./FilterCards.styles";
 
-const FilterCards = () => {
+const FilterCards = ({ title }) => {
+  const [handelCopyURL, copied] = useCopyURL();
+
   return (
     <DivWrapper>
-      <HeaderTitle>Solutions</HeaderTitle>
+      {title === "Library" ? (
+        <DivContainer>
+          <HeaderTitle>{title}</HeaderTitle>
+          <button className="btn" type="button" onClick={handelCopyURL}>
+            {copied ? "Copied ! " : "Copy profile URL "}
+            <img src={copyIcon} alt="copy-Icon" width={12} height={12} />
+          </button>
+        </DivContainer>
+      ) : (
+        <HeaderTitle>{title}</HeaderTitle>
+      )}
 
       <SelectWrapper>
         <SelectWrapper>

@@ -2,28 +2,28 @@ import React from "react";
 import {
   FilterCards,
   Footer,
+  ProfileHeader,
   ProfileInfoCard,
-  SearchHeader,
   SolutionCard,
   SolutionCardsContainer,
 } from "../../components";
+import { MainContainer } from "../SearchResultPage/SearchResultPage.styles";
 
-import { MainContainer } from "./SearchResultPage.styles";
-
-const SearchResultPage = () => {
+const ProfilePage = () => {
   return (
     <>
-      <SearchHeader></SearchHeader>
+      <ProfileHeader></ProfileHeader>
       <MainContainer>
         <ProfileInfoCard></ProfileInfoCard>
         <SolutionCardsContainer>
-          <FilterCards title={"Solutions"}></FilterCards>
+          <FilterCards title={"Library"}></FilterCards>
           <SolutionCard></SolutionCard>
         </SolutionCardsContainer>
       </MainContainer>
+
       <Footer></Footer>
     </>
   );
 };
 
-export default SearchResultPage;
+export default ProfilePage;

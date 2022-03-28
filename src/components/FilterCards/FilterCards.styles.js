@@ -18,7 +18,6 @@ export const SelectWrapper = styled.div`
 
 export const LabelTitle = styled.label`
   font-weight: 300;
-  width: 55px;
 `;
 
 export const SelectStyled = styled.select`
@@ -34,4 +33,34 @@ export const SelectStyled = styled.select`
 
 export const DivWrapper = styled.div`
   display: contents;
+`;
+export const DivContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 22px;
+  > button {
+    padding-inline: 16px;
+    padding-block: 4px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #212121;
+  }
+`;
+
+export const Alert = styled.div`
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  background-color: var(--color-gray);
+  padding: 4px;
+  border: 1px solid var(--color-yellow);
+  border-radius: 10px;
+  font-size: 12px;
+  @media (min-width: 1080px) {
+    bottom: 0px;
+    right: -88px;
+  }
 `;
