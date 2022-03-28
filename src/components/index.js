@@ -9,3 +9,4 @@ export { default as ProfileInfoCard } from "./ProfileInfoCard/ProfileInfoCard";
 export { default as FilterCards } from "./FilterCards/FilterCards";
 export { default as SolutionCardsContainer } from "./SolutionCardsContainer/SolutionCardsContainer";
 export { default as SolutionCard } from "./SolutionCard/SolutionCard";
+export { default as ErrorMessage } from "./ErrorMessage/ErrorMessage";
