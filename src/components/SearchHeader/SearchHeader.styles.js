@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const DivWrapper = styled.div`
-  width: 85%;
+  width: ${({ width }) => (width ? width : "85%")};
   max-width: 1344px;
   margin: 0 auto;
   display: flex;
@@ -16,13 +16,19 @@ export const DivWrapper = styled.div`
   padding-block: 10px;
   @media (max-width: 330px) {
     width: 95%;
-    justify-content: center;
   }
   > a {
     border-radius: 8px;
     padding-block: 5px;
     padding-inline: 15px;
     font-size: 12px;
+    @media (max-width: 286px) {
+      margin-block: 0;
+      margin-inline: auto;
+    }
+    @media (max-width: 285px) {
+      order: 2;
+    }
   }
 `;
 
@@ -97,9 +103,6 @@ export const ToggleSearch = styled(FindBtn)`
   @media (max-width: 540px) {
     display: block;
   }
-  @media (max-width: 275px) {
-    order: 1;
-  }
 `;
 
 export const ToggleSearchFormContainer = styled.form`
@@ -113,8 +116,8 @@ export const ToggleSearchFormContainer = styled.form`
   @media (min-width: 541px) {
     display: none;
   }
-  @media (max-width: 275px) {
-    order: 2;
+  @media (max-width: 285px) {
+    order: 1;
   }
 `;
 
@@ -146,12 +149,11 @@ export const JoinBtn = styled.button`
   font-size: 12px;
   cursor: pointer;
   transition: ease-in-out 0.2s all;
+
   :hover {
     background-color: var(--color-yellow-dark);
   }
-  @media (max-width: 275px) {
-    order: 3;
-  }
+
   @media (max-width: 330px) {
     padding-block: 5px;
     padding-inline: 10px;
