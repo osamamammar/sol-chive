@@ -28,6 +28,12 @@ export const MyProfileContainer = styled.div`
   gap: 6px;
   > a {
     display: contents;
+    > img.profile_picture-small {
+      width: 28px;
+      height: 28px;
+      background-color: var(--color-text-light);
+      border-radius: 50%;
+    }
   }
 `;
 

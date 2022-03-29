@@ -69,7 +69,7 @@ const ProfileInfoCard = ({ buttonDisplay }) => {
         {buttonDisplay === "true" ? (
           <Link to={"/edit-info"} className="edit_info btn">
             Edit info
-            <img src={blackPen} alt="pen-icon" />
+            <img src={blackPen} alt="pen-icon" width={12} height={12} />
           </Link>
         ) : null}
       </DescriptionWrapper>

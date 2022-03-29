@@ -34,6 +34,7 @@ const ProfileHeader = () => {
                 alt="profile"
                 width={28}
                 height={28}
+                className="profile_picture-small"
               />
               <p>John Doe</p>
             </Link>
