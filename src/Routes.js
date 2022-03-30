@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes as RoutesApp } from "react-router-dom";
 import {
+  HomePage,
   LandingPage,
   NotFoundPage,
   ProfilePage,
@@ -14,6 +15,7 @@ const Routes = () => {
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/search" element={<SearchResultPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
+        <Route path="/home" element={<HomePage />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </RoutesApp>
     </BrowserRouter>

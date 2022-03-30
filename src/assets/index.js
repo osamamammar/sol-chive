@@ -13,3 +13,4 @@ export { default as profilePictureSmall } from "./images/profilePicture-small.pn
 export { default as menu } from "./images/menu.svg";
 export { default as cross } from "./images/cross.svg";
 export { default as blackPen } from "./images/black-pen.svg";
+export { default as addNew } from "./images/add.svg";

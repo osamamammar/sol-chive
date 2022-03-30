@@ -32,7 +32,7 @@ export const SelectStyled = styled.select`
   cursor: pointer;
 `;
 
-export const DivWrapper = styled.div`
+export const HeaderContainer = styled.header`
   display: contents;
 `;
 export const DivContainer = styled.div`
@@ -41,13 +41,22 @@ export const DivContainer = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 22px;
+  gap: ${({ gap }) => (gap ? gap : "22px")};
   > button {
     padding-inline: 16px;
     padding-block: 4px;
     border-radius: 6px;
     font-size: 14px;
     color: #212121;
+  }
+  > a.btn {
+    padding-inline: 16px;
+    padding-block: 4px;
+    font-size: 12px;
+    border-radius: 6px;
+    > img {
+      margin-inline-start: 5px;
+    }
   }
 `;
 
