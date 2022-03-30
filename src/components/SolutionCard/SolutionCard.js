@@ -109,40 +109,42 @@ const SolutionCard = () => {
   ];
 
   return (
-    <CardContainer>
-      {solutions.map((solution) => (
-        <Card key={solution.id}>
-          <CardHeader>
-            <CardTitle>{solution.title}</CardTitle>
-            <CardExternalLink
-              src={externalLink}
-              alt="external-link"
-              width={21}
-              height={21}
-            />
-          </CardHeader>
+    <>
+      <CardContainer>
+        {solutions.map((solution) => (
+          <Card key={solution.id}>
+            <CardHeader>
+              <CardTitle>{solution.title}</CardTitle>
+              <CardExternalLink
+                src={externalLink}
+                alt="external-link"
+                width={21}
+                height={21}
+              />
+            </CardHeader>
 
-          <ProblemSource>source {solution.source}</ProblemSource>
+            <ProblemSource>source {solution.source}</ProblemSource>
 
-          <Tags>
-            {solution.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </Tags>
+            <Tags>
+              {solution.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </Tags>
 
-          <SolvedDate>solved {solution.date}</SolvedDate>
+            <SolvedDate>solved {solution.date}</SolvedDate>
 
-          <ViewLinkWrapper>
-            <Link
-              className="btn"
-              to={`/solution/${solution.title}/${solution.id}`}
-            >
-              View
-            </Link>
-          </ViewLinkWrapper>
-        </Card>
-      ))}
-    </CardContainer>
+            <ViewLinkWrapper>
+              <Link
+                className="btn"
+                to={`/solution/${solution.title}/${solution.id}`}
+              >
+                View
+              </Link>
+            </ViewLinkWrapper>
+          </Card>
+        ))}
+      </CardContainer>
+    </>
   );
 };
 

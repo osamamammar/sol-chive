@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fadeIn } from "../../animations";
 
 export const HeaderContainer = styled.header`
   background-color: var(--color-gray);
@@ -25,9 +26,6 @@ export const DivWrapper = styled.div`
     @media (max-width: 286px) {
       margin-block: 0;
       margin-inline: auto;
-    }
-    @media (max-width: 285px) {
-      order: 2;
     }
   }
 `;
@@ -113,11 +111,9 @@ export const ToggleSearchFormContainer = styled.form`
   justify-content: center;
   gap: 5px;
   width: 100%;
+  animation: ${fadeIn} 1s;
   @media (min-width: 541px) {
     display: none;
-  }
-  @media (max-width: 285px) {
-    order: 1;
   }
 `;
 

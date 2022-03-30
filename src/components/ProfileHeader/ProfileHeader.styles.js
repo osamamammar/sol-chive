@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fadeIn } from "../../animations";
 
 export const Navbar = styled.nav`
   display: flex;
@@ -45,6 +46,13 @@ export const MenuHamburger = styled.button`
     cursor: pointer;
     border-radius: 5px;
     background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: var(--color-primary);
+    }
+    &:focus {
+      background-color: var(--color-primary);
+    }
   }
 `;
 export const NavbarToggled = styled.nav`
@@ -54,6 +62,7 @@ export const NavbarToggled = styled.nav`
   margin-block: 0;
   margin-inline: auto;
   gap: 20px;
+  animation: ${fadeIn} 1s;
   > a {
     display: contents;
   }

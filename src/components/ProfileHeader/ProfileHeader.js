@@ -24,11 +24,11 @@ const ProfileHeader = () => {
         <Logo size={"25px"} weight={"bold"} margin={"unset"}></Logo>
 
         <Navbar>
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <HomeIcon src={home} alt="home" width={31} height={31} />
           </Link>
           <MyProfileContainer>
-            <Link to={"/"}>
+            <Link to={"/profile"}>
               <img
                 src={profilePictureSmall}
                 alt="profile"

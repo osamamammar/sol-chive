@@ -9,10 +9,9 @@ export const MainContainer = styled.main`
   align-items: start;
   justify-items: center;
   margin-inline: auto;
-  min-height: calc(100vh - 119px);
+  min-height: calc(100vh - 104px);
 
   @media (max-width: 1080px) {
     grid-template-columns: 1fr;
   }
-  margin-block-end: 15px;
 `;

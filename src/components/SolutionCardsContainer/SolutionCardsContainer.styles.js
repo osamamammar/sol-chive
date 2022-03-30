@@ -5,7 +5,8 @@ export const SectionContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
   margin-block-start: 24px;
-  flex-wrap: wrap;
+  margin-block-end: 100px;
 `;
