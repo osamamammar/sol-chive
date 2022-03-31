@@ -12,3 +12,4 @@ export { default as SolutionCard } from "./SolutionCard/SolutionCard";
 export { default as ErrorMessage } from "./ErrorMessage/ErrorMessage";
 export { default as ProfileHeader } from "./ProfileHeader/ProfileHeader";
 export { default as ScrollToTop } from "./ScrollToTop/ScrollToTop";
+export { default as HomeEmpty } from "./HomeEmpty/HomeEmpty";

@@ -7,6 +7,7 @@ import {
   SolutionCard,
   SolutionCardsContainer,
 } from "../../components";
+import { cards } from "../../json";
 
 import { MainContainer } from "./SearchResultPage.styles";
 
@@ -18,7 +19,7 @@ const SearchResultPage = () => {
         <ProfileInfoCard></ProfileInfoCard>
         <SolutionCardsContainer>
           <FilterCards title={"Solutions"}></FilterCards>
-          <SolutionCard></SolutionCard>
+          <SolutionCard solutions={cards}></SolutionCard>
         </SolutionCardsContainer>
       </MainContainer>
       <Footer></Footer>

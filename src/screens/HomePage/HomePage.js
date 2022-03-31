@@ -1,7 +1,9 @@
 import React from "react";
+import { cards } from "../../json";
 import {
   FilterCards,
   Footer,
+  HomeEmpty,
   ProfileHeader,
   SolutionCard,
   SolutionCardsContainer,
@@ -17,10 +19,12 @@ const HomePage = () => {
           <FilterCards
             title={"Library"}
             addNewBtn={true}
-            HomePage={true}
+            homePage={true}
+            cards={cards}
           ></FilterCards>
-          <SolutionCard></SolutionCard>
+          <SolutionCard solutions={cards}></SolutionCard>
         </SolutionCardsContainer>
+        {cards && cards.length === 0 && <HomeEmpty></HomeEmpty>}
       </MainContainer>
       <Footer></Footer>
     </>
