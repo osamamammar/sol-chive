@@ -55,13 +55,13 @@ img {
   background-color: var(--color-yellow);
   color: var(--color-primary);
   border: none;
-  border-radius: 8px;
   cursor: pointer;
   transition: ease-in-out 0.2s all;
 }
 .main-btn {
   padding-inline: 30px;
   padding-block: 4px;
+  border-radius: 8px;
   font-size: 20px;
 }
 
