@@ -1,1 +1,1 @@
-export { fadeIn } from "./FadeIn/FadeIn.styles";
+export { fadeIn, fadeInAndTranslate } from "./FadeIn/FadeIn.styles";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { scrollToTop } from "../../assets";
-import { DivWrapper } from "./ScrollToTop.styles";
+import { BtnGoToTop } from "./ScrollToTop.styles";
 
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -24,7 +24,7 @@ const ScrollToTop = () => {
   return (
     <>
       {visible && (
-        <DivWrapper>
+        <BtnGoToTop>
           <img
             src={scrollToTop}
             alt="scroll-to-top"
@@ -32,7 +32,7 @@ const ScrollToTop = () => {
             width={31}
             height={31}
           />
-        </DivWrapper>
+        </BtnGoToTop>
       )}
     </>
   );

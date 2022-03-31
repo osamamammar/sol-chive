@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import { fadeIn } from "../../animations";
+import { fadeInAndTranslate } from "../../animations";
 
-export const DivWrapper = styled.div`
-  position: relative;
-  animation: ${fadeIn} 1s;
-  > img {
-    position: fixed;
-    cursor: pointer;
-    inset-block-end: 78px;
-    inset-inline-end: 40px;
-  }
+export const BtnGoToTop = styled.button`
+  animation: ${fadeInAndTranslate} 1s;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+  inset-block-end: 78px;
+  inset-inline-end: 40px;
 `;
