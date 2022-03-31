@@ -6,6 +6,7 @@ export const MainContainer = styled.main`
   margin-block: 0;
   margin-inline: auto;
   min-height: calc(100vh - 128px);
+  position: relative;
   @media (max-width: 600px) {
     width: 85%;
   }

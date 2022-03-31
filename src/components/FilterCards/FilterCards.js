@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { addNew, copyIcon } from "../../assets";
+import { copyIcon } from "../../assets";
 import { useCopyURL } from "../../hooks";
+import AddNewBtn from "../AddNewBtn/AddNewBtn";
 import {
   DivContainer,
   HeaderContainer,
@@ -63,12 +63,7 @@ const FilterCards = ({ title, addNewBtn, homePage, cards }) => {
           </SelectWrapper>
         ) : null}
 
-        {title === "Library" && addNewBtn && (
-          <Link to={"/add-new"} className="btn">
-            Add new
-            <img src={addNew} alt="add-new" />
-          </Link>
-        )}
+        {title === "Library" && addNewBtn && <AddNewBtn />}
       </DivContainer>
     </HeaderContainer>
   );

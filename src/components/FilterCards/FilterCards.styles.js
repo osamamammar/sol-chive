@@ -49,15 +49,6 @@ export const DivContainer = styled.div`
     font-size: 14px;
     color: #212121;
   }
-  > a.btn {
-    padding-inline: 16px;
-    padding-block: 4px;
-    font-size: 12px;
-    border-radius: 6px;
-    > img {
-      margin-inline-start: 5px;
-    }
-  }
 `;
 
 export const Alert = styled.div`
