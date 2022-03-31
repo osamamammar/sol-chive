@@ -14,7 +14,11 @@ const HomePage = () => {
       <ProfileHeader></ProfileHeader>
       <MainContainer>
         <SolutionCardsContainer>
-          <FilterCards title={"Library"} addNewBtn={true}></FilterCards>
+          <FilterCards
+            title={"Library"}
+            addNewBtn={true}
+            HomePage={true}
+          ></FilterCards>
           <SolutionCard></SolutionCard>
         </SolutionCardsContainer>
       </MainContainer>

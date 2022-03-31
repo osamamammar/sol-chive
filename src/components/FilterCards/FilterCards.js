@@ -11,12 +11,14 @@ import {
   SelectWrapper,
 } from "./FilterCards.styles";
 
-const FilterCards = ({ title, addNewBtn }) => {
+const FilterCards = ({ title, addNewBtn, HomePage }) => {
   const [handelCopyURL, copied] = useCopyURL();
 
   return (
     <HeaderContainer>
-      {title === "Library" ? (
+      {(title === "Library" && HomePage) || title === "Solutions" ? (
+        <HeaderTitle>{title}</HeaderTitle>
+      ) : (
         <DivContainer>
           <HeaderTitle>{title}</HeaderTitle>
           <button className="btn" type="button" onClick={handelCopyURL}>
@@ -24,8 +26,6 @@ const FilterCards = ({ title, addNewBtn }) => {
             <img src={copyIcon} alt="copy-Icon" width={12} height={12} />
           </button>
         </DivContainer>
-      ) : (
-        <HeaderTitle>{title}</HeaderTitle>
       )}
       <DivContainer gap="15px">
         <SelectWrapper>
