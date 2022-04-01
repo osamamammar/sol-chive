@@ -50,12 +50,18 @@ img {
 }
 
 .main-btn,
-.btn{
-  background-color: var(--color-yellow);
+.btn,
+.red-btn{
   color: var(--color-primary);
   border: none;
   cursor: pointer;
   transition: ease-in-out 0.2s all;
+}
+.main-btn,.btn{
+  background-color: var(--color-yellow);
+}
+.red-btn{
+  background-color: var(--color-danger);
 }
 .main-btn {
   padding-inline: 30px;
@@ -66,6 +72,9 @@ img {
 
 .btn:hover,.main-btn:hover {
   background-color: var(--color-yellow-dark);
+}
+.red-btn:hover{
+  background-color:#d06565;
 }
 
 .visually-hidden:not(:focus):not(:active) {

@@ -14,3 +14,4 @@ export { default as ProfileHeader } from "./ProfileHeader/ProfileHeader";
 export { default as ScrollToTop } from "./ScrollToTop/ScrollToTop";
 export { default as HomeEmpty } from "./HomeEmpty/HomeEmpty";
 export { default as AddNewBtn } from "./AddNewBtn/AddNewBtn";
+export { default as AddNewProblemForm } from "./AddNewProblemForm/AddNewProblemForm";

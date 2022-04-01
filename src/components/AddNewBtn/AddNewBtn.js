@@ -4,7 +4,7 @@ import { StyledLink } from "./AddNewBtn.styles";
 
 const AddNewBtn = () => {
   return (
-    <StyledLink to={"/add-new"} className="btn">
+    <StyledLink to={"/add-new-problem"} className="btn">
       Add new
       <img src={addNew} alt="add-new" />
     </StyledLink>
