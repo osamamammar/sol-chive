@@ -51,7 +51,6 @@ img {
 
 .main-btn,
 .btn{
-
   background-color: var(--color-yellow);
   color: var(--color-primary);
   border: none;

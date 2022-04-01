@@ -17,7 +17,7 @@ const ProfilePage = () => {
       <MainContainer>
         <ProfileInfoCard buttonDisplay="true"></ProfileInfoCard>
         <SolutionCardsContainer>
-          <FilterCards title={"Library"}></FilterCards>
+          <FilterCards title={"Library"} cards={cards}></FilterCards>
           <SolutionCard solutions={cards}></SolutionCard>
         </SolutionCardsContainer>
       </MainContainer>

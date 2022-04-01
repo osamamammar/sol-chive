@@ -43,11 +43,16 @@ export const DivContainer = styled.div`
   align-items: center;
   gap: ${({ gap }) => (gap ? gap : "22px")};
   > button {
+    display: inline-flex;
+    align-items: center;
     padding-inline: 16px;
     padding-block: 4px;
     border-radius: 6px;
     font-size: 14px;
     color: #212121;
+    > img {
+      margin-inline-start: 5px;
+    }
   }
 `;
 

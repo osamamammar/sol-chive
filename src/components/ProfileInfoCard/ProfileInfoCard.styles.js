@@ -50,11 +50,13 @@ export const DescriptionWrapper = styled.div`
   align-items: flex-start;
   gap: 8px;
   > a.edit_info {
+    display: inline-flex;
     margin-block-start: 2px;
     margin-inline: auto;
     padding-inline: 25px;
     padding-block: 5px;
     font-size: 14px;
+    border-radius: 6px;
     > img {
       margin-inline-start: 8px;
     }

@@ -18,7 +18,7 @@ const SearchResultPage = () => {
       <MainContainer>
         <ProfileInfoCard></ProfileInfoCard>
         <SolutionCardsContainer>
-          <FilterCards title={"Solutions"}></FilterCards>
+          <FilterCards title={"Solutions"} cards={cards}></FilterCards>
           <SolutionCard solutions={cards}></SolutionCard>
         </SolutionCardsContainer>
       </MainContainer>

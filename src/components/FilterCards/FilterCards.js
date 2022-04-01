@@ -62,7 +62,6 @@ const FilterCards = ({ title, addNewBtn, homePage, cards }) => {
             </SelectWrapper>
           </SelectWrapper>
         ) : null}
-
         {title === "Library" && addNewBtn && <AddNewBtn />}
       </DivContainer>
     </HeaderContainer>
