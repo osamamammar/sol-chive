@@ -23,7 +23,6 @@ export const FormContainer = styled.form`
   @media (max-width: 450px) {
     padding-inline: 11px;
   }
-
 `;
 export const DivWrapper = styled.div`
   width: 100%;
@@ -51,5 +50,10 @@ export const DivWrapper = styled.div`
   }
   > label > span {
     font-size: 14px;
+  }
+  @media (max-width: 450px) {
+    > textarea {
+      max-height: 250px;
+    }
   }
 `;
