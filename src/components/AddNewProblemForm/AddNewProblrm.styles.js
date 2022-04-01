@@ -16,7 +16,14 @@ export const FormContainer = styled.form`
     padding-block: 6px;
     border-radius: 6px;
     font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
   }
+  @media (max-width: 450px) {
+    padding-inline: 11px;
+  }
+
 `;
 export const DivWrapper = styled.div`
   width: 100%;

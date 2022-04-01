@@ -1,4 +1,6 @@
 import React from "react";
+import { btnSubmit } from "../../assets";
+import CTABtn from "../CTABtn/CTABtn";
 import { DivWrapper, FormContainer } from "./AddNewProblrm.styles";
 
 const AddNewProblemForm = () => {
@@ -21,7 +23,7 @@ const AddNewProblemForm = () => {
           type="url"
           name="problemLink"
           id="problemLink"
-          placeholder="Problem link"
+          placeholder="https://example.com"
           required
         />
       </DivWrapper>
@@ -64,9 +66,16 @@ const AddNewProblemForm = () => {
         />
       </DivWrapper>
 
-      <button type="submit" className="btn">
-        Submit <img src="" alt="" />
-      </button>
+      <CTABtn
+        type={"submit"}
+        alt={"submit"}
+        imgIcon={btnSubmit}
+        className={"btn"}
+        width={"13.17"}
+        height={"9.52"}
+      >
+        Submit
+      </CTABtn>
     </FormContainer>
   );
 };

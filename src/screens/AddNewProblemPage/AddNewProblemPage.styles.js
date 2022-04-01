@@ -7,7 +7,7 @@ export const MainContainer = styled.main`
   margin-inline: auto;
   min-height: calc(100vh - 128px);
   @media (max-width: 450px) {
-    width: 80%;
+    width: 88%;
   } ;
 `;
 

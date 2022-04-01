@@ -1,6 +1,11 @@
 import React from "react";
 import { btnCancel, btnSubmit } from "../../assets";
-import { AddNewProblemForm, Footer, ProfileHeader } from "../../components";
+import {
+  AddNewProblemForm,
+  CTABtn,
+  Footer,
+  ProfileHeader,
+} from "../../components";
 import {
   DivWrapper,
   HeaderContainer,
@@ -17,12 +22,26 @@ const AddNewProblemPage = () => {
           <HeaderTitle>Add New</HeaderTitle>
 
           <DivWrapper>
-            <button type="submit" className="btn">
-              submit <img src={btnSubmit} alt="submit-icon" />
-            </button>
-            <button className="red-btn">
-              Cancel <img src={btnCancel} alt="cancel-icon" />
-            </button>
+            <CTABtn
+              type={"submit"}
+              alt={"submit"}
+              imgIcon={btnSubmit}
+              className={"btn"}
+              width={"13.17"}
+              height={"9.52"}
+            >
+              Submit
+            </CTABtn>
+            <CTABtn
+              type={"button"}
+              alt={"cancel"}
+              imgIcon={btnCancel}
+              className={"red-btn"}
+              width={"14"}
+              height={"14"}
+            >
+              Cancel
+            </CTABtn>
           </DivWrapper>
         </HeaderContainer>
 
