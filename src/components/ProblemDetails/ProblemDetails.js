@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { blackPen, externalLink, trash } from "../../assets";
+import { AddNewProblemPage } from "../../screens";
 import CTABtn from "../CTABtn/CTABtn";
 import {
   ProblemSource,
@@ -40,20 +41,19 @@ const ProblemDetails = () => {
         alignItems={"center"}
         gap={"12px"}
       >
-        <CTABtn
-          imgIcon={blackPen}
-          type={"button"}
-          alt={"edit"}
-          className={"btn"}
-          width={"12.03"}
-          height={"11.59"}
+        <Link
+          to={"/add-new-problem"}
+          state={{ fromViewSolutionPage: true }}
+          className="edit-link btn"
         >
           Edit
-        </CTABtn>
+          <img src={blackPen} alt="edit-icon" />
+        </Link>
+
         <CTABtn
           imgIcon={trash}
           type={"button"}
-          alt={"delete"}
+          alt={"delete-icon"}
           className={"red-btn"}
           width={"10.25"}
           height={"11.27"}

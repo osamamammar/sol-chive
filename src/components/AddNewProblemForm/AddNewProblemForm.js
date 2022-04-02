@@ -1,6 +1,7 @@
 import React from "react";
 import { btnSubmit } from "../../assets";
 import CTABtn from "../CTABtn/CTABtn";
+import YourPerfectSolutionForm from "../YourPerfectSolutionForm/YourPerfectSolutionForm";
 import { DivWrapper, FormContainer } from "./AddNewProblrm.styles";
 
 const AddNewProblemForm = () => {
@@ -34,37 +35,7 @@ const AddNewProblemForm = () => {
         </label>
         <input type="text" name="tags" id="tags" placeholder="Enter tags" />
       </DivWrapper>
-
-      <DivWrapper>
-        <label htmlFor="yourSolution">Your Solution</label>
-        <textarea
-          type=""
-          placeholder="
-          /**
-          Enter your code here
-          **/"
-          name="yourSolution"
-          id="yourSolution"
-          rows={30}
-          required
-        />
-      </DivWrapper>
-
-      <DivWrapper>
-        <label htmlFor="perfectSolution">
-          Perfect Solution <span>(optional)</span>
-        </label>
-        <textarea
-          type="text"
-          placeholder="   
-          /**
-          Enter your code here
-          **/"
-          name="perfectSolution"
-          id="perfectSolution"
-          rows={30}
-        />
-      </DivWrapper>
+      <YourPerfectSolutionForm></YourPerfectSolutionForm>
 
       <CTABtn
         type={"submit"}

@@ -17,3 +17,5 @@ export { default as AddNewBtn } from "./AddNewBtn/AddNewBtn";
 export { default as AddNewProblemForm } from "./AddNewProblemForm/AddNewProblemForm";
 export { default as CTABtn } from "./CTABtn/CTABtn";
 export { default as ProblemDetails } from "./ProblemDetails/ProblemDetails";
+export { default as ViewSolutionForm } from "./ViewSolutionForm/ViewSolutionForm";
+export { default as YourPerfectSolutionForm } from "./YourPerfectSolutionForm/YourPerfectSolutionForm";

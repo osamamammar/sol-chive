@@ -30,6 +30,7 @@ export const DivWrapper = styled.div`
 
   flex-wrap: wrap;
   gap: ${(props) => (props.gap ? props.gap : "8px")};
+
   > a.link {
     display: inline-flex;
     justify-content: center;
@@ -41,5 +42,14 @@ export const DivWrapper = styled.div`
     padding-inline: 14px;
     padding-block: 3px;
     color: var(--color-yellow);
+  }
+  > a.edit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding-inline: 16px;
+    padding-block: 4px;
+    border-radius: 6px;
+    font-size: 12px;
   }
 `;
