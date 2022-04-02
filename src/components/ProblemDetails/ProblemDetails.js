@@ -30,7 +30,7 @@ const ProblemDetails = () => {
         </Tags>
 
         <SolvedDate size={"14px"}>solved 2 days ago</SolvedDate>
-        <Link to={"/"} className="link">
+        <Link to={"/"} className="external-link">
           Open The problem <img src={externalLink} alt="external-link-icon" />
         </Link>
       </DivWrapper>
