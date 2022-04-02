@@ -16,3 +16,4 @@ export { default as HomeEmpty } from "./HomeEmpty/HomeEmpty";
 export { default as AddNewBtn } from "./AddNewBtn/AddNewBtn";
 export { default as AddNewProblemForm } from "./AddNewProblemForm/AddNewProblemForm";
 export { default as CTABtn } from "./CTABtn/CTABtn";
+export { default as ProblemDetails } from "./ProblemDetails/ProblemDetails";

@@ -7,6 +7,7 @@ import {
   NotFoundPage,
   ProfilePage,
   SearchResultPage,
+  ViewSolutionPage,
 } from "./screens";
 
 const Routes = () => {
@@ -18,6 +19,10 @@ const Routes = () => {
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/home" element={<HomePage />}></Route>
         <Route path="/add-new-problem" element={<AddNewProblemPage />}></Route>
+        <Route
+          path="/solution/:title/:id"
+          element={<ViewSolutionPage />}
+        ></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </RoutesApp>
     </BrowserRouter>

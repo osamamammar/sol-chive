@@ -40,7 +40,7 @@ export const CardExternalLink = styled.img`
   background-color: var(--color-primary);
 `;
 export const ProblemSource = styled.p`
-  font-size: 12px;
+  font-size: ${(props) => (props.size ? props.size : "12px")};
   font-weight: 300;
   color: var(--color-placeholder);
 `;

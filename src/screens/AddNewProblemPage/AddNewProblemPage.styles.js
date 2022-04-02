@@ -30,13 +30,4 @@ export const DivWrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  > button {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding-inline: 16px;
-    padding-block: 4px;
-    border-radius: 6px;
-    font-size: 12px;
-  }
 `;
