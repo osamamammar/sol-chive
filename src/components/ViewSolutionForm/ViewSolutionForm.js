@@ -1,11 +1,11 @@
 import React from "react";
-import YourPerfectSolutionForm from "../YourPerfectSolutionForm/YourPerfectSolutionForm";
+import YourAndPerfectSolutionForm from "../YourAndPerfectSolutionForm/YourAndPerfectSolutionForm";
 import { FormContainer } from "./ViewSolutionForm.styles";
 
 const ViewSolutionForm = () => {
   return (
     <FormContainer>
-      <YourPerfectSolutionForm></YourPerfectSolutionForm>
+      <YourAndPerfectSolutionForm></YourAndPerfectSolutionForm>
     </FormContainer>
   );
 };

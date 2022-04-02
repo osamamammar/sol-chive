@@ -1,7 +1,7 @@
 import React from "react";
 import { btnSubmit } from "../../assets";
 import CTABtn from "../CTABtn/CTABtn";
-import YourPerfectSolutionForm from "../YourPerfectSolutionForm/YourPerfectSolutionForm";
+import YourPerfectSolutionForm from "../YourAndPerfectSolutionForm/YourAndPerfectSolutionForm";
 import { DivWrapper, FormContainer } from "./AddNewProblrm.styles";
 
 const AddNewProblemForm = () => {

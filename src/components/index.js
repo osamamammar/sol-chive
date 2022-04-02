@@ -18,4 +18,4 @@ export { default as AddNewProblemForm } from "./AddNewProblemForm/AddNewProblemF
 export { default as CTABtn } from "./CTABtn/CTABtn";
 export { default as ProblemDetails } from "./ProblemDetails/ProblemDetails";
 export { default as ViewSolutionForm } from "./ViewSolutionForm/ViewSolutionForm";
-export { default as YourPerfectSolutionForm } from "./YourPerfectSolutionForm/YourPerfectSolutionForm";
+export { default as YourAndPerfectSolutionForm } from "./YourAndPerfectSolutionForm/YourAndPerfectSolutionForm";

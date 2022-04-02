@@ -1,7 +1,7 @@
 import React from "react";
 import { DivWrapper } from "../AddNewProblemForm/AddNewProblrm.styles";
 
-const YourPerfectSolutionForm = () => {
+const YourAndPerfectSolutionForm = () => {
   return (
     <>
       <DivWrapper>
@@ -40,4 +40,4 @@ const YourPerfectSolutionForm = () => {
   );
 };
 
-export default YourPerfectSolutionForm;
+export default YourAndPerfectSolutionForm;
