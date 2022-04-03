@@ -24,6 +24,7 @@ export const DivContainer = styled.div`
     padding-inline: 18px;
     padding-block: 2px;
     font-size: clamp(18px, 1.5vw, 20px);
+    border-radius: 6px;
   }
 `;
 
