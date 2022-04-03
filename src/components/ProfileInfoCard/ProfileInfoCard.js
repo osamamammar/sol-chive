@@ -67,7 +67,11 @@ const ProfileInfoCard = ({ buttonDisplay }) => {
           <BodyDescription>7 problems</BodyDescription>
         </SolvedWrapper>
         {buttonDisplay === "true" ? (
-          <Link to={"/edit-info"} className="edit_info btn">
+          <Link
+            to={"/edit-info"}
+            className="edit_info btn"
+            rel="noreferrer noopener"
+          >
             Edit info
             <img src={blackPen} alt="pen-icon" width={12} height={12} />
           </Link>

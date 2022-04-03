@@ -30,7 +30,7 @@ const ProblemDetails = () => {
         </Tags>
 
         <SolvedDate size={"14px"}>solved 2 days ago</SolvedDate>
-        <Link to={"/"} className="external-link">
+        <Link to={"/"} className="external-link" rel="noreferrer noopener">
           Open The problem <img src={externalLink} alt="external-link-icon" />
         </Link>
       </DivWrapper>
@@ -45,6 +45,7 @@ const ProblemDetails = () => {
           to={"/add-new-problem"}
           state={{ fromViewSolutionPage: true }}
           className="edit-link btn"
+          rel="noreferrer noopener"
         >
           Edit
           <img src={blackPen} alt="edit-icon" />

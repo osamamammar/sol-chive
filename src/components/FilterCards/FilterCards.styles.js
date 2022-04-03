@@ -58,15 +58,15 @@ export const DivContainer = styled.div`
 
 export const Alert = styled.div`
   position: absolute;
-  bottom: 30px;
-  right: 50px;
+  inset-block-end: 30px;
+  inset-inline-end: 50px;
   background-color: var(--color-gray);
   padding: 4px;
   border: 1px solid var(--color-yellow);
   border-radius: 10px;
   font-size: 12px;
   @media (min-width: 1080px) {
-    bottom: 0px;
-    right: -88px;
+    inset-block-end: 0px;
+    inset-inline-end: -88px;
   }
 `;

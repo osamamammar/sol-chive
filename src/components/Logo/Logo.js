@@ -4,7 +4,7 @@ import { LogoTitle, MarkYellow } from "./Logo.styles";
 
 const Logo = ({ size, weight, margin }) => {
   return (
-    <Link to={"/"} style={{ display: "contents" }}>
+    <Link to={"/"} style={{ display: "contents" }} rel="noreferrer noopener">
       <LogoTitle size={size} weight={weight} margin={margin}>
         <MarkYellow>Sol</MarkYellow>-chive
       </LogoTitle>

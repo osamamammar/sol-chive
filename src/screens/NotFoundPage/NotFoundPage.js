@@ -16,7 +16,7 @@ const NotFoundPage = () => {
           <ErrorMessage className="upper_message">
             Something's <span>Missing.</span>
           </ErrorMessage>
-          <Link className="btn" to={"/"}>
+          <Link className="btn" to={"/"} rel="noreferrer noopener">
             Go Back
           </Link>
         </DivContainer>

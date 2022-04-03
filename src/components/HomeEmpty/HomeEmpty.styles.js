@@ -7,7 +7,7 @@ export const DivWrapper = styled.div`
   margin-inline: auto;
   position: absolute;
   width: 100%;
-  top: 50px;
+  inset-block-start: 50px;
   > p {
     display: flex;
     justify-content: center;

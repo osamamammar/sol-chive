@@ -55,18 +55,8 @@ const EditInfoPage = () => {
             >
               Submit
             </CTABtn>
-            {/* 
-            <CTABtn
-              type={"button"}
-              alt={"cancel"}
-              imgIcon={btnCancel}
-              className={"red-btn"}
-              width={"14"}
-              height={"14"}
-            >
-              Cancel
-            </CTABtn> */}
-            <Link to={-1} className="red-btn">
+
+            <Link to={-1} className="red-btn" rel="noreferrer noopener">
               Cancel
               <img src={btnCancel} alt="cancel-icon" width={14} height={14} />
             </Link>

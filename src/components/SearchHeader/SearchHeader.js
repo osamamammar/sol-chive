@@ -45,7 +45,7 @@ const SearchHeader = () => {
           <img src={searchIconV2} alt="search-icon" width={15} height={15} />
         </ToggleSearch>
 
-        <Link to={"/"} className="btn">
+        <Link to={"/"} className="btn" rel="noreferrer noopener">
           Join or login
         </Link>
 

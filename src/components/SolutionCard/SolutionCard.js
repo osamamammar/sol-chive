@@ -44,6 +44,7 @@ const SolutionCard = ({ solutions }) => {
                   <Link
                     className="btn"
                     to={`/solution/${solution.title}/${solution.id}`}
+                    rel="noreferrer noopener"
                   >
                     View
                   </Link>

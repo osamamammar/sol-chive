@@ -41,7 +41,7 @@ const AddNewProblemPage = () => {
               Submit
             </CTABtn>
 
-            <Link to={-1} className="red-btn">
+            <Link to={-1} className="red-btn" rel="noreferrer noopener">
               Cancel
               <img src={btnCancel} alt="cancel-icon" width={14} height={14} />
             </Link>
