@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { btnCancel, btnSubmit } from "../../assets";
 import {
   AddNewProblemForm,
@@ -40,16 +40,11 @@ const AddNewProblemPage = () => {
             >
               Submit
             </CTABtn>
-            <CTABtn
-              type={"button"}
-              alt={"cancel"}
-              imgIcon={btnCancel}
-              className={"red-btn"}
-              width={"14"}
-              height={"14"}
-            >
+
+            <Link to={-1} className="red-btn">
               Cancel
-            </CTABtn>
+              <img src={btnCancel} alt="cancel-icon" width={14} height={14} />
+            </Link>
           </DivWrapper>
         </HeaderContainer>
 

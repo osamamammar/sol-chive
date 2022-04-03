@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes as RoutesApp } from "react-router-dom";
 import {
   AddNewProblemPage,
+  EditInfoPage,
   HomePage,
   LandingPage,
   NotFoundPage,
@@ -23,6 +24,7 @@ const Routes = () => {
           path="/solution/:title/:id"
           element={<ViewSolutionPage />}
         ></Route>
+        <Route path="/edit-info" element={<EditInfoPage />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </RoutesApp>
     </BrowserRouter>

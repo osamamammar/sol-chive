@@ -19,3 +19,4 @@ export { default as CTABtn } from "./CTABtn/CTABtn";
 export { default as ProblemDetails } from "./ProblemDetails/ProblemDetails";
 export { default as ViewSolutionForm } from "./ViewSolutionForm/ViewSolutionForm";
 export { default as YourAndPerfectSolutionForm } from "./YourAndPerfectSolutionForm/YourAndPerfectSolutionForm";
+export { default as EditInfoForm } from "./EditInfoForm/EditInfoForm";

@@ -5,3 +5,4 @@ export { default as ProfilePage } from "./ProfilePage/ProfilePage";
 export { default as HomePage } from "./HomePage/HomePage";
 export { default as AddNewProblemPage } from "./AddNewProblemPage/AddNewProblemPage";
 export { default as ViewSolutionPage } from "./ViewSolutionPage/ViewSolutionPage";
+export { default as EditInfoPage } from "./EditInfoPage/EditInfoPage";

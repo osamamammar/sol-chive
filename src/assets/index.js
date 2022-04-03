@@ -18,3 +18,4 @@ export { default as scrollToTop } from "./images/scrollToTop.svg";
 export { default as btnSubmit } from "./images/btn-submit.svg";
 export { default as btnCancel } from "./images/btn-cancel.svg";
 export { default as trash } from "./images/trash.svg";
+export { default as refresh } from "./images/refresh.svg";
