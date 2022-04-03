@@ -22,12 +22,19 @@ const SolutionCard = ({ solutions }) => {
               <Card key={solution.id}>
                 <CardHeader>
                   <CardTitle>{solution.title}</CardTitle>
-                  <CardExternalLink
-                    src={externalLink}
-                    alt="external-link"
-                    width={21}
-                    height={21}
-                  />
+                  <a
+                    href="https://www.example.com"
+                    target={"_blank"}
+                    rel="noreferrer noopener"
+                    className="external-link"
+                  >
+                    <CardExternalLink
+                      src={externalLink}
+                      alt="external-link"
+                      width={21}
+                      height={21}
+                    />
+                  </a>
                 </CardHeader>
 
                 <ProblemSource>source {solution.source}</ProblemSource>

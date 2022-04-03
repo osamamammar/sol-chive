@@ -25,6 +25,9 @@ export const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  a.external-link{
+    display:contents;
+  }
 `;
 
 export const CardTitle = styled.h5`

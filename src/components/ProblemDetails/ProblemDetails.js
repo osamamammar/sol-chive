@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { blackPen, externalLink, trash } from "../../assets";
-import { AddNewProblemPage } from "../../screens";
 import CTABtn from "../CTABtn/CTABtn";
 import {
   ProblemSource,
