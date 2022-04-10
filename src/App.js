@@ -5,11 +5,9 @@ import { ScrollToTop } from "./components";
 function App() {
   return (
     <>
-      <GlobalStyles>
-        <ScrollToTop>
-          <Routes></Routes>
-        </ScrollToTop>
-      </GlobalStyles>
+      <GlobalStyles></GlobalStyles>
+      <ScrollToTop></ScrollToTop>
+      <Routes></Routes>
     </>
   );
 }

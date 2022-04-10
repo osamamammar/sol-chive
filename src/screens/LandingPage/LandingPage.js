@@ -12,8 +12,14 @@ import {
   SearchForm,
   Footer,
 } from "../../components";
+import { useSelector, useDispatch } from "react-redux";
 
 const LandingPage = () => {
+  const getAnonymousUserSolutions = useSelector(
+    (state) => state.getAnonymousUserSolutions
+  );
+
+  const dispatch = useDispatch();
   return (
     <>
       <LogoHeader></LogoHeader>
@@ -27,7 +33,7 @@ const LandingPage = () => {
 
           <OrSeperator></OrSeperator>
 
-          <SearchForm></SearchForm>
+          <SearchForm dispatch={dispatch}></SearchForm>
         </MainSection>
       </MainContainer>
 
