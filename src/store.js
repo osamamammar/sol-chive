@@ -1,10 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { getAnonymousUserSolutionsReducers } from "./redux";
+import {
+  getAnonymousUserSolutionsReducers,
+  getUserProfileReducers,
+} from "./redux";
 
 const reducer = combineReducers({
   getAnonymousUserSolutions: getAnonymousUserSolutionsReducers,
+  getUserProfile: getUserProfileReducers,
 });
 const initialState = {};
 const middleware = [thunk];
