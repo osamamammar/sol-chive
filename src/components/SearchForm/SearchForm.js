@@ -13,15 +13,15 @@ const SearchForm = ({ dispatch }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+    await dispatch(getAnonymousUserSolutionsActions({ email }));
     navigate({
       pathname: `/search`,
       search: createSearchParams({
         email: email,
       }).toString(),
     });
-    dispatch(getAnonymousUserSolutionsActions({ email }));
   };
   return (
     <SearchFormContainer onSubmit={submitHandler}>

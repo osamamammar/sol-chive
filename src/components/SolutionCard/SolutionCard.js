@@ -18,8 +18,9 @@ const SolutionCard = ({ data }) => {
   return (
     <>
       <CardContainer>
-        {data.solutions.length > 0
-          ? data.solutions.map(
+        {data && data.solutions.length > 0
+          ? data &&
+            data.solutions.map(
               ({ solution_id, created_on, title, link, source, tags }) => (
                 <Card key={solution_id}>
                   <CardHeader>
@@ -63,7 +64,7 @@ const SolutionCard = ({ data }) => {
                 </Card>
               )
             )
-          : "null"}
+          : null}
       </CardContainer>
     </>
   );

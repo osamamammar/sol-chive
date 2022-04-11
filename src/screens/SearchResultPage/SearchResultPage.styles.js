@@ -15,3 +15,18 @@ export const MainContainer = styled.main`
     grid-template-columns: 1fr;
   }
 `;
+
+export const NoResultsContainer = styled.main`
+  min-height: calc(100vh - 133px);
+`;
+export const SectionContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 10px;
+  max-width: 400px;
+  margin-inline: auto;
+  margin-block-start: 30px;
+  gap: 20px;
+`;

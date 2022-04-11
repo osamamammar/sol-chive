@@ -11,7 +11,7 @@ import {
   SelectWrapper,
 } from "./FilterCards.styles";
 
-const FilterCards = ({ title, addNewBtn, homePage, cards }) => {
+const FilterCards = ({ title, addNewBtn, homePage, data }) => {
   const [handelCopyURL, copied] = useCopyURL();
 
   return (
@@ -28,7 +28,7 @@ const FilterCards = ({ title, addNewBtn, homePage, cards }) => {
         </DivContainer>
       )}
       <DivContainer gap="15px">
-        {cards.length > 0 ? (
+        {data && data.solutions.length > 0 ? (
           <SelectWrapper>
             <SelectWrapper>
               <LabelTitle htmlFor="sortBy">sort by:</LabelTitle>

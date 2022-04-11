@@ -13,8 +13,8 @@ export const CardContainer = styled.ul`
 export const Card = styled.li`
   background-color: var(--color-gray);
   border-radius: 10px;
-  padding-inline: 10px;
-  padding-block: 10px;
+  padding-inline: 14px;
+  padding-block: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,8 +25,8 @@ export const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  a.external-link{
-    display:contents;
+  a.external-link {
+    display: contents;
   }
 `;
 
