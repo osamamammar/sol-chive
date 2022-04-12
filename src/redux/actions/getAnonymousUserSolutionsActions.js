@@ -3,7 +3,7 @@ import {
   GET_ANONYMOUS_USER_SOLUTIONS_REQUEST,
   GET_ANONYMOUS_USER_SOLUTIONS_SUCCESS,
 } from "..";
-import { getAnonymousUserSolutionsApi } from "../../services";
+import { getAnonymousUserSolutionsApi } from "../../apis";
 
 export const getAnonymousUserSolutionsActions =
   ({ email }) =>
@@ -17,9 +17,8 @@ export const getAnonymousUserSolutionsActions =
     } catch (error) {
       let err = "";
       if (error.response.status === 404) {
-        err = "404 not found, there's no user found with given email";
+        err = "There's no user found with given email";
       }
-      // err = error.response.data.message;
       dispatch(getAnonymousUserSolutionsFail(err));
     }
   };

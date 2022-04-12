@@ -3,12 +3,12 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
   getAnonymousUserSolutionsReducers,
-  getUserProfileReducers,
+  getUserProfileCardReducers,
 } from "./redux";
 
 const reducer = combineReducers({
   getAnonymousUserSolutions: getAnonymousUserSolutionsReducers,
-  getUserProfile: getUserProfileReducers,
+  getUserProfileCard: getUserProfileCardReducers,
 });
 const initialState = {};
 const middleware = [thunk];

@@ -16,18 +16,18 @@ axios.interceptors.request.use(
 
 // For POST requests
 axios.interceptors.response.use(
-  (res) => {
+  (response) => {
     // Add configurations here
-    if (res.status === 200) {
-      console.log("Posted Successfully");
+    if (response.status === 200) {
+      console.log("Done Successfully");
     }
-    return res;
+    return response;
   },
-  (err) => {
-    if (err.response.status === 404) {
-      err.response.data.message = "something went wrong";
+  (error) => {
+    if (error.response.status === 404) {
+      error.response.data.message = "something went wrong";
     }
-    return Promise.reject(err);
+    return Promise.reject(error);
   }
 );
 

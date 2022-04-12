@@ -19,7 +19,7 @@ import {
 } from "./SearchResultPage.styles";
 import {
   getAnonymousUserSolutionsActions,
-  getUserProfileActions,
+  getUserProfileCardActions,
 } from "../../redux";
 
 const SearchResultPage = () => {
@@ -31,19 +31,19 @@ const SearchResultPage = () => {
   );
   const { loading, data, error } = getAnonymousUserSolutions;
 
-  const getUserProfile = useSelector((state) => state.getUserProfile);
+  const getUserProfileCard = useSelector((state) => state.getUserProfileCard);
   const {
     loading: InfoCardLoading,
     data: InfoCardData,
     error: InfoCardError,
-  } = getUserProfile;
+  } = getUserProfileCard;
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     Promise.all([
       dispatch(getAnonymousUserSolutionsActions({ email })),
-      dispatch(getUserProfileActions({ email })),
+      dispatch(getUserProfileCardActions({ email })),
     ]);
   }, [dispatch, email]);
 

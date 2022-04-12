@@ -1,6 +1,9 @@
+// export action creators
 export { getAnonymousUserSolutionsActions } from "./actions/getAnonymousUserSolutionsActions";
-export { getUserProfileActions } from "./actions/getUserProfileActions";
+export { getUserProfileCardActions } from "./actions/getUserProfileCardActions";
+// export constants
 export * from "./constants/getAnonymousUserSolutionsConstants";
-export * from "./constants/getUserProfileConstants";
+export * from "./constants/getUserProfileCardConstants";
+// export reducers
 export { getAnonymousUserSolutionsReducers } from "./reducers/getAnonymousUserSolutionsReducers";
-export { getUserProfileReducers } from "./reducers/getUserProfileReducers";
+export { getUserProfileCardReducers } from "./reducers/getUserProfileCardReducers";
