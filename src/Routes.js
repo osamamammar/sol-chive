@@ -21,7 +21,7 @@ const Routes = () => {
         <Route path="/home" element={<HomePage />}></Route>
         <Route path="/add-new-problem" element={<AddNewProblemPage />}></Route>
         <Route
-          path="/solution/:title/:id"
+          path="/solution/:title/:solution_id"
           element={<ViewSolutionPage />}
         ></Route>
         <Route path="/edit-info" element={<EditInfoPage />}></Route>
