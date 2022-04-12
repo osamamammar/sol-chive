@@ -3,14 +3,14 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
   getAnonymousUserSolutionsReducers,
-  getOneSolutionDetailsReducers,
+  getOneSolutionDetailsForAnonymousReducers,
   getUserProfileCardReducers,
 } from "./redux";
 
 const reducer = combineReducers({
   getAnonymousUserSolutions: getAnonymousUserSolutionsReducers,
   getUserProfileCard: getUserProfileCardReducers,
-  getOneSolutionDetails: getOneSolutionDetailsReducers,
+  getOneSolutionDetailsForAnonymous: getOneSolutionDetailsForAnonymousReducers,
 });
 const initialState = {};
 const middleware = [thunk];

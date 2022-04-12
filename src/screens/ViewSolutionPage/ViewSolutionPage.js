@@ -4,32 +4,48 @@ import {
   Footer,
   ProblemDetails,
   ProfileHeader,
+  SearchHeader,
   ViewSolutionForm,
 } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { MainContainer } from "./ViewSolutionPage.styles";
+import { getOneSolutionDetailsForAnonymousActions } from "../../redux";
 
 const ViewSolutionPage = () => {
-  const { solution_id } = useParams();
+  const { solutionId } = useParams();
 
-  // const getOneSolutionDetailsForAnonymousUser = useSelector(
-  //   (state) => state.getOneSolutionDetailsForAnonymousUser
-  // );
-  // const { loading, data, error } = getOneSolutionDetailsForAnonymousUser;
-  // const dispatch = useDispatch();
+  const getOneSolutionDetailsForAnonymous = useSelector(
+    (state) => state.getOneSolutionDetailsForAnonymous
+  );
+  const { loading, data, error } = getOneSolutionDetailsForAnonymous;
 
-  // useEffect(() => {
-  //   dispatch(getOneSolutionDetailsForAnonymousUserActions({ solution_id }));
-  // }, [dispatch, solution_id]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getOneSolutionDetailsForAnonymousActions({ solutionId }));
+  }, [dispatch, solutionId]);
 
   return (
     <>
-      <ProfileHeader />
-      <MainContainer>
-        <ProblemDetails></ProblemDetails>
-        <ViewSolutionForm></ViewSolutionForm>
-      </MainContainer>
-      <Footer />
+      {data ? (
+        <>
+          <SearchHeader></SearchHeader>
+          <MainContainer>
+            <ProblemDetails data={data}></ProblemDetails>
+            <ViewSolutionForm></ViewSolutionForm>
+          </MainContainer>
+          <Footer />
+        </>
+      ) : (
+        <>
+          <ProfileHeader />
+          <MainContainer>
+            <ProblemDetails></ProblemDetails>
+            <ViewSolutionForm></ViewSolutionForm>
+          </MainContainer>
+          <Footer />
+        </>
+      )}
     </>
   );
 };
