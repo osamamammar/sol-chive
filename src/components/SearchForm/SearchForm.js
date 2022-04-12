@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { getAnonymousUserSolutionsActions } from "../../apis";
 import { searchIcon } from "../../assets";
 import {
   IconForInput,
@@ -9,13 +8,12 @@ import {
   SearchInput,
 } from "./SearchForm.styles";
 
-const SearchForm = ({ dispatch }) => {
+const SearchForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
-  const submitHandler = async (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    await dispatch(getAnonymousUserSolutionsActions({ email }));
     navigate({
       pathname: `/search`,
       search: createSearchParams({
@@ -23,6 +21,7 @@ const SearchForm = ({ dispatch }) => {
       }).toString(),
     });
   };
+
   return (
     <SearchFormContainer onSubmit={submitHandler}>
       <LabelForInput htmlFor="email">find someone problem solver</LabelForInput>
@@ -37,7 +36,6 @@ const SearchForm = ({ dispatch }) => {
         required
         onChange={(e) => setEmail(e.target.value)}
       />
-
       <button className="main-btn" type="submit">
         Find now
       </button>

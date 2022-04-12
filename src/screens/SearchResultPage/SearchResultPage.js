@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import {
   ErrorMessage,
   FilterCards,
@@ -11,13 +12,15 @@ import {
   SolutionCard,
   SolutionCardsContainer,
 } from "../../components";
-import { useSelector, useDispatch } from "react-redux";
 import {
   MainContainer,
   NoResultsContainer,
   SectionContainer,
 } from "./SearchResultPage.styles";
-import { getAnonymousUserSolutionsActions } from "../../apis";
+import {
+  getAnonymousUserSolutionsActions,
+  getUserProfileActions,
+} from "../../redux";
 
 const SearchResultPage = () => {
   const location = useLocation();
@@ -27,36 +30,45 @@ const SearchResultPage = () => {
     (state) => state.getAnonymousUserSolutions
   );
   const { loading, data, error } = getAnonymousUserSolutions;
+
+  const getUserProfile = useSelector((state) => state.getUserProfile);
+  const {
+    loading: InfoCardLoading,
+    data: InfoCardData,
+    error: InfoCardError,
+  } = getUserProfile;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!data && !loading && !error) {
-      dispatch(getAnonymousUserSolutionsActions({ email }));
-    }
-  }, [dispatch, data, loading, error, email]);
+    Promise.all([
+      dispatch(getAnonymousUserSolutionsActions({ email })),
+      dispatch(getUserProfileActions({ email })),
+    ]);
+  }, [dispatch, email]);
 
   return (
     <>
       <SearchHeader></SearchHeader>
-      {error && !loading ? (
+      {error || InfoCardError ? (
         <>
           <NoResultsContainer>
-            <ErrorMessage>{error}</ErrorMessage>
+            <ErrorMessage>{error || InfoCardError}</ErrorMessage>
             <SectionContainer>
               <OrSeperator></OrSeperator>
-              <SearchForm dispatch={dispatch}></SearchForm>
+              <SearchForm></SearchForm>
             </SectionContainer>
           </NoResultsContainer>
         </>
-      ) : data ? (
+      ) : data && InfoCardData ? (
         <MainContainer>
-          <ProfileInfoCard></ProfileInfoCard>
+          <ProfileInfoCard data={InfoCardData}></ProfileInfoCard>
           <SolutionCardsContainer>
             <FilterCards title={"Solutions"} data={data}></FilterCards>
-            <SolutionCard data={data} loading={loading}></SolutionCard>
+            <SolutionCard data={data}></SolutionCard>
           </SolutionCardsContainer>
         </MainContainer>
-      ) : (
+      ) : loading || InfoCardLoading ? (
         <div
           style={{
             minHeight: "calc(100vh - 104px)",
@@ -69,7 +81,7 @@ const SearchResultPage = () => {
         >
           <p>Looooooding.........</p>
         </div>
-      )}
+      ) : null}
 
       <Footer></Footer>
     </>

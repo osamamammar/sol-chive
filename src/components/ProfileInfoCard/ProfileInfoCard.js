@@ -14,28 +14,28 @@ import {
   UserEmail,
 } from "./ProfileInfoCard.styles";
 
-const ProfileInfoCard = ({ buttonDisplay }) => {
+const ProfileInfoCard = ({ data, buttonDisplay }) => {
+  const { name, picture, email, about, contacts, problem_count } = data;
   return (
     <AsideContainer>
       <MainWrapper>
         <ProfilePicture
-          src={profilePic}
+          src={picture}
           alt="profile-picture"
           width={70}
           height={70}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = profilePic;
+          }}
         ></ProfilePicture>
-        <ProfileName>John Doe</ProfileName>
-        <UserEmail>johndoe@solchive.com</UserEmail>
+        <ProfileName>{name}</ProfileName>
+        <UserEmail>{email}</UserEmail>
       </MainWrapper>
 
       <DescriptionWrapper>
         <TitleDescription>About:</TitleDescription>
-        <BodyDescription>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-          accusantium incidunt facilis assumenda debitis consequuntur ipsam est
-          illum, eius modi ipsa porro et unde velit perspiciatis iste laborum
-          quisquam a.
-        </BodyDescription>
+        <BodyDescription>{about}</BodyDescription>
 
         <TitleDescription>Contacts:</TitleDescription>
         <ContactsLink
@@ -43,28 +43,12 @@ const ProfileInfoCard = ({ buttonDisplay }) => {
           target="_blank"
           rel="noopenner noreferrer"
         >
-          +201115790092
-        </ContactsLink>
-
-        <ContactsLink
-          href="https://www.linkedin.com/johndoe"
-          target="_blank"
-          rel="noopenner noreferrer"
-        >
-          linkedin.com/johndoe
-        </ContactsLink>
-
-        <ContactsLink
-          href="https://www.github.com/johndoe"
-          target="_blank"
-          rel="noopenner noreferrer"
-        >
-          github.com/johndoe
+          {contacts}
         </ContactsLink>
 
         <SolvedWrapper>
           <TitleDescription>Solved:</TitleDescription>
-          <BodyDescription>7 problems</BodyDescription>
+          <BodyDescription>{problem_count} problems</BodyDescription>
         </SolvedWrapper>
         {buttonDisplay === "true" ? (
           <Link

@@ -6,7 +6,7 @@ export const AsideContainer = styled.aside`
   border-radius: 9px;
   padding-block: 40px 16px;
   padding-inline: 15px;
-  min-height: 275px;
+  min-height: 260px;
   align-self: flex-start;
   position: sticky;
   inset-block-start: 60px;
@@ -35,11 +35,13 @@ export const ProfilePicture = styled.img`
 
 export const ProfileName = styled.h2`
   font-size: 20px;
+  text-align: center;
 `;
 
 export const UserEmail = styled.p`
   font-size: 14px;
   font-weight: 300;
+  text-align: center;
 `;
 
 export const DescriptionWrapper = styled.div`

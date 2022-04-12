@@ -32,6 +32,7 @@ export const SearchInput = styled.input`
   &:-webkit-autofill:focus {
     -webkit-text-fill-color: white;
     -webkit-box-shadow: 0 0 0px 1000px var(--color-gray) inset;
+    box-shadow: 0 0 0px 1000px var(--color-gray) inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 `;

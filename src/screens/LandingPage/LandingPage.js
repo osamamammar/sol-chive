@@ -12,10 +12,8 @@ import {
   SearchForm,
   Footer,
 } from "../../components";
-import { useDispatch } from "react-redux";
 
 const LandingPage = () => {
-  const dispatch = useDispatch();
   return (
     <>
       <LogoHeader></LogoHeader>
@@ -29,7 +27,7 @@ const LandingPage = () => {
 
           <OrSeperator></OrSeperator>
 
-          <SearchForm dispatch={dispatch}></SearchForm>
+          <SearchForm></SearchForm>
         </MainSection>
       </MainContainer>
 
