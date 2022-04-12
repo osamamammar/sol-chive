@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
 export const DivWrapper = styled.div`
   width: ${({ width }) => (width ? width : "85%")};
   max-width: 1344px;
-  margin-block:0 ;
+  margin-block: 0;
   margin-inline: auto;
   display: flex;
   flex-wrap: wrap;

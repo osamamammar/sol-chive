@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { createSearchParams, Link, useNavigate } from "react-router-dom";
 import { searchIcon, searchIconV2 } from "../../assets";
 import { useToggle } from "../../hooks";
 import Logo from "../Logo/Logo";
@@ -18,12 +18,25 @@ import {
 
 const SearchHeader = () => {
   const [display, toggle] = useToggle(false);
+  const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navigate({
+      pathname: `/search`,
+      search: createSearchParams({
+        email: email,
+      }).toString(),
+    });
+  };
 
   return (
     <HeaderContainer>
       <DivWrapper>
         <Logo size={"25px"} weight={"bold"} margin={"unset"}></Logo>
-        <SearchFormContainer>
+        <SearchFormContainer onSubmit={submitHandler}>
           <LabelForInput htmlFor="email">find:</LabelForInput>
 
           <IconForInput>
@@ -36,6 +49,7 @@ const SearchHeader = () => {
             id="email"
             placeholder="Enter email"
             required
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <FindBtn type="submit">search</FindBtn>
@@ -50,7 +64,7 @@ const SearchHeader = () => {
         </Link>
 
         {toggle && (
-          <ToggleSearchFormContainer>
+          <ToggleSearchFormContainer onSubmit={submitHandler}>
             <LabelForInput htmlFor="email" className="visually-hidden">
               find:
             </LabelForInput>
@@ -61,6 +75,7 @@ const SearchHeader = () => {
               id="email"
               placeholder="Enter email"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <FindBtn type="submit">search</FindBtn>

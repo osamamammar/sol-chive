@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
+  ErrorMessage,
   Footer,
+  Loader,
   ProblemDetails,
   ProfileHeader,
   SearchHeader,
@@ -27,25 +29,20 @@ const ViewSolutionPage = () => {
 
   return (
     <>
-      {data ? (
-        <>
-          <SearchHeader></SearchHeader>
-          <MainContainer>
+      <SearchHeader></SearchHeader>
+      <MainContainer>
+        {loading ? (
+          <Loader></Loader>
+        ) : error ? (
+          <ErrorMessage>{error}</ErrorMessage>
+        ) : data ? (
+          <>
             <ProblemDetails data={data}></ProblemDetails>
-            <ViewSolutionForm></ViewSolutionForm>
-          </MainContainer>
-          <Footer />
-        </>
-      ) : (
-        <>
-          <ProfileHeader />
-          <MainContainer>
-            <ProblemDetails></ProblemDetails>
-            <ViewSolutionForm></ViewSolutionForm>
-          </MainContainer>
-          <Footer />
-        </>
-      )}
+            <ViewSolutionForm data={data}></ViewSolutionForm>
+          </>
+        ) : null}
+      </MainContainer>
+      <Footer />
     </>
   );
 };

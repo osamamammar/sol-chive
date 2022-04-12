@@ -5,6 +5,7 @@ import {
   ErrorMessage,
   FilterCards,
   Footer,
+  Loader,
   OrSeperator,
   ProfileInfoCard,
   SearchForm,
@@ -69,18 +70,7 @@ const SearchResultPage = () => {
           </SolutionCardsContainer>
         </MainContainer>
       ) : loading || InfoCardLoading ? (
-        <div
-          style={{
-            minHeight: "calc(100vh - 104px)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: "auto",
-          }}
-        >
-          <p>Looooooding.........</p>
-        </div>
+        <Loader></Loader>
       ) : null}
 
       <Footer></Footer>
