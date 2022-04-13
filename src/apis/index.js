@@ -1,3 +1,4 @@
-export { getAnonymousUserSolutionsApi } from "./getAnonymousUserSolutionsApi";
-export { getUserProfileCardApi } from "./getUserProfileCardApi";
-export { getOneSolutionDetailsForAnonymousApi } from "./getOneSolutionDetailsForAnonymousApi";
+export { getAnonymousUserSolutionsApi } from "./Solutions/getAnonymousUserSolutionsApi";
+export { getUserProfileCardApi } from "./User/getUserProfileCardApi";
+export { getOneSolutionDetailsForAnonymousApi } from "./Solutions/getOneSolutionDetailsForAnonymousApi";
+export { userLoginWithGoogleApi } from "./Authentication/userLoginWithGoogleApi";
