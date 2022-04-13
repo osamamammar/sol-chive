@@ -5,12 +5,14 @@ import {
   getAnonymousUserSolutionsReducers,
   getOneSolutionDetailsForAnonymousReducers,
   getUserProfileCardReducers,
+  userLoginWithGoogleReducers,
 } from "./redux";
 
 const reducer = combineReducers({
   getAnonymousUserSolutions: getAnonymousUserSolutionsReducers,
   getUserProfileCard: getUserProfileCardReducers,
   getOneSolutionDetailsForAnonymous: getOneSolutionDetailsForAnonymousReducers,
+  userLoginWithGoogle: userLoginWithGoogleReducers,
 });
 const initialState = {};
 const middleware = [thunk];

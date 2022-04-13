@@ -6,7 +6,10 @@ export const SocialList = styled.ul`
   margin-block: 8px;
   gap: 20px;
 `;
-export const SocialBtns = styled.button`
+export const SocialBtn = styled.a`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 71px;
   height: 71px;
   border: none;
