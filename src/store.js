@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
+  getAllSolutionsForAuthUserReducers,
   getAnonymousUserSolutionsReducers,
   getOneSolutionDetailsForAnonymousReducers,
   getUserProfileCardReducers,
@@ -13,6 +14,7 @@ const reducer = combineReducers({
   getUserProfileCard: getUserProfileCardReducers,
   getOneSolutionDetailsForAnonymous: getOneSolutionDetailsForAnonymousReducers,
   userLoginWithGoogle: userLoginWithGoogleReducers,
+  getAllSolutionsForAuthUser: getAllSolutionsForAuthUserReducers,
 });
 const initialState = {};
 const middleware = [thunk];
