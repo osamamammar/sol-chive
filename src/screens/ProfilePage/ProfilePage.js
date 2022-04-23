@@ -20,11 +20,11 @@ const ProfilePage = () => {
     <>
       <ProfileHeader></ProfileHeader>
       <MainContainer>
-        {/* <ProfileInfoCard buttonDisplay="true"></ProfileInfoCard>
+        <ProfileInfoCard buttonDisplay="true"></ProfileInfoCard>
         <SolutionCardsContainer>
-          <FilterCards title={"Library"} cards={cards}></FilterCards>
+          <FilterCards title={"Library"}></FilterCards>
           <SolutionCard data={""}></SolutionCard>
-        </SolutionCardsContainer> */}
+        </SolutionCardsContainer>
       </MainContainer>
 
       <Footer></Footer>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { cross, home, logOut, menu, profilePictureSmall } from "../../assets";
 import { useToggle } from "../../hooks";
+import { getBasicInfoActions } from "../../redux";
 import Logo from "../Logo/Logo";
 import {
   DivWrapper,
@@ -18,6 +20,13 @@ import {
 const ProfileHeader = () => {
   const [display, toggle] = useToggle(false);
 
+  const { data: basicInfo } = useSelector((state) => state.getBasicInfo);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBasicInfoActions());
+  }, [dispatch]);
+
   return (
     <HeaderContainer>
       <DivWrapper>
@@ -30,13 +39,21 @@ const ProfileHeader = () => {
           <MyProfileContainer>
             <Link to={"/profile"} rel="noreferrer noopener">
               <img
-                src={profilePictureSmall}
+                src={basicInfo && basicInfo.picture}
                 alt="profile"
                 width={28}
                 height={28}
                 className="profile_picture-small"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = profilePictureSmall;
+                }}
               />
-              <p>John Doe</p>
+              <p>
+                {basicInfo && basicInfo.name
+                  ? `${basicInfo.name.split(" ")[0]}'s Profile`
+                  : "error"}
+              </p>
             </Link>
           </MyProfileContainer>
           <Link to={"/"} rel="noreferrer noopener">
@@ -60,12 +77,21 @@ const ProfileHeader = () => {
             <MyProfileContainer>
               <Link to={"/"} rel="noreferrer noopener">
                 <img
-                  src={profilePictureSmall}
+                  src={basicInfo && basicInfo.picture}
                   alt="profile"
                   width={28}
                   height={28}
+                  className="profile_picture-small"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = profilePictureSmall;
+                  }}
                 />
-                <p>John Doe</p>
+                <p>
+                  {basicInfo && basicInfo.name
+                    ? `${basicInfo.name.split(" ")[0]}'s Profile`
+                    : "error"}
+                </p>
               </Link>
             </MyProfileContainer>
             <Link to={"/"} rel="noreferrer noopener">

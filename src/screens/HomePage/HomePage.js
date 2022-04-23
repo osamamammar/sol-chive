@@ -17,6 +17,7 @@ const HomePage = () => {
   const { loading, data, error } = useSelector(
     (state) => state.getAllSolutionsForAuthUser
   );
+
   const dispatch = useDispatch();
 
   useEffect(() => {

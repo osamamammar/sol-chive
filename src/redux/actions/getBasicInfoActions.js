@@ -22,7 +22,7 @@ export const getBasicInfoActions = () => async (dispatch) => {
 
 const getBasicInfoRequest = () => {
   return {
-    TYPE: GET_BASIC_INFO_REQUEST,
+    type: GET_BASIC_INFO_REQUEST,
   };
 };
 const getBasicInfoSuccess = (data) => {
