@@ -15,12 +15,11 @@ import {
 } from "./ProfileInfoCard.styles";
 
 const ProfileInfoCard = ({ data, buttonDisplay }) => {
-  const { name, picture, email, about, contacts, problem_count } = data;
   return (
     <AsideContainer>
       <MainWrapper>
         <ProfilePicture
-          src={picture}
+          src={data && data.picture}
           alt="profile-picture"
           width={70}
           height={70}
@@ -29,13 +28,13 @@ const ProfileInfoCard = ({ data, buttonDisplay }) => {
             e.target.src = profilePic;
           }}
         ></ProfilePicture>
-        <ProfileName>{name}</ProfileName>
-        <UserEmail>{email}</UserEmail>
+        <ProfileName>{data && data.name}</ProfileName>
+        <UserEmail>{data && data.email}</UserEmail>
       </MainWrapper>
 
       <DescriptionWrapper>
         <TitleDescription>About:</TitleDescription>
-        <BodyDescription>{about}</BodyDescription>
+        <BodyDescription>{data && data.about}</BodyDescription>
 
         <TitleDescription>Contacts:</TitleDescription>
         <ContactsLink
@@ -43,12 +42,14 @@ const ProfileInfoCard = ({ data, buttonDisplay }) => {
           target="_blank"
           rel="noopenner noreferrer"
         >
-          {contacts}
+          {data && data.contacts}
         </ContactsLink>
 
         <SolvedWrapper>
           <TitleDescription>Solved:</TitleDescription>
-          <BodyDescription>{problem_count} problems</BodyDescription>
+          <BodyDescription>
+            {data && data.problem_count} problems
+          </BodyDescription>
         </SolvedWrapper>
         {buttonDisplay === "true" ? (
           <Link

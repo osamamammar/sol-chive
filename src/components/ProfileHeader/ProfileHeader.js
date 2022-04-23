@@ -24,8 +24,10 @@ const ProfileHeader = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getBasicInfoActions());
-  }, [dispatch]);
+    if (!basicInfo) {
+      dispatch(getBasicInfoActions());
+    }
+  }, [dispatch, basicInfo]);
 
   return (
     <HeaderContainer>

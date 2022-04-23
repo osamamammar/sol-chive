@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MainContainer = styled.main`
   width: 85%;
   max-width: 1344px;
+  position: relative;
   display: grid;
   grid-template-columns: minmax(200px, 239px) minmax(750px, 1fr);
   grid-gap: 20px;
