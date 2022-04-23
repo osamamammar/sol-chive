@@ -16,18 +16,21 @@ export const MainContainer = styled.main`
     grid-template-columns: 1fr;
   }
 `;
-
+export const DivWrapper = styled.div`
+  position: relative;
+`;
 export const NoResultsContainer = styled.main`
-  min-height: calc(100vh - 133px);
+  min-height: calc(100vh - 103px);
 `;
 export const SectionContainer = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-inline: 10px;
-  max-width: 400px;
+  max-width: 380px;
   margin-inline: auto;
-  margin-block-start: 30px;
+  inset-block-start: 100px;
   gap: 20px;
 `;

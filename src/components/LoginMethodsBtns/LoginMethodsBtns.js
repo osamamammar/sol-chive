@@ -11,14 +11,14 @@ import { userLoginWithGoogleActions } from "../../redux";
 import { SocialBtn, SocialList } from "./LoginMethodsBtns.styles";
 
 const LoginMethodsBtns = () => {
-  const { loading, data, error } = useSelector(
-    (state) => state.userLoginWithGoogle
-  );
+  const { data } = useSelector((state) => state.userLoginWithGoogle);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(userLoginWithGoogleActions());
-  }, [dispatch]);
+    if (!data) {
+      dispatch(userLoginWithGoogleActions());
+    }
+  }, [dispatch, data]);
 
   return (
     <>

@@ -24,7 +24,9 @@ const ViewSolutionPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getOneSolutionDetailsForAnonymousActions({ solutionId }));
+    if (solutionId) {
+      dispatch(getOneSolutionDetailsForAnonymousActions({ solutionId }));
+    }
   }, [dispatch, solutionId]);
 
   return (

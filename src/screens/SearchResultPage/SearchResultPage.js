@@ -14,6 +14,7 @@ import {
   SolutionCardsContainer,
 } from "../../components";
 import {
+  DivWrapper,
   MainContainer,
   NoResultsContainer,
   SectionContainer,
@@ -51,27 +52,28 @@ const SearchResultPage = () => {
   return (
     <>
       <SearchHeader></SearchHeader>
-      {error || InfoCardError ? (
-        <>
+      { loading || InfoCardLoading ? (
+        <Loader></Loader>
+        ):error || InfoCardError ? (
           <NoResultsContainer>
-            <ErrorMessage>{error || InfoCardError}</ErrorMessage>
-            <SectionContainer>
-              <OrSeperator></OrSeperator>
-              <SearchForm></SearchForm>
-            </SectionContainer>
+            <DivWrapper>
+              <ErrorMessage>{error || InfoCardError}</ErrorMessage>
+              <SectionContainer>
+                <OrSeperator></OrSeperator>
+                <SearchForm></SearchForm>
+              </SectionContainer>
+            </DivWrapper>
           </NoResultsContainer>
-        </>
-      ) : data && InfoCardData ? (
+      ) : data && InfoCardData && (
         <MainContainer>
           <ProfileInfoCard data={InfoCardData}></ProfileInfoCard>
-          <SolutionCardsContainer>
+          <SolutionCardsContainer marginBlockStart>
             <FilterCards title={"Solutions"} data={data}></FilterCards>
             <SolutionCard data={data}></SolutionCard>
           </SolutionCardsContainer>
         </MainContainer>
-      ) : loading || InfoCardLoading ? (
-        <Loader></Loader>
-      ) : null}
+      ) 
+      }
 
       <Footer></Footer>
     </>

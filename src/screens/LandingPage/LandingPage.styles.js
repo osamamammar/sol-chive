@@ -5,6 +5,7 @@ export const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* position: relative; */
 `;
 
 export const MainSection = styled.section`

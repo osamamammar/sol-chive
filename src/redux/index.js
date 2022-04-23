@@ -5,6 +5,7 @@ export { getOneSolutionDetailsForAnonymousActions } from "./actions/getOneSoluti
 export { userLoginWithGoogleActions } from "./actions/userLoginWithGoogleActions";
 export { getAllSolutionsForAuthUserActions } from "./actions/getAllSolutionsForAuthUserActions";
 export { getBasicInfoActions } from "./actions/getBasicInfoActions";
+export { userLogoutActions } from "./actions/userLogoutActions";
 
 // export constants
 export * from "./constants/getAnonymousUserSolutionsConstants";

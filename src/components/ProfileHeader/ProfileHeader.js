@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { cross, home, logOut, menu, profilePictureSmall } from "../../assets";
 import { useToggle } from "../../hooks";
-import { getBasicInfoActions } from "../../redux";
+import { getBasicInfoActions, userLogoutActions } from "../../redux";
 import Logo from "../Logo/Logo";
 import {
   DivWrapper,
@@ -22,7 +22,9 @@ const ProfileHeader = () => {
 
   const { data: basicInfo } = useSelector((state) => state.getBasicInfo);
   const dispatch = useDispatch();
-
+  const handleLogout = () => {
+    dispatch(userLogoutActions());
+  };
   useEffect(() => {
     if (!basicInfo) {
       dispatch(getBasicInfoActions());
@@ -58,7 +60,8 @@ const ProfileHeader = () => {
               </p>
             </MyProfileContainer>
           </Link>
-          <Link to={"/"} rel="noreferrer noopener">
+
+          <Link to={"/"} rel="noreferrer noopener" onClick={handleLogout}>
             <img src={logOut} alt="logout" width={31} height={31} />
           </Link>
         </Navbar>
@@ -96,7 +99,8 @@ const ProfileHeader = () => {
                 </p>
               </MyProfileContainer>
             </Link>
-            <Link to={"/"} rel="noreferrer noopener">
+
+            <Link to={"/"} rel="noreferrer noopener" onClick={handleLogout}>
               <img src={logOut} alt="logout" width={31} height={31} />
             </Link>
           </NavbarToggled>
