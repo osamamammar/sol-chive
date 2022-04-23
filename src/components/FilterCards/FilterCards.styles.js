@@ -33,7 +33,12 @@ export const SelectStyled = styled.select`
 `;
 
 export const HeaderContainer = styled.header`
-  display: contents;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 10px;
 `;
 export const DivContainer = styled.div`
   position: relative;

@@ -3,6 +3,7 @@ export { getAnonymousUserSolutionsActions } from "./actions/getAnonymousUserSolu
 export { getUserProfileCardActions } from "./actions/getUserProfileCardActions";
 export { getOneSolutionDetailsForAnonymousActions } from "./actions/getOneSolutionDetailsForAnonymousActions";
 export { userLoginWithGoogleActions } from "./actions/userLoginWithGoogleActions";
+export { getAllSolutionsForAuthUserActions } from "./actions/getAllSolutionsForAuthUserActions";
 
 // export constants
 export * from "./constants/getAnonymousUserSolutionsConstants";

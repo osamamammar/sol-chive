@@ -1,30 +1,51 @@
-import React from "react";
-import { cards } from "../../json";
+import React, { useEffect } from "react";
 import {
+  ErrorMessage,
   FilterCards,
   Footer,
   HomeEmpty,
+  Loader,
   ProfileHeader,
   SolutionCard,
   SolutionCardsContainer,
 } from "../../components";
 import { MainContainer } from "./HomePage.styles";
+import { useSelector } from "react-redux";
+import { getAllSolutionsForAuthUserActions } from "../../redux";
+import { useDispatch } from "react-redux";
 
 const HomePage = () => {
+  const { loading, data, error } = useSelector(
+    (state) => state.getAllSolutionsForAuthUser
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllSolutionsForAuthUserActions());
+  }, [dispatch]);
+
   return (
     <>
       <ProfileHeader></ProfileHeader>
       <MainContainer>
-        <SolutionCardsContainer>
-          <FilterCards
-            title={"Library"}
-            addNewBtn={true}
-            homePage={true}
-            cards={cards}
-          ></FilterCards>
-          <SolutionCard solutions={cards}></SolutionCard>
-        </SolutionCardsContainer>
-        {cards && cards.length === 0 && <HomeEmpty></HomeEmpty>}
+        {loading ? (
+          <Loader></Loader>
+        ) : error ? (
+          <ErrorMessage>{error}</ErrorMessage>
+        ) : (
+          data && (
+            <SolutionCardsContainer>
+              <FilterCards
+                title={"Library"}
+                addNewBtn={true}
+                homePage={true}
+                data={data}
+              ></FilterCards>
+              <SolutionCard data={data}></SolutionCard>
+            </SolutionCardsContainer>
+          )
+        )}
+        {data && data.solutions.length === 0 && <HomeEmpty></HomeEmpty>}
       </MainContainer>
       <Footer></Footer>
     </>

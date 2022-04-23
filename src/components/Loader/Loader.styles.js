@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Spin } from "../../animations";
 
 export const DivWrapper = styled.div`
-  min-height: calc(100vh - 103px);
+  min-height: calc(100vh - 104px);
   display: flex;
   justify-content: center;
   align-items: center;
