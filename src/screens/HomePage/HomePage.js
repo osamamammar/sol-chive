@@ -10,9 +10,8 @@ import {
   SolutionCardsContainer,
 } from "../../components";
 import { MainContainer } from "./HomePage.styles";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getAllSolutionsForAuthUserActions } from "../../redux";
-import { useDispatch } from "react-redux";
 
 const HomePage = () => {
   const { loading, data, error } = useSelector(

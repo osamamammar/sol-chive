@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import {
   FilterCards,
   Footer,
@@ -7,19 +8,23 @@ import {
   SolutionCard,
   SolutionCardsContainer,
 } from "../../components";
-import { cards } from "../../json";
 import { MainContainer } from "../SearchResultPage/SearchResultPage.styles";
 
 const ProfilePage = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // dispatch(get);
+  }, [dispatch]);
+
   return (
     <>
       <ProfileHeader></ProfileHeader>
       <MainContainer>
-        <ProfileInfoCard buttonDisplay="true"></ProfileInfoCard>
+        {/* <ProfileInfoCard buttonDisplay="true"></ProfileInfoCard>
         <SolutionCardsContainer>
           <FilterCards title={"Library"} cards={cards}></FilterCards>
-          <SolutionCard solutions={cards}></SolutionCard>
-        </SolutionCardsContainer>
+          <SolutionCard data={""}></SolutionCard>
+        </SolutionCardsContainer> */}
       </MainContainer>
 
       <Footer></Footer>
