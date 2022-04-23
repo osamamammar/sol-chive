@@ -38,8 +38,8 @@ const ProfileHeader = () => {
           <Link to={"/home"} rel="noreferrer noopener">
             <HomeIcon src={home} alt="home" width={31} height={31} />
           </Link>
-          <MyProfileContainer>
-            <Link to={"/profile"} rel="noreferrer noopener">
+          <Link to={"/profile"} rel="noreferrer noopener">
+            <MyProfileContainer>
               <img
                 src={basicInfo && basicInfo.picture}
                 alt="profile"
@@ -56,8 +56,8 @@ const ProfileHeader = () => {
                   ? `${basicInfo.name.split(" ")[0]}'s Profile`
                   : "error"}
               </p>
-            </Link>
-          </MyProfileContainer>
+            </MyProfileContainer>
+          </Link>
           <Link to={"/"} rel="noreferrer noopener">
             <img src={logOut} alt="logout" width={31} height={31} />
           </Link>
@@ -76,8 +76,8 @@ const ProfileHeader = () => {
             <Link to={"/"} rel="noreferrer noopener">
               <HomeIcon src={home} alt="home" width={31} height={31} />
             </Link>
-            <MyProfileContainer>
-              <Link to={"/"} rel="noreferrer noopener">
+            <Link to={"/"} rel="noreferrer noopener">
+              <MyProfileContainer>
                 <img
                   src={basicInfo && basicInfo.picture}
                   alt="profile"
@@ -94,8 +94,8 @@ const ProfileHeader = () => {
                     ? `${basicInfo.name.split(" ")[0]}'s Profile`
                     : "error"}
                 </p>
-              </Link>
-            </MyProfileContainer>
+              </MyProfileContainer>
+            </Link>
             <Link to={"/"} rel="noreferrer noopener">
               <img src={logOut} alt="logout" width={31} height={31} />
             </Link>

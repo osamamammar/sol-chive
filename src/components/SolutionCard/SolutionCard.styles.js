@@ -26,7 +26,9 @@ export const CardHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   a.external-link {
-    display: contents;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

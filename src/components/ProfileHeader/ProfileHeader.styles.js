@@ -7,12 +7,14 @@ export const Navbar = styled.nav`
   align-items: center;
   gap: 20px;
   > a {
-    display: contents;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   @media (max-width: 395px) {
     gap: 10px;
   }
-  @media (max-width: 370px) {
+  @media (max-width: 449px) {
     display: none;
   }
 `;
@@ -27,20 +29,17 @@ export const MyProfileContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 6px;
-  > a {
-    display: contents;
-    > img.profile_picture-small {
-      width: 28px;
-      height: 28px;
-      background-color: var(--color-text-light);
-      border-radius: 50%;
-    }
+  > img.profile_picture-small {
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-text-light);
+    border-radius: 50%;
   }
 `;
 
 export const MenuHamburger = styled.button`
   display: none;
-  @media (max-width: 370px) {
+  @media (max-width: 449px) {
     display: block;
     border: none;
     cursor: pointer;
@@ -64,9 +63,11 @@ export const NavbarToggled = styled.nav`
   gap: 20px;
   animation: ${fadeIn} 1s;
   > a {
-    display: contents;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  @media (min-width: 371px) {
+  @media (min-width: 450px) {
     display: none;
   }
 `;
