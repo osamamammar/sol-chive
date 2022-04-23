@@ -4,6 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import {
   getAllSolutionsForAuthUserReducers,
   getAnonymousUserSolutionsReducers,
+  getBasicInfoReducers,
   getOneSolutionDetailsForAnonymousReducers,
   getUserProfileCardReducers,
   userLoginWithGoogleReducers,
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   getOneSolutionDetailsForAnonymous: getOneSolutionDetailsForAnonymousReducers,
   userLoginWithGoogle: userLoginWithGoogleReducers,
   getAllSolutionsForAuthUser: getAllSolutionsForAuthUserReducers,
+  getBasicInfo: getBasicInfoReducers,
 });
 const initialState = {};
 const middleware = [thunk];
