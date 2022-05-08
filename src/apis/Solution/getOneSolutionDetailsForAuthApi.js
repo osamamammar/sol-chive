@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getOneSolutionDetailsForAuthUserApi = async ({ solutionId }) => {
+export const getOneSolutionDetailsForAuthApi = async ({ solutionId }) => {
   const { data } = await axios.get(
     `${process.env.REACT_APP_API_URL}/user/solutions/${solutionId}`
   );

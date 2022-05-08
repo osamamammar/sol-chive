@@ -26,10 +26,10 @@ const ViewSolutionPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (solutionId) {
+    if (solutionId && !Auth) {
       dispatch(getOneSolutionDetailsForAnonymousActions({ solutionId }));
     }
-  }, [dispatch, solutionId]);
+  }, [dispatch, solutionId, Auth]);
 
   return (
     <>
