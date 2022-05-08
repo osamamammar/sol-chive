@@ -14,6 +14,7 @@ export * from "./constants/getOneSolutionDetailsForAnonymousConstants";
 export * from "./constants/userLoginWithGoogleConstants";
 export * from "./constants/getAllSolutionsForAuthUserConstants";
 export * from "./constants/getBasicInfoConstants";
+export * from "./constants/getOneSolutionDetailsForAuthConstants";
 
 // export reducers
 export { getAllSolutionsForAnonymousUserReducers } from "./reducers/getAllSolutionsForAnonymousUserReducers";
