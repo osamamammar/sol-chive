@@ -7,6 +7,7 @@ export { getAllSolutionsForAuthUserActions } from "./actions/getAllSolutionsForA
 export { getBasicInfoActions } from "./actions/getBasicInfoActions";
 export { userLogoutActions } from "./actions/userLogoutActions";
 export { getOneSolutionDetailsForAuthActions } from "./actions/getOneSolutionDetailsForAuthActions";
+export { deleteOneSolutionForAuthActions } from "./reducers/deleteOneSolutionForAuthActions";
 
 // export constants
 export * from "./constants/getAllSolutionsForAnonymousUserConstants";
@@ -26,3 +27,4 @@ export { userLoginWithGoogleReducers } from "./reducers/userLoginWithGoogleReduc
 export { getAllSolutionsForAuthUserReducers } from "./reducers/getAllSolutionsForAuthUserReducers";
 export { getBasicInfoReducers } from "./reducers/getBasicInfoReducers";
 export { getOneSolutionDetailsForAuthReducers } from "./reducers/getOneSolutionDetailsForAuthReducers";
+export { deleteOneSolutionForAuthReducers } from "./reducers/deleteOneSolutionForAuthReducers";
