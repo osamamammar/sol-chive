@@ -5,19 +5,27 @@ import {
   GET_ALL_SOLUTIONS_FOR_AUTH_USER_SUCCESS,
 } from "../constants/getAllSolutionsForAuthUserConstants";
 
-export const getAllSolutionsForAuthUserActions = () => async (dispatch) => {
-  try {
-    dispatch(getAllSolutionsRequest());
+export const getAllSolutionsForAuthUserActions =
+  ({ page, sortbydate, source, tag, perfectsolution }) =>
+  async (dispatch) => {
+    try {
+      dispatch(getAllSolutionsRequest());
 
-    const data = await getAllSolutionsForAuthUserApi();
+      const data = await getAllSolutionsForAuthUserApi({
+        page,
+        sortbydate,
+        source,
+        tag,
+        perfectsolution,
+      });
 
-    dispatch(getAllSolutionsSuccess(data));
-  } catch (error) {
-    let err = "";
-    err = error.response.data.message;
-    dispatch(getAllSolutionsFail(err));
-  }
-};
+      dispatch(getAllSolutionsSuccess(data));
+    } catch (error) {
+      let err = "";
+      err = error.response.data.message;
+      dispatch(getAllSolutionsFail(err));
+    }
+  };
 
 const getAllSolutionsRequest = () => {
   return { type: GET_ALL_SOLUTIONS_FOR_AUTH_USER_REQUEST };
