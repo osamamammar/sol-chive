@@ -20,6 +20,7 @@ const Routes = () => {
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/home" element={<HomePage />}></Route>
         <Route path="/add-new-problem" element={<AddNewProblemPage />}></Route>
+        <Route path="/edit-problem" element={<AddNewProblemPage />}></Route>
         <Route
           path="/solution/:title/:solutionId"
           element={<ViewSolutionPage />}

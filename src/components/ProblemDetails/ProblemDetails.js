@@ -15,7 +15,7 @@ import {
   SectionContainer,
 } from "./ProblemDetails.styles";
 
-const ProblemDetails = ({ data }) => {
+const ProblemDetails = ({ data, solutionId }) => {
   const Auth = checkAuth(cookieData);
 
   return (
@@ -52,8 +52,8 @@ const ProblemDetails = ({ data }) => {
           gap={"12px"}
         >
           <Link
-            to={"/add-new-problem"}
-            state={{ fromViewSolutionPage: true }}
+            to={"/edit-problem"}
+            state={{ fromViewSolutionPage: true, solutionId: solutionId }}
             className="edit-link btn"
             rel="noreferrer noopener"
           >

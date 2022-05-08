@@ -56,7 +56,10 @@ const ViewSolutionPage = () => {
           <ErrorMessage>{error || errorForAuth}</ErrorMessage>
         ) : data || dataForAuth ? (
           <>
-            <ProblemDetails data={data || dataForAuth}></ProblemDetails>
+            <ProblemDetails
+              data={data || dataForAuth}
+              solutionId={solutionId}
+            ></ProblemDetails>
             <ViewSolutionForm data={data || dataForAuth}></ViewSolutionForm>
           </>
         ) : null}
