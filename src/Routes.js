@@ -16,7 +16,7 @@ const Routes = () => {
     <BrowserRouter>
       <RoutesApp>
         <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/search" element={<SearchResultPage />}></Route>
+        <Route path="/search/:email" element={<SearchResultPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/home" element={<HomePage />}></Route>
         <Route path="/add-new-problem" element={<AddNewProblemPage />}></Route>

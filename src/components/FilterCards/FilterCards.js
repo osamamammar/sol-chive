@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { copyIcon } from "../../assets";
 import { useCopyURL } from "../../hooks";
 import AddNewBtn from "../AddNewBtn/AddNewBtn";
@@ -10,9 +10,19 @@ import {
   SelectStyled,
   SelectWrapper,
 } from "./FilterCards.styles";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const FilterCards = ({ title, addNewBtn, homePage, data }) => {
   const [handelCopyURL, copied] = useCopyURL();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [sortbydate, setSortbydate] = useState(
+    new URLSearchParams(location.search).get("sortbydate") || ""
+  );
+  const [perfectSolution, setPerfectSolution] = useState(
+    new URLSearchParams(location.search).get("perfectsolution") || ""
+  );
 
   return (
     <HeaderContainer>
@@ -31,33 +41,58 @@ const FilterCards = ({ title, addNewBtn, homePage, data }) => {
         {data && data.solutions.length > 0 ? (
           <SelectWrapper>
             <SelectWrapper>
-              <LabelTitle htmlFor="sortBy">sort by:</LabelTitle>
+              <LabelTitle htmlFor="sortbydate">sort by date:</LabelTitle>
 
-              <SelectStyled name="sortBy" id="sortBy" defaultValue={"-select-"}>
-                <option value="-select-" disabled>
-                  -select-
+              <SelectStyled
+                name="sortbydate"
+                id="sortbydate"
+                value={sortbydate}
+                onChange={(e) => {
+                  setSortbydate(e.target.value);
+                  navigate({
+                    search: `?page=1${
+                      e.target.value ? `&sortbydate=${e.target.value}` : ""
+                    }${
+                      perfectSolution
+                        ? `&perfectsolution=${perfectSolution}`
+                        : ""
+                    }`,
+                  });
+                }}
+              >
+                <option value="" defaultValue={""}>
+                  Default
                 </option>
-                <option value="date">Date</option>
-                <option value="latest">Latest</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
               </SelectStyled>
             </SelectWrapper>
 
             <SelectWrapper>
-              <LabelTitle width={"unset"} htmlFor="filterBy">
-                filter by:
+              <LabelTitle width={"unset"} htmlFor="perfectsolution">
+                perfect solution:
               </LabelTitle>
 
               <SelectStyled
-                name="filterBy"
-                id="filterBy"
-                defaultValue={"-select-"}
+                name="perfectsolution"
+                id="perfectsolution"
+                value={perfectSolution}
+                onChange={(e) => {
+                  setPerfectSolution(e.target.value);
+                  navigate({
+                    search: `?page=1${
+                      sortbydate ? `&sortbydate=${sortbydate}` : ""
+                    }${
+                      e.target.value ? `&perfectsolution=${e.target.value}` : ""
+                    }`,
+                  });
+                }}
               >
-                <option value="-select-" disabled>
-                  -select-
+                <option value="" defaultValue={""}>
+                  Default
                 </option>
-                <option value="sourse">Sourse</option>
-                <option value="tag">Tag</option>
-                <option value="perfect solution">Perfect Solution</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
               </SelectStyled>
             </SelectWrapper>
           </SelectWrapper>

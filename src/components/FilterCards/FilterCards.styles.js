@@ -18,7 +18,7 @@ export const SelectWrapper = styled.div`
 
 export const LabelTitle = styled.label`
   font-weight: 300;
-  width: ${({ width }) => (width ? width : "55px")};
+  width: ${({ width }) => (width ? width : "unset")};
 `;
 
 export const SelectStyled = styled.select`

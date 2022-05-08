@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   ErrorMessage,
@@ -7,6 +7,7 @@ import {
   Footer,
   Loader,
   OrSeperator,
+  Pagination,
   ProfileInfoCard,
   SearchForm,
   SearchHeader,
@@ -25,8 +26,16 @@ import {
 } from "../../redux";
 
 const SearchResultPage = () => {
+  const { email } = useParams();
+
   const location = useLocation();
-  const email = new URLSearchParams(location.search).get("email") || "";
+  const page = new URLSearchParams(location.search).get("page") || 1;
+  const sortbydate =
+    new URLSearchParams(location.search).get("sortbydate") || "";
+  const source = new URLSearchParams(location.search).get("source") || "";
+  const tag = new URLSearchParams(location.search).get("tag") || "";
+  const perfectsolution =
+    new URLSearchParams(location.search).get("perfectsolution") || "";
 
   const getAnonymousUserSolutions = useSelector(
     (state) => state.getAnonymousUserSolutions
@@ -44,36 +53,55 @@ const SearchResultPage = () => {
 
   useEffect(() => {
     Promise.all([
-      dispatch(getAnonymousUserSolutionsActions({ email })),
+      dispatch(
+        getAnonymousUserSolutionsActions({
+          email,
+          page,
+          sortbydate,
+          source,
+          tag,
+          perfectsolution,
+        })
+      ),
       dispatch(getUserProfileCardActions({ email })),
     ]);
-  }, [dispatch, email]);
+  }, [dispatch, email, page, sortbydate, source, tag, perfectsolution]);
 
   return (
     <>
       <SearchHeader></SearchHeader>
-      { loading || InfoCardLoading ? (
+      {loading || InfoCardLoading ? (
         <Loader></Loader>
-        ):error || InfoCardError ? (
-          <NoResultsContainer>
-            <DivWrapper>
-              <ErrorMessage>{error || InfoCardError}</ErrorMessage>
-              <SectionContainer>
-                <OrSeperator></OrSeperator>
-                <SearchForm></SearchForm>
-              </SectionContainer>
-            </DivWrapper>
-          </NoResultsContainer>
-      ) : data && InfoCardData && (
-        <MainContainer>
-          <ProfileInfoCard data={InfoCardData}></ProfileInfoCard>
-          <SolutionCardsContainer marginBlockStart>
-            <FilterCards title={"Solutions"} data={data}></FilterCards>
-            <SolutionCard data={data}></SolutionCard>
-          </SolutionCardsContainer>
-        </MainContainer>
-      ) 
-      }
+      ) : error || InfoCardError ? (
+        <NoResultsContainer>
+          <DivWrapper>
+            <ErrorMessage>{error || InfoCardError}</ErrorMessage>
+            <SectionContainer>
+              <OrSeperator></OrSeperator>
+              <SearchForm></SearchForm>
+            </SectionContainer>
+          </DivWrapper>
+        </NoResultsContainer>
+      ) : (
+        data &&
+        InfoCardData && (
+          <MainContainer>
+            <ProfileInfoCard data={InfoCardData}></ProfileInfoCard>
+            <SolutionCardsContainer marginBlockStart>
+              <FilterCards
+                title="Solutions"
+                currentPage={data.pageNumber}
+                data={data}
+              ></FilterCards>
+              <SolutionCard data={data}></SolutionCard>
+              <Pagination
+                totalPages={data.totalPages}
+                currentPage={data.pageNumber}
+              ></Pagination>
+            </SolutionCardsContainer>
+          </MainContainer>
+        )
+      )}
 
       <Footer></Footer>
     </>

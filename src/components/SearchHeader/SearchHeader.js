@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createSearchParams, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { searchIcon, searchIconV2 } from "../../assets";
 import { useToggle } from "../../hooks";
 import Logo from "../Logo/Logo";
@@ -25,10 +25,7 @@ const SearchHeader = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     navigate({
-      pathname: `/search`,
-      search: createSearchParams({
-        email: email,
-      }).toString(),
+      pathname: `/search/${email}`,
     });
   };
 

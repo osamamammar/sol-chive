@@ -6,12 +6,19 @@ import {
 import { getAnonymousUserSolutionsApi } from "../../apis";
 
 export const getAnonymousUserSolutionsActions =
-  ({ email }) =>
+  ({ page, email, sortbydate, source, tag, perfectsolution }) =>
   async (dispatch) => {
     try {
       dispatch(getAnonymousUserSolutionsRequest());
 
-      const data = await getAnonymousUserSolutionsApi({ email });
+      const data = await getAnonymousUserSolutionsApi({
+        page,
+        email,
+        sortbydate,
+        source,
+        tag,
+        perfectsolution,
+      });
 
       dispatch(getAnonymousUserSolutionsSuccess(data));
     } catch (error) {

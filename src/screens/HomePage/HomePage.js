@@ -5,6 +5,7 @@ import {
   Footer,
   HomeEmpty,
   Loader,
+  Pagination,
   ProfileHeader,
   SolutionCard,
   SolutionCardsContainer,
@@ -42,6 +43,11 @@ const HomePage = () => {
                 data={data}
               ></FilterCards>
               <SolutionCard data={data}></SolutionCard>
+              <Pagination
+                auth={true}
+                totalPages={data.totalPages}
+                currentPage={data.pageNumber}
+              ></Pagination>
             </SolutionCardsContainer>
           )
         )}
