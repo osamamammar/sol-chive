@@ -12,9 +12,11 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { MainContainer } from "./ViewSolutionPage.styles";
 import { getOneSolutionDetailsForAnonymousActions } from "../../redux";
+import { checkAuth, cookieData } from "../../utils";
 
 const ViewSolutionPage = () => {
   const { solutionId } = useParams();
+  const Auth = checkAuth(cookieData);
 
   const getOneSolutionDetailsForAnonymous = useSelector(
     (state) => state.getOneSolutionDetailsForAnonymous
@@ -31,7 +33,12 @@ const ViewSolutionPage = () => {
 
   return (
     <>
-      <SearchHeader></SearchHeader>
+      {Auth === "true" ? (
+        <ProfileHeader></ProfileHeader>
+      ) : (
+        <SearchHeader></SearchHeader>
+      )}
+
       <MainContainer>
         {loading ? (
           <Loader></Loader>

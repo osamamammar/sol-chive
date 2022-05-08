@@ -2,8 +2,8 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
+  getAllSolutionsForAnonymousUserReducers,
   getAllSolutionsForAuthUserReducers,
-  getAnonymousUserSolutionsReducers,
   getBasicInfoReducers,
   getOneSolutionDetailsForAnonymousReducers,
   getUserProfileCardReducers,
@@ -11,7 +11,7 @@ import {
 } from "./redux";
 
 const reducer = combineReducers({
-  getAnonymousUserSolutions: getAnonymousUserSolutionsReducers,
+  getAllSolutionsForAnonymousUser: getAllSolutionsForAnonymousUserReducers,
   getUserProfileCard: getUserProfileCardReducers,
   getOneSolutionDetailsForAnonymous: getOneSolutionDetailsForAnonymousReducers,
   userLoginWithGoogle: userLoginWithGoogleReducers,

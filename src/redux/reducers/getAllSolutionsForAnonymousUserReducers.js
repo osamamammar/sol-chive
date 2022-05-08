@@ -2,9 +2,9 @@ import {
   GET_ANONYMOUS_USER_SOLUTIONS_FAIL,
   GET_ANONYMOUS_USER_SOLUTIONS_REQUEST,
   GET_ANONYMOUS_USER_SOLUTIONS_SUCCESS,
-} from "../constants/getAnonymousUserSolutionsConstants";
+} from "../constants/getAllSolutionsForAnonymousUserConstants";
 
-export const getAnonymousUserSolutionsReducers = (state = {}, action) => {
+export const getAllSolutionsForAnonymousUserReducers = (state = {}, action) => {
   switch (action.type) {
     case GET_ANONYMOUS_USER_SOLUTIONS_REQUEST:
       return {

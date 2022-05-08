@@ -1,5 +1,5 @@
 // export action creators
-export { getAnonymousUserSolutionsActions } from "./actions/getAnonymousUserSolutionsActions";
+export { getAllSolutionsForAnonymousUserActions } from "./actions/getAllSolutionsForAnonymousUserActions";
 export { getUserProfileCardActions } from "./actions/getUserProfileCardActions";
 export { getOneSolutionDetailsForAnonymousActions } from "./actions/getOneSolutionDetailsForAnonymousActions";
 export { userLoginWithGoogleActions } from "./actions/userLoginWithGoogleActions";
@@ -8,7 +8,7 @@ export { getBasicInfoActions } from "./actions/getBasicInfoActions";
 export { userLogoutActions } from "./actions/userLogoutActions";
 
 // export constants
-export * from "./constants/getAnonymousUserSolutionsConstants";
+export * from "./constants/getAllSolutionsForAnonymousUserConstants";
 export * from "./constants/getUserProfileCardConstants";
 export * from "./constants/getOneSolutionDetailsForAnonymousConstants";
 export * from "./constants/userLoginWithGoogleConstants";
@@ -16,7 +16,7 @@ export * from "./constants/getAllSolutionsForAuthUserConstants";
 export * from "./constants/getBasicInfoConstants";
 
 // export reducers
-export { getAnonymousUserSolutionsReducers } from "./reducers/getAnonymousUserSolutionsReducers";
+export { getAllSolutionsForAnonymousUserReducers } from "./reducers/getAllSolutionsForAnonymousUserReducers";
 export { getUserProfileCardReducers } from "./reducers/getUserProfileCardReducers";
 export { getOneSolutionDetailsForAnonymousReducers } from "./reducers/getOneSolutionDetailsForAnonymousReducers";
 export { userLoginWithGoogleReducers } from "./reducers/userLoginWithGoogleReducers";

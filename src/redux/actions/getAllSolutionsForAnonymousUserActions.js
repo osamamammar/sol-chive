@@ -3,15 +3,15 @@ import {
   GET_ANONYMOUS_USER_SOLUTIONS_REQUEST,
   GET_ANONYMOUS_USER_SOLUTIONS_SUCCESS,
 } from "..";
-import { getAnonymousUserSolutionsApi } from "../../apis";
+import { getAllSolutionsForAnonymousUserApi } from "../../apis";
 
-export const getAnonymousUserSolutionsActions =
+export const getAllSolutionsForAnonymousUserActions =
   ({ page, email, sortbydate, source, tag, perfectsolution }) =>
   async (dispatch) => {
     try {
-      dispatch(getAnonymousUserSolutionsRequest());
+      dispatch(getAllSolutionsRequest());
 
-      const data = await getAnonymousUserSolutionsApi({
+      const data = await getAllSolutionsForAnonymousUserApi({
         page,
         email,
         sortbydate,
@@ -20,23 +20,23 @@ export const getAnonymousUserSolutionsActions =
         perfectsolution,
       });
 
-      dispatch(getAnonymousUserSolutionsSuccess(data));
+      dispatch(getAllSolutionsSuccess(data));
     } catch (error) {
       let err = "";
       if (error.response.status === 404) {
         err = "There's no user found with given email";
       }
-      dispatch(getAnonymousUserSolutionsFail(err));
+      dispatch(getAllSolutionsFail(err));
     }
   };
 
-const getAnonymousUserSolutionsRequest = () => {
+const getAllSolutionsRequest = () => {
   return { type: GET_ANONYMOUS_USER_SOLUTIONS_REQUEST };
 };
-const getAnonymousUserSolutionsSuccess = (data) => {
+const getAllSolutionsSuccess = (data) => {
   return { type: GET_ANONYMOUS_USER_SOLUTIONS_SUCCESS, payload: data };
 };
-const getAnonymousUserSolutionsFail = (err) => {
+const getAllSolutionsFail = (err) => {
   return {
     type: GET_ANONYMOUS_USER_SOLUTIONS_FAIL,
     payload: err,

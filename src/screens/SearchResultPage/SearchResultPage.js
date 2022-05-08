@@ -21,7 +21,7 @@ import {
   SectionContainer,
 } from "./SearchResultPage.styles";
 import {
-  getAnonymousUserSolutionsActions,
+  getAllSolutionsForAnonymousUserActions,
   getUserProfileCardActions,
 } from "../../redux";
 
@@ -37,10 +37,10 @@ const SearchResultPage = () => {
   const perfectsolution =
     new URLSearchParams(location.search).get("perfectsolution") || "";
 
-  const getAnonymousUserSolutions = useSelector(
-    (state) => state.getAnonymousUserSolutions
+  const getAllSolutionsForAnonymousUser = useSelector(
+    (state) => state.getAllSolutionsForAnonymousUser
   );
-  const { loading, data, error } = getAnonymousUserSolutions;
+  const { loading, data, error } = getAllSolutionsForAnonymousUser;
 
   const getUserProfileCard = useSelector((state) => state.getUserProfileCard);
   const {
@@ -54,7 +54,7 @@ const SearchResultPage = () => {
   useEffect(() => {
     Promise.all([
       dispatch(
-        getAnonymousUserSolutionsActions({
+        getAllSolutionsForAnonymousUserActions({
           email,
           page,
           sortbydate,

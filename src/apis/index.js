@@ -2,7 +2,7 @@
 export { userLoginWithGoogleApi } from "./Authentication/userLoginWithGoogleApi";
 
 //SOLUTIONS APIS
-export { getAnonymousUserSolutionsApi } from "./Solution/getAnonymousUserSolutionsApi";
+export { getAllSolutionsForAnonymousUserApi } from "./Solution/getAllSolutionsForAnonymousUserApi";
 export { getAllSolutionsForAuthUserApi } from "./Solution/getAllSolutionsForAuthUserApi";
 export { getOneSolutionDetailsForAnonymousApi } from "./Solution/getOneSolutionDetailsForAnonymousApi";
 

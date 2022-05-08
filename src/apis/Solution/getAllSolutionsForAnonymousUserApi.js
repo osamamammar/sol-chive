@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getAnonymousUserSolutionsApi = async ({
+export const getAllSolutionsForAnonymousUserApi = async ({
   email,
   page,
   sortbydate,

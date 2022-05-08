@@ -54,9 +54,9 @@ const ProfileHeader = () => {
                 }}
               />
               <p>
-                {basicInfo && basicInfo.name
-                  ? `${basicInfo.name.split(" ")[0]}'s Profile`
-                  : "error"}
+                {basicInfo &&
+                  basicInfo.name &&
+                  `${basicInfo.name.split(" ")[0]}'s Profile`}
               </p>
             </MyProfileContainer>
           </Link>
