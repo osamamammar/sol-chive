@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { blackPen, externalLink, trash } from "../../assets";
 import { checkAuth, cookieData, diffDays } from "../../utils";
 import CTABtn from "../CTABtn/CTABtn";
@@ -17,6 +18,16 @@ import {
 
 const ProblemDetails = ({ data, solutionId }) => {
   const Auth = checkAuth(cookieData);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    if (Auth === "true") {
+      console.log("delete");
+      // dispatch(deleteProblemActions({ solutionId }));
+      // navigate("/");
+    }
+  };
 
   return (
     <SectionContainer>
@@ -58,7 +69,7 @@ const ProblemDetails = ({ data, solutionId }) => {
             rel="noreferrer noopener"
           >
             Edit
-            <img src={blackPen} alt="edit-icon" />
+            <img src={blackPen} alt="edit-icon" width={"12"} height={"11.56"} />
           </Link>
 
           <CTABtn
@@ -68,6 +79,7 @@ const ProblemDetails = ({ data, solutionId }) => {
             className={"red-btn"}
             width={"10.25"}
             height={"11.27"}
+            click={handleDelete}
           >
             Delete
           </CTABtn>
@@ -76,5 +88,4 @@ const ProblemDetails = ({ data, solutionId }) => {
     </SectionContainer>
   );
 };
-
 export default ProblemDetails;
