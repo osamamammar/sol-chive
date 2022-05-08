@@ -11,7 +11,10 @@ import {
 } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { MainContainer } from "./ViewSolutionPage.styles";
-import { getOneSolutionDetailsForAnonymousActions } from "../../redux";
+import {
+  getOneSolutionDetailsForAnonymousActions,
+  getOneSolutionDetailsForAuthActions,
+} from "../../redux";
 import { checkAuth, cookieData } from "../../utils";
 
 const ViewSolutionPage = () => {
@@ -23,11 +26,18 @@ const ViewSolutionPage = () => {
   );
   const { loading, data, error } = getOneSolutionDetailsForAnonymous;
 
+  const {
+    loading: loadingForAuth,
+    data: dataForAuth,
+    error: errorForAuth,
+  } = useSelector((state) => state.getOneSolutionDetailsForAuth);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (solutionId && !Auth) {
       dispatch(getOneSolutionDetailsForAnonymousActions({ solutionId }));
+    } else {
+      dispatch(getOneSolutionDetailsForAuthActions({ solutionId }));
     }
   }, [dispatch, solutionId, Auth]);
 
@@ -40,14 +50,14 @@ const ViewSolutionPage = () => {
       )}
 
       <MainContainer>
-        {loading ? (
+        {loading || loadingForAuth ? (
           <Loader></Loader>
-        ) : error ? (
-          <ErrorMessage>{error}</ErrorMessage>
-        ) : data ? (
+        ) : error || errorForAuth ? (
+          <ErrorMessage>{error || errorForAuth}</ErrorMessage>
+        ) : data || dataForAuth ? (
           <>
-            <ProblemDetails data={data}></ProblemDetails>
-            <ViewSolutionForm data={data}></ViewSolutionForm>
+            <ProblemDetails data={data || dataForAuth}></ProblemDetails>
+            <ViewSolutionForm data={data || dataForAuth}></ViewSolutionForm>
           </>
         ) : null}
       </MainContainer>

@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { checkAuth, cookieData } from "../../utils";
 import { DivWrapper } from "../AddNewProblemForm/AddNewProblrm.styles";
 
 const YourAndPerfectSolutionForm = ({ data }) => {
-  const [yourSolution, setYourSolution] = useState(data && data.my_solution);
-  const [perfectSolution, setPerfectSolution] = useState(
-    data && data.perfect_solution
-  );
+  const Auth = checkAuth(cookieData);
+
+  const [yourSolution, setYourSolution] = useState("");
+  const [perfectSolution, setPerfectSolution] = useState("");
+
+  useEffect(() => {
+    if (data) {
+      setYourSolution(data && data.my_solution);
+      setPerfectSolution(data && data.perfect_solution);
+    }
+  }, [data]);
 
   return (
     <>
@@ -41,7 +49,9 @@ const YourAndPerfectSolutionForm = ({ data }) => {
           name="perfectSolution"
           id="perfectSolution"
           rows={30}
-          value={perfectSolution || "please login to see the perfect solution"}
+          value={
+            Auth ? perfectSolution : "please login to see the perfect solution"
+          }
           onChange={(e) => setPerfectSolution(e.target.value)}
         ></textarea>
       </DivWrapper>

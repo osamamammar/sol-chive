@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { blackPen, externalLink, trash } from "../../assets";
-import { diffDays } from "../../utils";
+import { checkAuth, cookieData, diffDays } from "../../utils";
 import CTABtn from "../CTABtn/CTABtn";
 import {
   ProblemSource,
@@ -16,6 +16,8 @@ import {
 } from "./ProblemDetails.styles";
 
 const ProblemDetails = ({ data }) => {
+  const Auth = checkAuth(cookieData);
+
   return (
     <SectionContainer>
       <DivWrapper>
@@ -41,7 +43,8 @@ const ProblemDetails = ({ data }) => {
           Open The problem <img src={externalLink} alt="external-link-icon" />
         </a>
       </DivWrapper>
-      {data ? null : (
+
+      {Auth ? (
         <DivWrapper
           flexDirection={"row"}
           justifyContent={"flex-start"}
@@ -69,7 +72,7 @@ const ProblemDetails = ({ data }) => {
             Delete
           </CTABtn>
         </DivWrapper>
-      )}
+      ) : null}
     </SectionContainer>
   );
 };
