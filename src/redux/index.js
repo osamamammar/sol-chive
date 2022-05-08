@@ -23,3 +23,4 @@ export { getOneSolutionDetailsForAnonymousReducers } from "./reducers/getOneSolu
 export { userLoginWithGoogleReducers } from "./reducers/userLoginWithGoogleReducers";
 export { getAllSolutionsForAuthUserReducers } from "./reducers/getAllSolutionsForAuthUserReducers";
 export { getBasicInfoReducers } from "./reducers/getBasicInfoReducers";
+export { getOneSolutionDetailsForAuthReducers } from "./reducers/getOneSolutionDetailsForAuthReducers";

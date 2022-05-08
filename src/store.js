@@ -6,6 +6,7 @@ import {
   getAllSolutionsForAuthUserReducers,
   getBasicInfoReducers,
   getOneSolutionDetailsForAnonymousReducers,
+  getOneSolutionDetailsForAuthReducers,
   getUserProfileCardReducers,
   userLoginWithGoogleReducers,
 } from "./redux";
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   userLoginWithGoogle: userLoginWithGoogleReducers,
   getAllSolutionsForAuthUser: getAllSolutionsForAuthUserReducers,
   getBasicInfo: getBasicInfoReducers,
+  getOneSolutionDetailsForAuth: getOneSolutionDetailsForAuthReducers,
 });
 const initialState = {};
 const middleware = [thunk];
