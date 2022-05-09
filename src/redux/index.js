@@ -7,7 +7,7 @@ export { getAllSolutionsForAuthUserActions } from "./actions/getAllSolutionsForA
 export { getBasicInfoActions } from "./actions/getBasicInfoActions";
 export { userLogoutActions } from "./actions/userLogoutActions";
 export { getOneSolutionDetailsForAuthActions } from "./actions/getOneSolutionDetailsForAuthActions";
-export { deleteOneSolutionForAuthActions } from "./reducers/deleteOneSolutionForAuthActions";
+export { deleteOneSolutionForAuthActions } from "./actions/deleteOneSolutionForAuthActions";
 
 // export constants
 export * from "./constants/getAllSolutionsForAnonymousUserConstants";

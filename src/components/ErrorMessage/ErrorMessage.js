@@ -1,9 +1,9 @@
 import React from "react";
 import { DivWrapper, TextError } from "./ErrorMessage.styles";
 
-const ErrorMessage = ({ children }) => {
+const ErrorMessage = ({ children, position, marginBlockStart }) => {
   return (
-    <DivWrapper>
+    <DivWrapper position={position} marginBlockStart={marginBlockStart}>
       <TextError>{children}</TextError>
     </DivWrapper>
   );

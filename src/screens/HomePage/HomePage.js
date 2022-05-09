@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import {
+  Alert,
   ErrorMessage,
   FilterCards,
   Footer,
@@ -47,6 +48,9 @@ const HomePage = () => {
     <>
       <ProfileHeader></ProfileHeader>
       <MainContainer>
+        {location.state && location.state.success && (
+          <Alert delay="2000">{location.state?.success}</Alert>
+        )}
         {loading ? (
           <Loader></Loader>
         ) : error ? (

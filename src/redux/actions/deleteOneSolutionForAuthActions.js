@@ -16,7 +16,7 @@ export const deleteOneSolutionForAuthActions =
       dispatch(deleteOneSolutionSuccess(data));
     } catch (error) {
       let err = "";
-      err = error.response.data.message;
+      err = error.response.data;
       dispatch(deleteOneSolutionFail(err));
     }
   };

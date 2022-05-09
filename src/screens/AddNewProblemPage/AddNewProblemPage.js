@@ -30,10 +30,10 @@ const AddNewProblemPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!data) {
+    if (!data && fromViewSolutionPage) {
       dispatch(getOneSolutionDetailsForAuthActions({ solutionId }));
     }
-  }, [data, dispatch, solutionId]);
+  }, [data, dispatch, solutionId, fromViewSolutionPage]);
 
   return (
     <>

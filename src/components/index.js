@@ -22,3 +22,4 @@ export { default as YourAndPerfectSolutionForm } from "./YourAndPerfectSolutionF
 export { default as EditInfoForm } from "./EditInfoForm/EditInfoForm";
 export { default as Loader } from "./Loader/Loader";
 export { default as Pagination } from "./Pagination/Pagination";
+export { default as Alert } from "./Alert/Alert";

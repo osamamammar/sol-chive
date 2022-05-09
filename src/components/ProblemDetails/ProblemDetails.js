@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { blackPen, externalLink, trash } from "../../assets";
+import { deleteOneSolutionForAuthActions } from "../../redux";
 import { checkAuth, cookieData, diffDays } from "../../utils";
 import CTABtn from "../CTABtn/CTABtn";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import {
   ProblemSource,
   SolvedDate,
@@ -21,71 +24,90 @@ const ProblemDetails = ({ data, solutionId }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleDelete = () => {
-    if (Auth === "true") {
-      console.log("delete");
-      // dispatch(deleteProblemActions({ solutionId }));
-      // navigate("/");
-    }
+  const {
+    loading,
+    data: dataDeleting,
+    error,
+  } = useSelector((state) => state.deleteOneSolutionForAuth);
+
+  const handleDelete = async () => {
+    await dispatch(deleteOneSolutionForAuthActions({ solutionId }));
+    // if (!error && data.solution_id !== solutionId) {
+    //   await navigate("/home", {
+    //     state: { success: "problem deleted successfully" },
+    //   });
+    // }
   };
 
   return (
-    <SectionContainer>
-      <DivWrapper>
-        <CardHeader>
-          <CardTitle>{data && data.title}</CardTitle>
-          <ProblemSource>source {data && data.source}</ProblemSource>
-        </CardHeader>
-        <Tags>
-          {data && data.tags.map((tag) => <span key={tag}>{tag}</span>)}
-        </Tags>
+    <>
+      <SectionContainer>
+        <DivWrapper>
+          <CardHeader>
+            <CardTitle>{data && data.title}</CardTitle>
+            <ProblemSource>source {data && data.source}</ProblemSource>
+          </CardHeader>
+          <Tags>
+            {data && data.tags.map((tag) => <span key={tag}>{tag}</span>)}
+          </Tags>
 
-        <SolvedDate size={"14px"}>
-          solved {diffDays(new Date(data && data.created_on), new Date())} days
-          ago
-        </SolvedDate>
+          <SolvedDate size={"14px"}>
+            solved {diffDays(new Date(data && data.created_on), new Date())}{" "}
+            days ago
+          </SolvedDate>
 
-        <a
-          href={data && data.link}
-          className="external-link"
-          rel="noreferrer noopener"
-          target="_blank"
-        >
-          Open The problem <img src={externalLink} alt="external-link-icon" />
-        </a>
-      </DivWrapper>
-
-      {Auth ? (
-        <DivWrapper
-          flexDirection={"row"}
-          justifyContent={"flex-start"}
-          alignItems={"center"}
-          gap={"12px"}
-        >
-          <Link
-            to={"/edit-problem"}
-            state={{ fromViewSolutionPage: true, solutionId: solutionId }}
-            className="edit-link btn"
+          <a
+            href={data && data.link}
+            className="external-link"
             rel="noreferrer noopener"
+            target="_blank"
           >
-            Edit
-            <img src={blackPen} alt="edit-icon" width={"12"} height={"11.56"} />
-          </Link>
-
-          <CTABtn
-            imgIcon={trash}
-            type={"button"}
-            alt={"delete-icon"}
-            className={"red-btn"}
-            width={"10.25"}
-            height={"11.27"}
-            click={handleDelete}
-          >
-            Delete
-          </CTABtn>
+            Open The problem <img src={externalLink} alt="external-link-icon" />
+          </a>
         </DivWrapper>
-      ) : null}
-    </SectionContainer>
+
+        {Auth ? (
+          <DivWrapper
+            flexDirection={"row"}
+            justifyContent={"flex-start"}
+            alignItems={"center"}
+            gap={"12px"}
+          >
+            <Link
+              to={"/edit-problem"}
+              state={{ fromViewSolutionPage: true, solutionId: solutionId }}
+              className="edit-link btn"
+              rel="noreferrer noopener"
+            >
+              Edit
+              <img
+                src={blackPen}
+                alt="edit-icon"
+                width={"12"}
+                height={"11.56"}
+              />
+            </Link>
+
+            <CTABtn
+              imgIcon={trash}
+              type={"button"}
+              alt={"delete-icon"}
+              className={"red-btn"}
+              width={"10.25"}
+              height={"11.27"}
+              click={handleDelete}
+            >
+              {loading ? "Deleting..." : "Delete"}
+            </CTABtn>
+          </DivWrapper>
+        ) : null}
+      </SectionContainer>
+      {error && (
+        <ErrorMessage position="unset" marginBlockStart={"15px"}>
+          {error.message}
+        </ErrorMessage>
+      )}
+    </>
   );
 };
 export default ProblemDetails;

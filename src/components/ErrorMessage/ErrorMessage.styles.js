@@ -5,7 +5,9 @@ export const DivWrapper = styled.div`
   max-width: 1344px;
 
   background-color: var(--color-bg-error);
-  position: absolute;
+  position: ${(props) => (props.position ? props.position : "absolute")};
+  margin-block-start: ${(props) =>
+    props.marginBlockStart ? props.marginBlockStart : "unset"};
   inset-inline-start: 0;
   inset-inline-end: 0;
   inset-block-start: 30px;
