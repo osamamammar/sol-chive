@@ -6,7 +6,7 @@ import {
 } from "../constants/deleteOneSolutionForAuthConstants";
 
 export const deleteOneSolutionForAuthActions =
-  ({ solutionId }) =>
+  ({ solutionId, navigate }) =>
   async (dispatch) => {
     try {
       dispatch(deleteOneSolutionRequest());
@@ -14,6 +14,9 @@ export const deleteOneSolutionForAuthActions =
       const data = await deleteOneSolutionForAuthApi({ solutionId });
 
       dispatch(deleteOneSolutionSuccess(data));
+      navigate("/home", {
+        state: { success: "problem deleted successfully" },
+      });
     } catch (error) {
       let err = "";
       err = error.response.data;

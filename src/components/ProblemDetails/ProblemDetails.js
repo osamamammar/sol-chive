@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -24,19 +24,13 @@ const ProblemDetails = ({ data, solutionId }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const {
-    loading,
-    data: dataDeleting,
-    error,
-  } = useSelector((state) => state.deleteOneSolutionForAuth);
+  const { loading, error } = useSelector(
+    (state) => state.deleteOneSolutionForAuth
+  );
 
-  const handleDelete = async () => {
-    await dispatch(deleteOneSolutionForAuthActions({ solutionId }));
-    // if (!error && data.solution_id !== solutionId) {
-    //   await navigate("/home", {
-    //     state: { success: "problem deleted successfully" },
-    //   });
-    // }
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    await dispatch(deleteOneSolutionForAuthActions({ solutionId, navigate }));
   };
 
   return (
@@ -95,7 +89,7 @@ const ProblemDetails = ({ data, solutionId }) => {
               className={"red-btn"}
               width={"10.25"}
               height={"11.27"}
-              click={handleDelete}
+              click={(e) => handleDelete(e)}
             >
               {loading ? "Deleting..." : "Delete"}
             </CTABtn>

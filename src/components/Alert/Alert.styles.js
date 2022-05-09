@@ -8,6 +8,7 @@ export const AlertWrapper = styled.div`
   border: 1px solid transparent;
   border-radius: 0.25rem;
   margin-block-start: 15px;
+  margin-block-end: 15px;
   > p {
     color: #155724;
   }
