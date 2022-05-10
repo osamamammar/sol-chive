@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cross, home, logOut, menu, profilePictureSmall } from "../../assets";
 import { useToggle } from "../../hooks";
 import { getBasicInfoActions, userLogoutActions } from "../../redux";
@@ -19,11 +19,12 @@ import {
 
 const ProfileHeader = () => {
   const [display, toggle] = useToggle(false);
+  const navigate = useNavigate();
 
   const { data: basicInfo } = useSelector((state) => state.getBasicInfo);
   const dispatch = useDispatch();
   const handleLogout = () => {
-    dispatch(userLogoutActions());
+    dispatch(userLogoutActions({ navigate }));
   };
   useEffect(() => {
     if (!basicInfo) {
@@ -67,7 +68,7 @@ const ProfileHeader = () => {
             </MyProfileContainer>
           </Link>
 
-          <Link to={"/"} rel="noreferrer noopener" onClick={handleLogout}>
+          <button className="cta-btn" onClick={handleLogout} title="logout">
             <img
               src={logOut}
               alt="logout"
@@ -75,10 +76,10 @@ const ProfileHeader = () => {
               height={31}
               title="logout"
             />
-          </Link>
+          </button>
         </Navbar>
 
-        <MenuHamburger onClick={display}>
+        <MenuHamburger onClick={display} title="menu">
           {toggle ? (
             <img src={cross} alt="menu" width={25} height={25} />
           ) : (
@@ -118,7 +119,7 @@ const ProfileHeader = () => {
               </MyProfileContainer>
             </Link>
 
-            <Link to={"/"} rel="noreferrer noopener" onClick={handleLogout}>
+            <button className="cta-btn" onClick={handleLogout} title="logout">
               <img
                 src={logOut}
                 alt="logout"
@@ -126,7 +127,7 @@ const ProfileHeader = () => {
                 height={31}
                 title="logout"
               />
-            </Link>
+            </button>
           </NavbarToggled>
         )}
       </DivWrapper>

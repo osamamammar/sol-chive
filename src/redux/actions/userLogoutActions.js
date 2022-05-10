@@ -1,17 +1,20 @@
 import { userLogoutApi } from "../../apis/Authentication/userLogoutApi";
 import { USER_LOGOUT } from "../constants/userLoginWithGoogleConstants";
 
-export const userLogoutActions = () => async (dispatch) => {
-  try {
-    const data = await userLogoutApi();
+export const userLogoutActions =
+  ({ navigate }) =>
+  async (dispatch) => {
+    try {
+      const data = await userLogoutApi();
 
-    dispatch(userLogoutSuccess(data));
-  } catch (error) {
-    let err = "";
-    err = error.response.data.message;
-    dispatch(userLogoutFail(err));
-  }
-};
+      dispatch(userLogoutSuccess(data));
+      navigate("/");
+    } catch (error) {
+      let err = "";
+      err = error.response.data.message;
+      dispatch(userLogoutFail(err));
+    }
+  };
 
 const userLogoutSuccess = (data) => {
   return { type: USER_LOGOUT, payload: data };

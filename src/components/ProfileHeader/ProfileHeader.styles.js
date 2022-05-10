@@ -5,11 +5,18 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 20px;
-  > a {
-    display: flex;
+  gap: 16px;
+  > .cta-btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
   }
   @media (max-width: 395px) {
     gap: 10px;
@@ -58,15 +65,24 @@ export const NavbarToggled = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin-block: 0;
   margin-inline: auto;
-  gap: 20px;
+  gap: 16px;
   animation: ${fadeIn} 1s;
-  > a {
-    display: flex;
+  > .cta-btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
   }
+
   @media (min-width: 450px) {
     display: none;
   }
