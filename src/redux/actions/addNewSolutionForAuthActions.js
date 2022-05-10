@@ -1,4 +1,4 @@
-import { addNewSolutionForAuthApi } from "../../apis";
+import { addNewSolutionAuthApi } from "../../apis";
 import {
   ADD_NEW_SOLUTION_FAIL,
   ADD_NEW_SOLUTION_REQUEST,
@@ -11,7 +11,7 @@ export const addNewSolutionForAuthActions =
     try {
       dispatch(addSolutionRequest());
 
-      const data = await addNewSolutionForAuthApi({
+      const data = await addNewSolutionAuthApi({
         problemTitle,
         problemLink,
         tags,
