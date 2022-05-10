@@ -18,6 +18,7 @@ export * from "./constants/getAllSolutionsForAuthUserConstants";
 export * from "./constants/getBasicInfoConstants";
 export * from "./constants/getOneSolutionDetailsForAuthConstants";
 export * from "./constants/deleteOneSolutionForAuthConstants";
+export * from "./constants/addNewSolutionForAuthConstants";
 
 // export reducers
 export { getAllSolutionsForAnonymousUserReducers } from "./reducers/getAllSolutionsForAnonymousUserReducers";
@@ -28,3 +29,4 @@ export { getAllSolutionsForAuthUserReducers } from "./reducers/getAllSolutionsFo
 export { getBasicInfoReducers } from "./reducers/getBasicInfoReducers";
 export { getOneSolutionDetailsForAuthReducers } from "./reducers/getOneSolutionDetailsForAuthReducers";
 export { deleteOneSolutionForAuthReducers } from "./reducers/deleteOneSolutionForAuthReducers";
+export { addNewSolutionForAuthReducers } from "./reducers/addNewSolutionForAuthReducers";

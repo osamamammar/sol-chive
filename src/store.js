@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
+  addNewSolutionForAuthReducers,
   deleteOneSolutionForAuthReducers,
   getAllSolutionsForAnonymousUserReducers,
   getAllSolutionsForAuthUserReducers,
@@ -21,6 +22,7 @@ const reducer = combineReducers({
   getBasicInfo: getBasicInfoReducers,
   getOneSolutionDetailsForAuth: getOneSolutionDetailsForAuthReducers,
   deleteOneSolutionForAuth: deleteOneSolutionForAuthReducers,
+  addNewSolutionForAuth: addNewSolutionForAuthReducers,
 });
 const initialState = {};
 const middleware = [thunk];
