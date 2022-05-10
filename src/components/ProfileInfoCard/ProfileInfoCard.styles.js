@@ -10,10 +10,15 @@ export const AsideContainer = styled.aside`
   align-self: flex-start;
   position: sticky;
   inset-block-start: 60px;
+  transition: all 0.2s ease-in-out;
   @media (max-width: 1080px) {
     position: relative;
     inset-block-start: 0;
     max-width: 420px;
+  }
+
+  &:hover {
+    transform: scale(1.01);
   }
 `;
 export const MainWrapper = styled.div`
@@ -31,6 +36,11 @@ export const ProfilePicture = styled.img`
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 `;
 
 export const ProfileName = styled.h2`
