@@ -16,7 +16,7 @@ import {
   ViewLinkWrapper,
 } from "./SolutionCard.styles";
 
-const SolutionCard = ({ data }) => {
+const SolutionCard = ({ data, pathName }) => {
   const Auth = checkAuth(cookieData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -82,7 +82,7 @@ const SolutionCard = ({ data }) => {
                                 navigate,
                               })
                             );
-                            window.location.reload();
+                            pathName === "/home" && window.location.reload();
                           }}
                         />
                       </button>

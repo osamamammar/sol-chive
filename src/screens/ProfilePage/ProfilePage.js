@@ -73,7 +73,10 @@ const ProfilePage = () => {
             ></ProfileInfoCard>
             <SolutionCardsContainer marginBlockStart={`marginBlockStart`}>
               <FilterCards title={"Library"} data={data}></FilterCards>
-              <SolutionCard data={data}></SolutionCard>
+              <SolutionCard
+                data={data}
+                pathName={location.pathname}
+              ></SolutionCard>
               <Pagination
                 totalPages={data.totalPages}
                 currentPage={data.pageNumber}
