@@ -17,11 +17,9 @@ const Pagination = ({ totalPages, currentPage, auth }) => {
     totalPages > 1 && (
       <PaginationContainer className="list-card">
         {[...Array(totalPages).keys()].map((x) => (
-          <li
-            key={x + 1}
-            className={`${x + 1 === currentPage ? "active" : ""}`}
-          >
+          <li key={x + 1}>
             <Link
+              className={`${x + 1 === currentPage ? "active" : ""}`}
               to={`?page=${x + 1}${
                 sortByDate ? `&sortbydate=${sortByDate}` : ""
               }${source ? `&source=${source}` : ""}${tag ? `&tag=${tag}` : ""}${
