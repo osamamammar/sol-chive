@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { PaginationContainer } from "./Pagination.styles";
 
-const Pagination = ({ totalPages, currentPage, auth }) => {
+const Pagination = ({ totalPages, currentPage }) => {
   const location = useLocation();
 
   const sortByDate =

@@ -30,6 +30,10 @@ export const HomeIcon = styled.img`
   padding-block: 4px 8px;
   border-radius: 9px;
   background-color: var(--color-primary);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 export const MyProfileContainer = styled.div`
   display: flex;
@@ -41,6 +45,10 @@ export const MyProfileContainer = styled.div`
     height: 28px;
     background-color: var(--color-text-light);
     border-radius: 50%;
+  }
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.8;
   }
 `;
 

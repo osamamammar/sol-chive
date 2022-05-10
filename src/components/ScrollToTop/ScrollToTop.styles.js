@@ -11,4 +11,8 @@ export const BtnGoToTop = styled.button`
   z-index: 100;
   inset-block-end: 78px;
   inset-inline-end: 40px;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.4);
+  }
 `;

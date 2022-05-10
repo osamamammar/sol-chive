@@ -66,7 +66,6 @@ const HomePage = () => {
               ></FilterCards>
               <SolutionCard data={data}></SolutionCard>
               <Pagination
-                auth={true}
                 totalPages={data.totalPages}
                 currentPage={data.pageNumber}
               ></Pagination>

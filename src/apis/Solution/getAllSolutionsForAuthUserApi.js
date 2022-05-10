@@ -8,12 +8,12 @@ export const getAllSolutionsForAuthUserApi = async ({
   perfectsolution,
 }) => {
   const { data } = await axios.get(
-    `${process.env.REACT_APP_API_URL}/user/solutions?${
-      page ? `page=${page}` : `page=1`
-    }&${sortbydate ? `sortbydate=${sortbydate}` : ""}&${
-      source ? `source=${source}` : ""
-    }&${tag ? `tag=${tag}` : ""}&${
-      perfectsolution ? `perfectsolution=${perfectsolution}` : ""
+    `${process.env.REACT_APP_API_URL}/user/solutions${
+      page ? `?page=${page}` : `?page=1`
+    }${sortbydate ? `&sortbydate=${sortbydate}` : ""}${
+      source ? `&source=${source}` : ""
+    }${tag ? `&tag=${tag}` : ""}${
+      perfectsolution ? `&perfectsolution=${perfectsolution}` : ""
     }`,
     { withCredentials: true }
   );

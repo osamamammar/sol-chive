@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import {
   ErrorMessage,
   FilterCards,
   Footer,
   Loader,
+  Pagination,
   ProfileHeader,
   ProfileInfoCard,
   SolutionCard,
@@ -17,6 +19,15 @@ import {
 import { MainContainer } from "../SearchResultPage/SearchResultPage.styles";
 
 const ProfilePage = () => {
+  const location = useLocation();
+  const page = new URLSearchParams(location.search).get("page") || 1;
+  const sortbydate =
+    new URLSearchParams(location.search).get("sortbydate") || "";
+  const source = new URLSearchParams(location.search).get("source") || "";
+  const tag = new URLSearchParams(location.search).get("tag") || "";
+  const perfectsolution =
+    new URLSearchParams(location.search).get("perfectsolution") || "";
+
   const { loading, data, error } = useSelector(
     (state) => state.getAllSolutionsForAuthUser
   );
@@ -29,12 +40,19 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
   const email = "osamaammar29@gmail.com";
   useEffect(() => {
-    if (!data) {
-      dispatch(getAllSolutionsForAuthUserActions());
-    } else if (!InfoCardData) {
-      dispatch(getUserProfileCardActions({ email }));
-    }
-  }, [dispatch, data, InfoCardData]);
+    Promise.all([
+      dispatch(
+        getAllSolutionsForAuthUserActions({
+          page,
+          sortbydate,
+          source,
+          tag,
+          perfectsolution,
+        })
+      ),
+      dispatch(getUserProfileCardActions({ email })),
+    ]);
+  }, [dispatch, email, page, sortbydate, source, tag, perfectsolution]);
 
   return (
     <>
@@ -56,6 +74,10 @@ const ProfilePage = () => {
             <SolutionCardsContainer marginBlockStart={`marginBlockStart`}>
               <FilterCards title={"Library"} data={data}></FilterCards>
               <SolutionCard data={data}></SolutionCard>
+              <Pagination
+                totalPages={data.totalPages}
+                currentPage={data.pageNumber}
+              ></Pagination>
             </SolutionCardsContainer>
           </MainContainer>
         )
