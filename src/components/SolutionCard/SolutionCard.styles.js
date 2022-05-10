@@ -19,6 +19,10 @@ export const Card = styled.li`
   flex-direction: column;
   justify-content: center;
   gap: 8px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.01);
+  }
 `;
 
 export const CardHeader = styled.div`
@@ -29,16 +33,20 @@ export const CardHeader = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 `;
 
-export const CardTitle = styled.h5`
+export const CardTitle = styled.h3`
   font-size: 16px;
 `;
 
 export const CardExternalLink = styled.img`
-  width: 21px;
-  height: 21px;
+  width: 23px;
+  height: 23px;
   padding-inline: 6.1px 5.7px;
   padding-block: 5.9px;
   border-radius: 7px;
@@ -67,10 +75,31 @@ export const Tags = styled.p`
 export const SolvedDate = styled(ProblemSource)``;
 
 export const ViewLinkWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   > a {
     border-radius: 6px;
     padding-inline: 22px;
     padding-block: 3px;
     font-size: 15px;
+  }
+  > button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    border: none;
+    padding-inline: 6.1px 5.7px;
+    padding-block: 5.9px;
+    border-radius: 7px;
+    background-color: var(--color-primary);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 `;

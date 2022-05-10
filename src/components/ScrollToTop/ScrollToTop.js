@@ -31,6 +31,7 @@ const ScrollToTop = () => {
             onClick={goToTop}
             width={31}
             height={31}
+            title="go to top"
           />
         </BtnGoToTop>
       )}

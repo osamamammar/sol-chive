@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { externalLink } from "../../assets";
-import { diffDays } from "../../utils";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { externalLink, redTrash } from "../../assets";
+import { deleteOneSolutionForAuthActions } from "../../redux";
+import { checkAuth, cookieData, diffDays } from "../../utils";
 import {
   Card,
   CardContainer,
@@ -15,6 +17,10 @@ import {
 } from "./SolutionCard.styles";
 
 const SolutionCard = ({ data }) => {
+  const Auth = checkAuth(cookieData);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <>
       <CardContainer>
@@ -36,6 +42,7 @@ const SolutionCard = ({ data }) => {
                         alt="external-link"
                         width={21}
                         height={21}
+                        title="go to source problem"
                       />
                     </a>
                   </CardHeader>
@@ -60,6 +67,26 @@ const SolutionCard = ({ data }) => {
                     >
                       View
                     </Link>
+                    {Auth && (
+                      <button title="delete problem">
+                        <img
+                          src={redTrash}
+                          alt="delete-icon"
+                          width={11.2}
+                          height={12.31}
+                          onClick={async (e) => {
+                            e.preventDefault();
+                            await dispatch(
+                              deleteOneSolutionForAuthActions({
+                                solutionId: solution_id,
+                                navigate,
+                              })
+                            );
+                            window.location.reload();
+                          }}
+                        />
+                      </button>
+                    )}
                   </ViewLinkWrapper>
                 </Card>
               )

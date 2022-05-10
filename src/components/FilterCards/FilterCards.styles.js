@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderTitle = styled.h4`
+export const HeaderTitle = styled.h2`
   font-size: 20px;
   font-weight: 300;
 `;

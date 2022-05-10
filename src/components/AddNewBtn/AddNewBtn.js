@@ -6,7 +6,7 @@ const AddNewBtn = () => {
   return (
     <StyledLink to={"/add-new-problem"} className="btn">
       Add new
-      <img src={addNew} alt="add-new" />
+      <img src={addNew} alt="add-new" width={10.78} height={14.4} />
     </StyledLink>
   );
 };

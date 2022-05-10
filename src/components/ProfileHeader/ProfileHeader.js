@@ -38,7 +38,13 @@ const ProfileHeader = () => {
 
         <Navbar>
           <Link to={"/home"} rel="noreferrer noopener">
-            <HomeIcon src={home} alt="home" width={31} height={31} />
+            <HomeIcon
+              src={home}
+              alt="home"
+              width={31}
+              height={31}
+              title="go to home"
+            />
           </Link>
           <Link to={"/profile"} rel="noreferrer noopener">
             <MyProfileContainer>
@@ -62,7 +68,13 @@ const ProfileHeader = () => {
           </Link>
 
           <Link to={"/"} rel="noreferrer noopener" onClick={handleLogout}>
-            <img src={logOut} alt="logout" width={31} height={31} />
+            <img
+              src={logOut}
+              alt="logout"
+              width={31}
+              height={31}
+              title="logout"
+            />
           </Link>
         </Navbar>
 
@@ -77,7 +89,13 @@ const ProfileHeader = () => {
         {toggle && (
           <NavbarToggled>
             <Link to={"/"} rel="noreferrer noopener">
-              <HomeIcon src={home} alt="home" width={31} height={31} />
+              <HomeIcon
+                src={home}
+                alt="home"
+                width={31}
+                height={31}
+                title="go to home"
+              />
             </Link>
             <Link to={"/"} rel="noreferrer noopener">
               <MyProfileContainer>
@@ -101,7 +119,13 @@ const ProfileHeader = () => {
             </Link>
 
             <Link to={"/"} rel="noreferrer noopener" onClick={handleLogout}>
-              <img src={logOut} alt="logout" width={31} height={31} />
+              <img
+                src={logOut}
+                alt="logout"
+                width={31}
+                height={31}
+                title="logout"
+              />
             </Link>
           </NavbarToggled>
         )}

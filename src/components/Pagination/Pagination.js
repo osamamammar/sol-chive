@@ -17,17 +17,20 @@ const Pagination = ({ totalPages, currentPage, auth }) => {
     totalPages > 1 && (
       <PaginationContainer className="list-card">
         {[...Array(totalPages).keys()].map((x) => (
-          <Link
+          <li
             key={x + 1}
-            to={`?page=${x + 1}${
-              sortByDate ? `&sortbydate=${sortByDate}` : ""
-            }${source ? `&source=${source}` : ""}${tag ? `&tag=${tag}` : ""}${
-              perfectSolution ? `&perfectsolution=${perfectSolution}` : ""
-            }`}
             className={`${x + 1 === currentPage ? "active" : ""}`}
           >
-            <li>{x + 1}</li>
-          </Link>
+            <Link
+              to={`?page=${x + 1}${
+                sortByDate ? `&sortbydate=${sortByDate}` : ""
+              }${source ? `&source=${source}` : ""}${tag ? `&tag=${tag}` : ""}${
+                perfectSolution ? `&perfectsolution=${perfectSolution}` : ""
+              }`}
+            >
+              {x + 1}
+            </Link>
+          </li>
         ))}
       </PaginationContainer>
     )
