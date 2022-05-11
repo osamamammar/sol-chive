@@ -9,6 +9,7 @@ export { userLogoutActions } from "./actions/userLogoutActions";
 export { getOneSolutionDetailsForAuthActions } from "./actions/getOneSolutionDetailsForAuthActions";
 export { deleteOneSolutionForAuthActions } from "./actions/deleteOneSolutionForAuthActions";
 export { addNewSolutionForAuthActions } from "./actions/addNewSolutionForAuthActions";
+export { updateSolutionActions } from "./actions/updateSolutionActions";
 
 // export constants
 export * from "./constants/getAllSolutionsForAnonymousUserConstants";
@@ -20,6 +21,7 @@ export * from "./constants/getBasicInfoConstants";
 export * from "./constants/getOneSolutionDetailsForAuthConstants";
 export * from "./constants/deleteOneSolutionForAuthConstants";
 export * from "./constants/addNewSolutionForAuthConstants";
+export * from "./constants/updateSolutionConstants";
 
 // export reducers
 export { getAllSolutionsForAnonymousUserReducers } from "./reducers/getAllSolutionsForAnonymousUserReducers";
@@ -31,3 +33,4 @@ export { getBasicInfoReducers } from "./reducers/getBasicInfoReducers";
 export { getOneSolutionDetailsForAuthReducers } from "./reducers/getOneSolutionDetailsForAuthReducers";
 export { deleteOneSolutionForAuthReducers } from "./reducers/deleteOneSolutionForAuthReducers";
 export { addNewSolutionForAuthReducers } from "./reducers/addNewSolutionForAuthReducers";
+export { updateSolutionReducers } from "./reducers/updateSolutionReducers";
