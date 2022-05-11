@@ -10,6 +10,7 @@ import {
   getOneSolutionDetailsForAnonymousReducers,
   getOneSolutionDetailsForAuthReducers,
   getUserProfileCardReducers,
+  settingsDataReducers,
   updateSolutionReducers,
   userLoginWithGoogleReducers,
 } from "./redux";
@@ -25,6 +26,7 @@ const reducer = combineReducers({
   deleteOneSolutionForAuth: deleteOneSolutionForAuthReducers,
   addNewSolutionForAuth: addNewSolutionForAuthReducers,
   updateSolution: updateSolutionReducers,
+  settingsData: settingsDataReducers,
 });
 
 const initialState = {};
