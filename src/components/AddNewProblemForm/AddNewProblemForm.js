@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { btnSubmit } from "../../assets";
-import { addNewSolutionForAuthActions } from "../../redux";
+import {
+  addNewSolutionForAuthActions,
+  RESET_ADD_NEW_SOLUTION_ERROR,
+} from "../../redux";
 import CTABtn from "../CTABtn/CTABtn";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import YourPerfectSolutionForm from "../YourAndPerfectSolutionForm/YourAndPerfectSolutionForm";
@@ -11,27 +14,24 @@ import { DivWrapper, FormContainer } from "./AddNewProblrm.styles";
 
 const AddNewProblemForm = ({ data }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [problemTitle, setProblemTitle] = useState("");
   const [problemLink, setProblemLink] = useState("");
   const [tags, setTags] = useState([]);
   const [yourSolution, setYourSolution] = useState("");
   const [perfectSolution, setPerfectSolution] = useState("");
 
-  const {
-    loading,
-    error,
-    success,
-    data: addSolutionData,
-  } = useSelector((state) => state.addNewSolutionForAuth);
+  const { error } = useSelector((state) => state.addNewSolutionForAuth);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (data) {
+    dispatch({ type: RESET_ADD_NEW_SOLUTION_ERROR });
+    if (data && location.pathname === "/edit-problem") {
       setProblemTitle(data && data.title);
       setProblemLink(data && data.link);
       setTags(data && data.tags);
     }
-  }, [data]);
+  }, [data, dispatch, location]);
 
   const childToParent = ({ yourSolution, perfectSolution }) => {
     setYourSolution(yourSolution);

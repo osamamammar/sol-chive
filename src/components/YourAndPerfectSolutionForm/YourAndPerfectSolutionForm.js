@@ -10,11 +10,15 @@ const YourAndPerfectSolutionForm = ({ data, childToParent }) => {
   const [perfectSolution, setPerfectSolution] = useState("");
 
   useEffect(() => {
-    if (data) {
+    if (
+      (location.pathname === "/edit-problem" ||
+        location.pathname.indexOf("/solution") === 0) &&
+      data
+    ) {
       setYourSolution(data && data.my_solution);
       setPerfectSolution(data && data.perfect_solution);
     }
-  }, [data]);
+  }, [data, location]);
 
   useEffect(() => {
     if (childToParent) {
