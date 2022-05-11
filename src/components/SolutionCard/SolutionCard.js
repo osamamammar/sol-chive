@@ -86,24 +86,12 @@ const SolutionCard = ({ data, pathName }) => {
                   <SolvedDate>
                     solved {diffDays(new Date(created_on), new Date())} days ago
                   </SolvedDate>
-                  <DivWrapper>
-                    <PerfectSolution style={{ flexWrap: "wrap" }}>
-                      Contains:
-                      {perfect_solution ? (
-                        <>
-                          <span
-                            style={{
-                              display: "flex",
-                              gap: "5px",
-                              flexWrap: "wrap",
-                            }}
-                          >
-                            <img
-                              src={exist}
-                              alt="exist"
-                              title="your solution exist"
-                            />
-                            <span>my solution</span>
+                  {Auth && (
+                    <DivWrapper>
+                      <PerfectSolution style={{ flexWrap: "wrap" }}>
+                        Contains:
+                        {perfect_solution ? (
+                          <>
                             <span
                               style={{
                                 display: "flex",
@@ -114,27 +102,27 @@ const SolutionCard = ({ data, pathName }) => {
                               <img
                                 src={exist}
                                 alt="exist"
-                                title="your perfect solution exist"
+                                title="your solution exist"
                               />
-                              <span>perfect solution</span>
+                              <span>my solution</span>
+                              <span
+                                style={{
+                                  display: "flex",
+                                  gap: "5px",
+                                  flexWrap: "wrap",
+                                }}
+                              >
+                                <img
+                                  src={exist}
+                                  alt="exist"
+                                  title="your perfect solution exist"
+                                />
+                                <span>perfect solution</span>
+                              </span>
                             </span>
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          <span
-                            style={{
-                              display: "flex",
-                              gap: "5px",
-                              flexWrap: "wrap",
-                            }}
-                          >
-                            <img
-                              src={exist}
-                              alt="exist"
-                              title="your solution exist"
-                            />
-                            <span>my solution</span>
+                          </>
+                        ) : (
+                          <>
                             <span
                               style={{
                                 display: "flex",
@@ -143,17 +131,31 @@ const SolutionCard = ({ data, pathName }) => {
                               }}
                             >
                               <img
-                                src={notExist}
-                                alt="no-exist"
-                                title="your perfect solution not exist"
+                                src={exist}
+                                alt="exist"
+                                title="your solution exist"
                               />
-                              <span>perfect solution</span>
+                              <span>my solution</span>
+                              <span
+                                style={{
+                                  display: "flex",
+                                  gap: "5px",
+                                  flexWrap: "wrap",
+                                }}
+                              >
+                                <img
+                                  src={notExist}
+                                  alt="no-exist"
+                                  title="your perfect solution not exist"
+                                />
+                                <span>perfect solution</span>
+                              </span>
                             </span>
-                          </span>
-                        </>
-                      )}
-                    </PerfectSolution>
-                  </DivWrapper>
+                          </>
+                        )}
+                      </PerfectSolution>
+                    </DivWrapper>
+                  )}
 
                   <ViewLinkWrapper>
                     <Link
