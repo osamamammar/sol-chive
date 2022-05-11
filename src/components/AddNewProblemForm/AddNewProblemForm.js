@@ -6,6 +6,7 @@ import { btnSubmit } from "../../assets";
 import {
   addNewSolutionForAuthActions,
   RESET_ADD_NEW_SOLUTION_ERROR,
+  updateSolutionActions,
 } from "../../redux";
 import CTABtn from "../CTABtn/CTABtn";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
@@ -22,6 +23,8 @@ const AddNewProblemForm = ({ data, solutionId }) => {
   const [perfectSolution, setPerfectSolution] = useState("");
 
   const { error } = useSelector((state) => state.addNewSolutionForAuth);
+  const { error: updateError } = useSelector((state) => state.updateSolution);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -41,7 +44,17 @@ const AddNewProblemForm = ({ data, solutionId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (location.pathname === "/edit-problem") {
-      dispatch();
+      dispatch(
+        updateSolutionActions({
+          solutionId,
+          navigate,
+          problemTitle,
+          problemLink,
+          tags,
+          yourSolution,
+          perfectSolution,
+        })
+      );
     } else {
       dispatch(
         addNewSolutionForAuthActions({
@@ -57,14 +70,14 @@ const AddNewProblemForm = ({ data, solutionId }) => {
   };
   return (
     <>
-      {error && (
+      {(error || updateError) && (
         <ErrorMessage
           position="unset"
           marginBlockStart={"15px"}
           width={"100%"}
           marginBlockEnd={"15px"}
         >
-          {error}
+          {error || updateError}
         </ErrorMessage>
       )}
       <FormContainer onSubmit={handleSubmit}>
