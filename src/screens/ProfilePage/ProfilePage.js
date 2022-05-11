@@ -5,6 +5,7 @@ import {
   ErrorMessage,
   FilterCards,
   Footer,
+  HomeEmpty,
   Loader,
   Pagination,
   ProfileHeader,
@@ -59,9 +60,9 @@ const ProfilePage = () => {
       <ProfileHeader></ProfileHeader>
       {loading || InfoCardLoading ? (
         <Loader height={"108px"}></Loader>
-      ) : error || InfoCardError ? (
+      ) : (error && !error.code === 404) || InfoCardError ? (
         <MainContainer>
-          <ErrorMessage>{error || InfoCardError}</ErrorMessage>
+          <ErrorMessage>{error.message || InfoCardError}</ErrorMessage>
         </MainContainer>
       ) : (
         data &&
@@ -85,7 +86,11 @@ const ProfilePage = () => {
           </MainContainer>
         )
       )}
-
+      {error && error.code === 404 && (
+        <MainContainer>
+          <HomeEmpty></HomeEmpty>
+        </MainContainer>
+      )}
       <Footer></Footer>
     </>
   );

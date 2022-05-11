@@ -14,7 +14,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import YourPerfectSolutionForm from "../YourAndPerfectSolutionForm/YourAndPerfectSolutionForm";
 import { DivWrapper, FormContainer } from "./AddNewProblrm.styles";
 
-const AddNewProblemForm = ({ data, solutionId }) => {
+const AddNewProblemForm = ({ data, solutionId, submitForm }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [problemTitle, setProblemTitle] = useState("");
@@ -78,6 +78,24 @@ const AddNewProblemForm = ({ data, solutionId }) => {
     }
   };
 
+  useEffect(() => {
+    if (submitForm) {
+      submitForm({
+        problemTitle,
+        problemLink,
+        tags,
+        yourSolution,
+        perfectSolution,
+      });
+    }
+  }, [
+    problemTitle,
+    problemLink,
+    tags,
+    yourSolution,
+    perfectSolution,
+    submitForm,
+  ]);
   return (
     <>
       {(error || updateError) && (

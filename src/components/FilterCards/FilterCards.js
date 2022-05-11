@@ -11,11 +11,13 @@ import {
   SelectWrapper,
 } from "./FilterCards.styles";
 import { useLocation, useNavigate } from "react-router-dom";
+import { checkAuth } from "../../utils";
 
 const FilterCards = ({ title, addNewBtn, homePage, data }) => {
   const [handelCopyURL, copied] = useCopyURL();
   const location = useLocation();
   const navigate = useNavigate();
+  const Auth = checkAuth("isLoggedIn");
 
   const [sortbydate, setSortbydate] = useState(
     new URLSearchParams(location.search).get("sortbydate") || ""
@@ -67,34 +69,37 @@ const FilterCards = ({ title, addNewBtn, homePage, data }) => {
                 <option value="desc">Descending</option>
               </SelectStyled>
             </SelectWrapper>
+            {Auth && (
+              <SelectWrapper>
+                <LabelTitle width={"unset"} htmlFor="perfectsolution">
+                  perfect solution:
+                </LabelTitle>
 
-            <SelectWrapper>
-              <LabelTitle width={"unset"} htmlFor="perfectsolution">
-                perfect solution:
-              </LabelTitle>
-
-              <SelectStyled
-                name="perfectsolution"
-                id="perfectsolution"
-                value={perfectSolution}
-                onChange={(e) => {
-                  setPerfectSolution(e.target.value);
-                  navigate({
-                    search: `?page=1${
-                      sortbydate ? `&sortbydate=${sortbydate}` : ""
-                    }${
-                      e.target.value ? `&perfectsolution=${e.target.value}` : ""
-                    }`,
-                  });
-                }}
-              >
-                <option value="" defaultValue={""}>
-                  Default
-                </option>
-                <option value="true">True</option>
-                <option value="false">False</option>
-              </SelectStyled>
-            </SelectWrapper>
+                <SelectStyled
+                  name="perfectsolution"
+                  id="perfectsolution"
+                  value={perfectSolution}
+                  onChange={(e) => {
+                    setPerfectSolution(e.target.value);
+                    navigate({
+                      search: `?page=1${
+                        sortbydate ? `&sortbydate=${sortbydate}` : ""
+                      }${
+                        e.target.value
+                          ? `&perfectsolution=${e.target.value}`
+                          : ""
+                      }`,
+                    });
+                  }}
+                >
+                  <option value="" defaultValue={""}>
+                    Default
+                  </option>
+                  <option value="true">True</option>
+                  <option value="false">False</option>
+                </SelectStyled>
+              </SelectWrapper>
+            )}
           </SelectWrapper>
         ) : null}
         {title === "Library" && addNewBtn && <AddNewBtn />}

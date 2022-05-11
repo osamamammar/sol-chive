@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { btnCancel, btnSubmit, refresh } from "../../assets";
 import { CTABtn, EditInfoForm, Footer, ProfileHeader } from "../../components";
+import { getSettingsActions } from "../../redux";
 import {
   DivWrapper,
   HeaderContainer,
@@ -13,6 +15,8 @@ import { UploadPictureContainer, UplodedPicture } from "./EditInfoPage.styles";
 const EditInfoPage = () => {
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
+  const dispatch = useDispatch();
+  const { loading, data, error } = useSelector((state) => state.settingsData);
 
   // create a preview as a side effect, whenever selected file is changed
   useEffect(() => {
@@ -32,15 +36,16 @@ const EditInfoPage = () => {
       setSelectedFile(undefined);
       return;
     }
-    // I've kept this example simple by using the first image instead of multiple
     setSelectedFile(e.target.files[0]);
   };
-
+  useEffect(() => {
+    dispatch(getSettingsActions());
+  }, [dispatch]);
   return (
     <>
       <ProfileHeader></ProfileHeader>
 
-      <MainContainer>
+      <MainContainer height={"132px"}>
         <HeaderContainer>
           <HeaderTitle>Edit information</HeaderTitle>
 
@@ -88,7 +93,7 @@ const EditInfoPage = () => {
           ></input>
         </UploadPictureContainer>
 
-        <EditInfoForm></EditInfoForm>
+        <EditInfoForm data={data}></EditInfoForm>
       </MainContainer>
 
       <Footer></Footer>

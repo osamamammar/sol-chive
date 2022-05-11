@@ -10,6 +10,11 @@ export { getOneSolutionDetailsForAuthActions } from "./actions/getOneSolutionDet
 export { deleteOneSolutionForAuthActions } from "./actions/deleteOneSolutionForAuthActions";
 export { addNewSolutionForAuthActions } from "./actions/addNewSolutionForAuthActions";
 export { updateSolutionActions } from "./actions/updateSolutionActions";
+export {
+  getSettingsActions,
+  updateSettingsActions,
+  updateAvatarActions,
+} from "./actions/settingsDataActions";
 
 // export constants
 export * from "./constants/getAllSolutionsForAnonymousUserConstants";
@@ -35,4 +40,8 @@ export { getOneSolutionDetailsForAuthReducers } from "./reducers/getOneSolutionD
 export { deleteOneSolutionForAuthReducers } from "./reducers/deleteOneSolutionForAuthReducers";
 export { addNewSolutionForAuthReducers } from "./reducers/addNewSolutionForAuthReducers";
 export { updateSolutionReducers } from "./reducers/updateSolutionReducers";
-export { settingsDataReducers } from "./reducers/settingsDataReducers";
+export {
+  getSettingsReducers,
+  updateSettingsReducers,
+  updateAvatarReducers,
+} from "./reducers/settingsDataReducers";

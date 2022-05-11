@@ -22,7 +22,7 @@ export const getAllSolutionsForAuthUserActions =
       dispatch(getAllSolutionsSuccess(data));
     } catch (error) {
       let err = "";
-      err = error.response.data.message;
+      err = error.response.data;
       dispatch(getAllSolutionsFail(err));
     }
   };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { btnSubmit } from "../../assets";
 import {
   DivWrapper,
@@ -6,7 +6,19 @@ import {
 } from "../AddNewProblemForm/AddNewProblrm.styles";
 import CTABtn from "../CTABtn/CTABtn";
 
-const EditInfoForm = () => {
+const EditInfoForm = ({ data }) => {
+  const [name, setName] = useState("");
+  const [contacts, setContacts] = useState("");
+  const [about, setAbout] = useState("");
+
+  useEffect(() => {
+    if (data) {
+      setName(data.name);
+      setContacts(data.contacts);
+      setAbout(data.about);
+    }
+  }, [data]);
+
   return (
     <FormContainer>
       <DivWrapper>
@@ -17,17 +29,21 @@ const EditInfoForm = () => {
           id="name"
           placeholder="Enter your name"
           required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </DivWrapper>
 
       <DivWrapper>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="contacts">Contacts</label>
         <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Enter email"
+          type="text"
+          name="contacts"
+          id="contacts"
+          placeholder="Enter your contacts"
           required
+          value={contacts}
+          onChange={(e) => setContacts(e.target.value)}
         />
       </DivWrapper>
 
@@ -39,6 +55,8 @@ const EditInfoForm = () => {
           name="about"
           id="about"
           rows={10}
+          value={about}
+          onChange={(e) => setAbout(e.target.value)}
         />
       </DivWrapper>
 

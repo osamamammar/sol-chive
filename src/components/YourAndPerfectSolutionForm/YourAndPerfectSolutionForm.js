@@ -47,29 +47,28 @@ const YourAndPerfectSolutionForm = ({ data, childToParent }) => {
           onChange={(e) => setYourSolution(e.target.value)}
         ></textarea>
       </DivWrapper>
-
-      <DivWrapper>
-        <label htmlFor="perfectSolution">
-          Perfect Solution <span>(optional)</span>
-        </label>
-        <textarea
-          readOnly={
-            Auth && location.pathname.indexOf("/solution") ? false : true
-          }
-          className="perfectSolution"
-          placeholder="   
+      {Auth && (
+        <DivWrapper>
+          <label htmlFor="perfectSolution">
+            Perfect Solution <span>(optional)</span>
+          </label>
+          <textarea
+            readOnly={
+              Auth && location.pathname.indexOf("/solution") ? false : true
+            }
+            className="perfectSolution"
+            placeholder="   
             /**
             Enter your code here
             **/"
-          name="perfectSolution"
-          id="perfectSolution"
-          rows={30}
-          value={
-            Auth ? perfectSolution : "please login to see the perfect solution"
-          }
-          onChange={(e) => setPerfectSolution(e.target.value)}
-        ></textarea>
-      </DivWrapper>
+            name="perfectSolution"
+            id="perfectSolution"
+            rows={30}
+            value={perfectSolution}
+            onChange={(e) => setPerfectSolution(e.target.value)}
+          ></textarea>
+        </DivWrapper>
+      )}
     </>
   );
 };

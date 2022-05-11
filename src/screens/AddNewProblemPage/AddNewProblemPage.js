@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { btnCancel, btnSubmit } from "../../assets";
 import {
   AddNewProblemForm,
@@ -10,7 +10,11 @@ import {
   Loader,
   ProfileHeader,
 } from "../../components";
-import { getOneSolutionDetailsForAuthActions } from "../../redux";
+import {
+  addNewSolutionForAuthActions,
+  getOneSolutionDetailsForAuthActions,
+  updateSolutionActions,
+} from "../../redux";
 import {
   DivWrapper,
   HeaderContainer,
@@ -20,6 +24,12 @@ import {
 
 const AddNewProblemPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [problemTitle, setProblemTitle] = useState("");
+  const [problemLink, setProblemLink] = useState("");
+  const [tags, setTags] = useState([]);
+  const [yourSolution, setYourSolution] = useState("");
+  const [perfectSolution, setPerfectSolution] = useState("");
   const { fromViewSolutionPage, solutionId, fromHome } = location.state || {
     fromViewSolutionPage: false,
     fromHome: false,
@@ -35,6 +45,48 @@ const AddNewProblemPage = () => {
       dispatch(getOneSolutionDetailsForAuthActions({ solutionId }));
     }
   }, [data, dispatch, solutionId, fromViewSolutionPage, fromHome]);
+
+  const submitForm = ({
+    problemTitle,
+    problemLink,
+    tags,
+    yourSolution,
+    perfectSolution,
+  }) => {
+    setProblemLink(problemLink);
+    setProblemTitle(problemTitle);
+    setTags(tags);
+    setYourSolution(yourSolution);
+    setPerfectSolution(perfectSolution);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/edit-problem") {
+      dispatch(
+        updateSolutionActions({
+          solutionId,
+          navigate,
+          problemTitle,
+          problemLink,
+          tags,
+          yourSolution,
+          perfectSolution,
+        })
+      );
+    } else {
+      dispatch(
+        addNewSolutionForAuthActions({
+          problemTitle,
+          problemLink,
+          tags,
+          yourSolution,
+          perfectSolution,
+          navigate,
+        })
+      );
+    }
+  };
 
   return (
     <>
@@ -59,6 +111,7 @@ const AddNewProblemPage = () => {
                   className={"btn"}
                   width={"13.17"}
                   height={"9.52"}
+                  click={(e) => handleSubmit(e)}
                 >
                   Submit
                 </CTABtn>
@@ -75,7 +128,11 @@ const AddNewProblemPage = () => {
               </DivWrapper>
             </HeaderContainer>
 
-            <AddNewProblemForm data={data} solutionId={solutionId} />
+            <AddNewProblemForm
+              data={data}
+              solutionId={solutionId}
+              submitForm={submitForm}
+            />
           </>
         )}
       </MainContainer>

@@ -5,7 +5,7 @@ export const MainContainer = styled.main`
   max-width: 1344px;
   margin-block: 0;
   margin-inline: auto;
-  min-height: calc(100vh - 108px);
+  min-height: calc(100vh - ${(props) => (props.height ? props.height : "108px")});
   @media (max-width: 450px) {
     width: 88%;
   } ;

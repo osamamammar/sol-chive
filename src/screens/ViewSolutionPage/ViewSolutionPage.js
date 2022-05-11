@@ -46,7 +46,7 @@ const ViewSolutionPage = () => {
     <>
       {Auth ? <ProfileHeader></ProfileHeader> : <SearchHeader></SearchHeader>}
 
-      <MainContainer>
+      <MainContainer height={"128px"}>
         {loading || loadingForAuth ? (
           <Loader></Loader>
         ) : error || errorForAuth ? (

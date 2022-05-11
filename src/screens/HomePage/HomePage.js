@@ -53,8 +53,8 @@ const HomePage = () => {
         )}
         {loading ? (
           <Loader height={"108px"}></Loader>
-        ) : error ? (
-          <ErrorMessage>{error}</ErrorMessage>
+        ) : error && !error.code === 404 ? (
+          <ErrorMessage>{error.message}</ErrorMessage>
         ) : (
           data && (
             <SolutionCardsContainer>
@@ -75,7 +75,7 @@ const HomePage = () => {
             </SolutionCardsContainer>
           )
         )}
-        {data && data.solutions.length === 0 && <HomeEmpty></HomeEmpty>}
+        {error && error.code === 404 && <HomeEmpty></HomeEmpty>}
       </MainContainer>
       <Footer></Footer>
     </>

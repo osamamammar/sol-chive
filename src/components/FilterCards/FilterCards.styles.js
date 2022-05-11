@@ -22,6 +22,7 @@ export const LabelTitle = styled.label`
 `;
 
 export const SelectStyled = styled.select`
+  min-width: 101px;
   position: relative;
   background-color: var(--color-gray);
   color: white;
