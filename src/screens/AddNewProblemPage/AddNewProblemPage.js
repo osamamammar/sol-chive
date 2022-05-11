@@ -74,7 +74,7 @@ const AddNewProblemPage = () => {
               </DivWrapper>
             </HeaderContainer>
 
-            <AddNewProblemForm data={data} />
+            <AddNewProblemForm data={data} solutionId={solutionId} />
           </>
         )}
       </MainContainer>

@@ -12,7 +12,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import YourPerfectSolutionForm from "../YourAndPerfectSolutionForm/YourAndPerfectSolutionForm";
 import { DivWrapper, FormContainer } from "./AddNewProblrm.styles";
 
-const AddNewProblemForm = ({ data }) => {
+const AddNewProblemForm = ({ data, solutionId }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [problemTitle, setProblemTitle] = useState("");
@@ -40,16 +40,20 @@ const AddNewProblemForm = ({ data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addNewSolutionForAuthActions({
-        problemTitle,
-        problemLink,
-        tags,
-        yourSolution,
-        perfectSolution,
-        navigate,
-      })
-    );
+    if (location.pathname === "/edit-problem") {
+      dispatch();
+    } else {
+      dispatch(
+        addNewSolutionForAuthActions({
+          problemTitle,
+          problemLink,
+          tags,
+          yourSolution,
+          perfectSolution,
+          navigate,
+        })
+      );
+    }
   };
   return (
     <>
