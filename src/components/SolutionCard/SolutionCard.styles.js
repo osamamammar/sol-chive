@@ -18,7 +18,7 @@ export const Card = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.01);
@@ -124,4 +124,12 @@ export const ViewLinkWrapper = styled.div`
       transform: scale(1.2);
     }
   }
+`;
+
+export const PerfectSolution = styled(ProblemSource)`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  gap: 5px;
 `;

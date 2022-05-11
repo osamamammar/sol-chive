@@ -1,7 +1,13 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { BlackPen, externalLink, redTrash } from "../../assets";
+import {
+  BlackPen,
+  exist,
+  externalLink,
+  notExist,
+  redTrash,
+} from "../../assets";
 import { deleteOneSolutionForAuthActions } from "../../redux";
 import { checkAuth, diffDays } from "../../utils";
 import {
@@ -15,6 +21,7 @@ import {
   SolvedDate,
   Tags,
   ViewLinkWrapper,
+  PerfectSolution,
 } from "./SolutionCard.styles";
 
 const SolutionCard = ({ data, pathName }) => {
@@ -28,7 +35,15 @@ const SolutionCard = ({ data, pathName }) => {
         {data && data.solutions.length > 0
           ? data &&
             data.solutions.map(
-              ({ solution_id, created_on, title, link, source, tags }) => (
+              ({
+                solution_id,
+                created_on,
+                title,
+                link,
+                source,
+                tags,
+                perfect_solution,
+              }) => (
                 <Card key={solution_id}>
                   <CardHeader>
                     <CardTitle>{title}</CardTitle>
@@ -71,6 +86,74 @@ const SolutionCard = ({ data, pathName }) => {
                   <SolvedDate>
                     solved {diffDays(new Date(created_on), new Date())} days ago
                   </SolvedDate>
+                  <DivWrapper>
+                    <PerfectSolution style={{ flexWrap: "wrap" }}>
+                      Contains:
+                      {perfect_solution ? (
+                        <>
+                          <span
+                            style={{
+                              display: "flex",
+                              gap: "5px",
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            <img
+                              src={exist}
+                              alt="exist"
+                              title="your solution exist"
+                            />
+                            <span>my solution</span>
+                            <span
+                              style={{
+                                display: "flex",
+                                gap: "5px",
+                                flexWrap: "wrap",
+                              }}
+                            >
+                              <img
+                                src={exist}
+                                alt="exist"
+                                title="your perfect solution exist"
+                              />
+                              <span>perfect solution</span>
+                            </span>
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          <span
+                            style={{
+                              display: "flex",
+                              gap: "5px",
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            <img
+                              src={exist}
+                              alt="exist"
+                              title="your solution exist"
+                            />
+                            <span>my solution</span>
+                            <span
+                              style={{
+                                display: "flex",
+                                gap: "5px",
+                                flexWrap: "wrap",
+                              }}
+                            >
+                              <img
+                                src={notExist}
+                                alt="no-exist"
+                                title="your perfect solution not exist"
+                              />
+                              <span>perfect solution</span>
+                            </span>
+                          </span>
+                        </>
+                      )}
+                    </PerfectSolution>
+                  </DivWrapper>
 
                   <ViewLinkWrapper>
                     <Link

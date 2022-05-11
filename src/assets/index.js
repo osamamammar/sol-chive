@@ -20,3 +20,5 @@ export { default as btnCancel } from "./images/btn-cancel.svg";
 export { default as trash } from "./images/trash.svg";
 export { default as refresh } from "./images/refresh.svg";
 export { default as redTrash } from "./images/red-trash.svg";
+export { default as exist } from "./images/exist.svg";
+export { default as notExist } from "./images/not-exist.svg";
