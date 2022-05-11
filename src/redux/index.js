@@ -34,7 +34,10 @@ export * from "./constants/settingsDataConstants";
 
 // export reducers
 export { getAllSolutionsForAnonymousUserReducers } from "./reducers/getAllSolutionsForAnonymousUserReducers";
-export { getUserProfileCardReducers } from "./reducers/getUserProfileCardReducers";
+export {
+  getUserProfileCardReducers,
+  getAuthUserProfileCardReducers,
+} from "./reducers/getUserProfileCardReducers";
 export { getOneSolutionDetailsForAnonymousReducers } from "./reducers/getOneSolutionDetailsForAnonymousReducers";
 export { userLoginWithGoogleReducers } from "./reducers/userLoginWithGoogleReducers";
 export { getAllSolutionsForAuthUserReducers } from "./reducers/getAllSolutionsForAuthUserReducers";

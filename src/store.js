@@ -6,6 +6,7 @@ import {
   deleteOneSolutionForAuthReducers,
   getAllSolutionsForAnonymousUserReducers,
   getAllSolutionsForAuthUserReducers,
+  getAuthUserProfileCardReducers,
   getBasicInfoReducers,
   getOneSolutionDetailsForAnonymousReducers,
   getOneSolutionDetailsForAuthReducers,
@@ -19,6 +20,7 @@ import {
 const reducer = combineReducers({
   getAllSolutionsForAnonymousUser: getAllSolutionsForAnonymousUserReducers,
   getUserProfileCard: getUserProfileCardReducers,
+  getAuthUserProfileCard: getAuthUserProfileCardReducers,
   getOneSolutionDetailsForAnonymous: getOneSolutionDetailsForAnonymousReducers,
   userLoginWithGoogle: userLoginWithGoogleReducers,
   getAllSolutionsForAuthUser: getAllSolutionsForAuthUserReducers,
