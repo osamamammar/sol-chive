@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { blackPen, externalLink, trash } from "../../assets";
 import { deleteOneSolutionForAuthActions } from "../../redux";
-import { checkAuth, cookieData, diffDays } from "../../utils";
+import { checkAuth, diffDays } from "../../utils";
 import CTABtn from "../CTABtn/CTABtn";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import {
@@ -20,7 +20,7 @@ import {
 } from "./ProblemDetails.styles";
 
 const ProblemDetails = ({ data, solutionId }) => {
-  const Auth = checkAuth(cookieData);
+  const Auth = checkAuth("isLoggedIn");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -97,7 +97,7 @@ const ProblemDetails = ({ data, solutionId }) => {
         ) : null}
       </SectionContainer>
       {error && (
-        <ErrorMessage position="unset" marginBlockStart={"15px"}>
+        <ErrorMessage position="unset" marginBlockStart={"15px"} width={"100%"}>
           {error.message}
         </ErrorMessage>
       )}

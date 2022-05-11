@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { externalLink, redTrash } from "../../assets";
 import { deleteOneSolutionForAuthActions } from "../../redux";
-import { checkAuth, cookieData, diffDays } from "../../utils";
+import { checkAuth, diffDays } from "../../utils";
 import {
   Card,
   CardContainer,
@@ -17,7 +17,7 @@ import {
 } from "./SolutionCard.styles";
 
 const SolutionCard = ({ data, pathName }) => {
-  const Auth = checkAuth(cookieData);
+  const Auth = checkAuth("isLoggedIn");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

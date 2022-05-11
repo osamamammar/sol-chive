@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import {
+  Alert,
   ErrorMessage,
   Footer,
   Loader,
@@ -15,12 +16,12 @@ import {
   getOneSolutionDetailsForAnonymousActions,
   getOneSolutionDetailsForAuthActions,
 } from "../../redux";
-import { checkAuth, cookieData } from "../../utils";
+import { checkAuth } from "../../utils";
 
 const ViewSolutionPage = () => {
   const { solutionId } = useParams();
-  const Auth = checkAuth(cookieData);
-
+  const location = useLocation();
+  const Auth = checkAuth("isLoggedIn");
   const getOneSolutionDetailsForAnonymous = useSelector(
     (state) => state.getOneSolutionDetailsForAnonymous
   );
@@ -34,20 +35,16 @@ const ViewSolutionPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (solutionId && !Auth) {
-      dispatch(getOneSolutionDetailsForAnonymousActions({ solutionId }));
-    } else {
+    if (solutionId && Auth) {
       dispatch(getOneSolutionDetailsForAuthActions({ solutionId }));
+    } else {
+      dispatch(getOneSolutionDetailsForAnonymousActions({ solutionId }));
     }
   }, [dispatch, solutionId, Auth]);
 
   return (
     <>
-      {Auth === "true" ? (
-        <ProfileHeader></ProfileHeader>
-      ) : (
-        <SearchHeader></SearchHeader>
-      )}
+      {Auth ? <ProfileHeader></ProfileHeader> : <SearchHeader></SearchHeader>}
 
       <MainContainer>
         {loading || loadingForAuth ? (
@@ -56,6 +53,9 @@ const ViewSolutionPage = () => {
           <ErrorMessage>{error || errorForAuth}</ErrorMessage>
         ) : data || dataForAuth ? (
           <>
+            {location.state && location.state.success && (
+              <Alert delay="2000">{location.state?.success}</Alert>
+            )}
             <ProblemDetails
               data={data || dataForAuth}
               solutionId={solutionId}

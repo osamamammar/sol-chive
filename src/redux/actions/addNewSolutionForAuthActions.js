@@ -6,7 +6,14 @@ import {
 } from "../constants/addNewSolutionForAuthConstants";
 
 export const addNewSolutionForAuthActions =
-  ({ problemTitle, problemLink, tags, yourSolution, perfectSolution }) =>
+  ({
+    problemTitle,
+    problemLink,
+    tags,
+    yourSolution,
+    perfectSolution,
+    navigate,
+  }) =>
   async (dispatch) => {
     try {
       dispatch(addSolutionRequest());
@@ -19,6 +26,11 @@ export const addNewSolutionForAuthActions =
         perfectSolution,
       });
       dispatch(addSolutionSuccess(data));
+      navigate(`/solution/${problemTitle}/${data.solutionId}`, {
+        replace: true,
+        state: { success: "Solution added successfully" },
+      });
+      window.scrollTo(0, 0);
     } catch (error) {
       let err = "";
       err = error.response.data.message;

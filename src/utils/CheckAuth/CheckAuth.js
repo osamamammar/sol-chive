@@ -1,9 +1,17 @@
-export const cookieData = document.cookie.split("; ");
-
 export const checkAuth = (cookieData) => {
-  for (let i = 0; i < cookieData.length; i++) {
-    if (cookieData[i].split("=")[0] === "isLoggedIn") {
-      return cookieData[i].split("=")[1];
+  let name = cookieData + "=";
+  let decoded_cookie = decodeURIComponent(document.cookie);
+  let carr = decoded_cookie.split(";");
+  for (let i = 0; i < carr.length; i++) {
+    let c = carr[i];
+
+    while (c.charAt(0) === " ") {
+      c = c.substring(1);
+    }
+
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length) === "true" ? true : false;
     }
   }
+  return "";
 };

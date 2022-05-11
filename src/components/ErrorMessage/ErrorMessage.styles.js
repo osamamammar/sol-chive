@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const DivWrapper = styled.div`
-  width: 78%;
+  width: ${(props) => (props.width ? props.width : "78%")};
   max-width: 1344px;
 
   background-color: var(--color-bg-error);
   position: ${(props) => (props.position ? props.position : "absolute")};
   margin-block-start: ${(props) =>
     props.marginBlockStart ? props.marginBlockStart : "unset"};
+  margin-block-end: ${(props) =>
+    props.marginBlockEnd ? props.marginBlockEnd : "unset"};
   inset-inline-start: 0;
   inset-inline-end: 0;
   inset-block-start: 30px;

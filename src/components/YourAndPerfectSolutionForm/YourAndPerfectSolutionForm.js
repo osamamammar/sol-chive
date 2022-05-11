@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { checkAuth, cookieData } from "../../utils";
+import { checkAuth } from "../../utils";
 import { DivWrapper } from "../AddNewProblemForm/AddNewProblrm.styles";
 
-const YourAndPerfectSolutionForm = ({ data }) => {
-  const Auth = checkAuth(cookieData);
+const YourAndPerfectSolutionForm = ({ data, childToParent }) => {
+  const Auth = checkAuth("isLoggedIn");
   const location = useLocation();
-
   const [yourSolution, setYourSolution] = useState("");
   const [perfectSolution, setPerfectSolution] = useState("");
 
@@ -17,12 +16,20 @@ const YourAndPerfectSolutionForm = ({ data }) => {
     }
   }, [data]);
 
+  useEffect(() => {
+    if (childToParent) {
+      childToParent({ yourSolution, perfectSolution });
+    }
+  }, [yourSolution, perfectSolution, childToParent]);
+
   return (
     <>
       <DivWrapper>
         <label htmlFor="yourSolution">Your Solution</label>
         <textarea
-          readOnly={location.pathname === "/edit-problem" ? false : true}
+          readOnly={
+            Auth && location.pathname.indexOf("/solution") ? false : true
+          }
           className="yourSolution"
           placeholder="
             /**
@@ -42,7 +49,9 @@ const YourAndPerfectSolutionForm = ({ data }) => {
           Perfect Solution <span>(optional)</span>
         </label>
         <textarea
-          readOnly={location.pathname === "/edit-problem" ? false : true}
+          readOnly={
+            Auth && location.pathname.indexOf("/solution") ? false : true
+          }
           className="perfectSolution"
           placeholder="   
             /**

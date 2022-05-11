@@ -1,2 +1,2 @@
 export { diffDays } from "./CalculateDiffDays/CalculateDiffDays";
-export { checkAuth, cookieData } from "./CheckAuth/CheckAuth";
+export { checkAuth } from "./CheckAuth/CheckAuth";

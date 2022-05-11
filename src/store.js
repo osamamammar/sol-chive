@@ -24,6 +24,7 @@ const reducer = combineReducers({
   deleteOneSolutionForAuth: deleteOneSolutionForAuthReducers,
   addNewSolutionForAuth: addNewSolutionForAuthReducers,
 });
+
 const initialState = {};
 const middleware = [thunk];
 
