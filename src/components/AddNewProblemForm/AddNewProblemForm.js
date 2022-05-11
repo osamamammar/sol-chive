@@ -38,6 +38,13 @@ const AddNewProblemForm = ({ data, solutionId }) => {
     }
   }, [data, dispatch, location]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [error, updateError]);
+
   const childToParent = ({ yourSolution, perfectSolution }) => {
     setYourSolution(yourSolution);
     setPerfectSolution(perfectSolution);
@@ -70,6 +77,7 @@ const AddNewProblemForm = ({ data, solutionId }) => {
       );
     }
   };
+
   return (
     <>
       {(error || updateError) && (
