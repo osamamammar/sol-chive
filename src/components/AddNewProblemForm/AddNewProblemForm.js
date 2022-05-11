@@ -6,6 +6,7 @@ import { btnSubmit } from "../../assets";
 import {
   addNewSolutionForAuthActions,
   RESET_ADD_NEW_SOLUTION_ERROR,
+  RESET_UPDATE_SOLUTION_ERROR,
   updateSolutionActions,
 } from "../../redux";
 import CTABtn from "../CTABtn/CTABtn";
@@ -29,6 +30,7 @@ const AddNewProblemForm = ({ data, solutionId }) => {
 
   useEffect(() => {
     dispatch({ type: RESET_ADD_NEW_SOLUTION_ERROR });
+    dispatch({ type: RESET_UPDATE_SOLUTION_ERROR });
     if (data && location.pathname === "/edit-problem") {
       setProblemTitle(data && data.title);
       setProblemLink(data && data.link);
