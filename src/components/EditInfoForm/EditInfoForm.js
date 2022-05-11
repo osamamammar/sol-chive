@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { btnSubmit } from "../../assets";
+import { updateSettingsActions } from "../../redux";
 import {
   DivWrapper,
   FormContainer,
@@ -10,6 +13,8 @@ const EditInfoForm = ({ data }) => {
   const [name, setName] = useState("");
   const [contacts, setContacts] = useState("");
   const [about, setAbout] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (data) {
@@ -19,8 +24,12 @@ const EditInfoForm = ({ data }) => {
     }
   }, [data]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(updateSettingsActions({ name, contacts, about, navigate }));
+  };
   return (
-    <FormContainer>
+    <FormContainer onSubmit={handleSubmit}>
       <DivWrapper>
         <label htmlFor="name">Display Name</label>
         <input
@@ -41,7 +50,6 @@ const EditInfoForm = ({ data }) => {
           name="contacts"
           id="contacts"
           placeholder="Enter your contacts"
-          required
           value={contacts}
           onChange={(e) => setContacts(e.target.value)}
         />

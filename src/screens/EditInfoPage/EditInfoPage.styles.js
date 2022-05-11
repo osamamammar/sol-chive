@@ -13,13 +13,15 @@ export const UploadPictureContainer = styled.div`
   border-radius: 9px;
   margin-block: 0 20px;
   margin-inline: auto;
-  > label {
+  > button {
+    min-width: 182px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
     font-size: 14px;
     cursor: pointer;
+    border: none;
     background-color: var(--color-yellow);
     color: var(--color-primary);
     border-radius: 6px;
@@ -29,11 +31,6 @@ export const UploadPictureContainer = styled.div`
     :hover {
       background-color: var(--color-yellow-dark);
     }
-  }
-  > input#avatar {
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
   }
 `;
 

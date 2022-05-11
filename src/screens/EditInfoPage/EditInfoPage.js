@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { btnCancel, btnSubmit, refresh } from "../../assets";
 import { CTABtn, EditInfoForm, Footer, ProfileHeader } from "../../components";
-import { getSettingsActions } from "../../redux";
+import { getSettingsActions, updateAvatarActions } from "../../redux";
 import {
   DivWrapper,
   HeaderContainer,
@@ -13,34 +13,22 @@ import {
 import { UploadPictureContainer, UplodedPicture } from "./EditInfoPage.styles";
 
 const EditInfoPage = () => {
-  const [selectedFile, setSelectedFile] = useState();
-  const [preview, setPreview] = useState();
   const dispatch = useDispatch();
-  const { loading, data, error } = useSelector((state) => state.settingsData);
+  const { data } = useSelector((state) => state.settingsData);
 
-  // create a preview as a side effect, whenever selected file is changed
-  useEffect(() => {
-    if (!selectedFile) {
-      setPreview(undefined);
-      return;
-    }
-    const objectUrl = URL.createObjectURL(selectedFile);
-    setPreview(objectUrl);
-
-    // free memory when ever this component is unmounted
-    return () => URL.revokeObjectURL(objectUrl);
-  }, [selectedFile]);
-
-  const onSelectFile = (e) => {
-    if (!e.target.files || e.target.files.length === 0) {
-      setSelectedFile(undefined);
-      return;
-    }
-    setSelectedFile(e.target.files[0]);
-  };
+  const {
+    data: pictureData,
+    loading,
+    error,
+  } = useSelector((state) => state.updateAvatar);
   useEffect(() => {
     dispatch(getSettingsActions());
   }, [dispatch]);
+
+  const handlePictureChange = (e) => {
+    e.preventDefault();
+    dispatch(updateAvatarActions());
+  };
   return (
     <>
       <ProfileHeader></ProfileHeader>
@@ -70,27 +58,38 @@ const EditInfoPage = () => {
 
         <UploadPictureContainer>
           <UplodedPicture>
-            {selectedFile && (
-              <img src={preview} alt="your-new-avatar" width={70} height={70} />
+            {pictureData && pictureData.picture && (
+              <img
+                src={pictureData.picture}
+                alt="avatar"
+                width={70}
+                height={70}
+              />
             )}
           </UplodedPicture>
 
-          <label htmlFor="avatar">
-            Load the new avatar
-            <img
-              src={refresh}
-              alt="load-new-avatar"
-              width={14.58}
-              height={11.81}
-            />
-          </label>
-          <input
-            type="file"
+          <button
+            type="submit"
             id="avatar"
             name="avatar"
-            accept="image/png, image/jpeg"
-            onChange={onSelectFile}
-          ></input>
+            onClick={(e) => handlePictureChange(e)}
+          >
+            {error ? (
+              <>something went wrong... try again later</>
+            ) : loading ? (
+              <>Loading avatar...</>
+            ) : (
+              <>
+                Load the new avatar
+                <img
+                  src={refresh}
+                  alt="load-new-avatar"
+                  width={14.58}
+                  height={11.81}
+                />
+              </>
+            )}
+          </button>
         </UploadPictureContainer>
 
         <EditInfoForm data={data}></EditInfoForm>

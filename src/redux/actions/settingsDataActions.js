@@ -42,18 +42,21 @@ const getSettingsFail = (err) => {
   };
 };
 
-export const updateSettingsActions = () => async (dispatch) => {
-  try {
-    dispatch(updateSettingsRequest());
-    const data = await updateSettingsDataApi();
+export const updateSettingsActions =
+  ({ name, contacts, about, navigate }) =>
+  async (dispatch) => {
+    try {
+      dispatch(updateSettingsRequest());
+      const data = await updateSettingsDataApi({ name, contacts, about });
 
-    dispatch(updateSettingsSuccess(data));
-  } catch (error) {
-    let err = "";
-    err = error.response.data.message;
-    dispatch(updateSettingsFail(err));
-  }
-};
+      dispatch(updateSettingsSuccess(data));
+      navigate("/profile");
+    } catch (error) {
+      let err = "";
+      err = error.response.data.message;
+      dispatch(updateSettingsFail(err));
+    }
+  };
 
 const updateSettingsRequest = () => {
   return { type: UPDATE_SETTING_REQUEST };
