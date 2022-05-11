@@ -64,7 +64,7 @@ const YourAndPerfectSolutionForm = ({ data, childToParent }) => {
             name="perfectSolution"
             id="perfectSolution"
             rows={30}
-            value={perfectSolution}
+            value={perfectSolution || ""}
             onChange={(e) => setPerfectSolution(e.target.value)}
           ></textarea>
         </DivWrapper>

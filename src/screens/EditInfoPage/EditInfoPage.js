@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { btnCancel, btnSubmit, refresh } from "../../assets";
@@ -14,12 +14,12 @@ import { UploadPictureContainer, UplodedPicture } from "./EditInfoPage.styles";
 
 const EditInfoPage = () => {
   const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.settingsData);
+  const { data, error } = useSelector((state) => state.settingsData);
 
   const {
     data: pictureData,
     loading,
-    error,
+    error: pictureError,
   } = useSelector((state) => state.updateAvatar);
   useEffect(() => {
     dispatch(getSettingsActions());
@@ -74,7 +74,7 @@ const EditInfoPage = () => {
             name="avatar"
             onClick={(e) => handlePictureChange(e)}
           >
-            {error ? (
+            {pictureError ? (
               <>something went wrong... try again later</>
             ) : loading ? (
               <>Loading avatar...</>
@@ -92,7 +92,7 @@ const EditInfoPage = () => {
           </button>
         </UploadPictureContainer>
 
-        <EditInfoForm data={data}></EditInfoForm>
+        <EditInfoForm data={data} error={error}></EditInfoForm>
       </MainContainer>
 
       <Footer></Footer>
