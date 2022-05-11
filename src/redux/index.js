@@ -1,6 +1,9 @@
 // export action creators
 export { getAllSolutionsForAnonymousUserActions } from "./actions/getAllSolutionsForAnonymousUserActions";
-export { getUserProfileCardActions } from "./actions/getUserProfileCardActions";
+export {
+  getUserProfileCardActions,
+  getAuthUserProfileCardActions,
+} from "./actions/getUserProfileCardActions";
 export { getOneSolutionDetailsForAnonymousActions } from "./actions/getOneSolutionDetailsForAnonymousActions";
 export { userLoginWithGoogleActions } from "./actions/userLoginWithGoogleActions";
 export { getAllSolutionsForAuthUserActions } from "./actions/getAllSolutionsForAuthUserActions";

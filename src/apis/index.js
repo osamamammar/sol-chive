@@ -11,7 +11,10 @@ export { addNewSolutionAuthApi } from "./Solution/addNewSolutionAuthApi";
 export { updateSolutionAuthApi } from "./Solution/updateSolutionAuthApi";
 
 //USER APIS
-export { getUserProfileCardApi } from "./User/getUserProfileCardApi";
+export {
+  getUserProfileCardApi,
+  getAuthUserProfileCardApi,
+} from "./User/getUserProfileCardApi";
 export { getBasicInfoApi } from "./User/getBasicInfoApi";
 export { getSettingsDataApi } from "./User/getSettingsDataApi";
 export { updateSettingsDataApi } from "./User/updateSettingsDataApi";
