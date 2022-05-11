@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { externalLink, redTrash } from "../../assets";
+import { BlackPen, externalLink, redTrash } from "../../assets";
 import { deleteOneSolutionForAuthActions } from "../../redux";
 import { checkAuth, diffDays } from "../../utils";
 import {
@@ -10,6 +10,7 @@ import {
   CardExternalLink,
   CardHeader,
   CardTitle,
+  DivWrapper,
   ProblemSource,
   SolvedDate,
   Tags,
@@ -46,9 +47,21 @@ const SolutionCard = ({ data, pathName }) => {
                       />
                     </a>
                   </CardHeader>
-
-                  <ProblemSource>source {source}</ProblemSource>
-
+                  <DivWrapper>
+                    <ProblemSource>source {source}</ProblemSource>
+                    {Auth && (
+                      <Link
+                        to={`/edit-problem`}
+                        state={{
+                          solutionId: solution_id,
+                          fromHome: true,
+                        }}
+                        title="edit problem"
+                      >
+                        <BlackPen width={12} height={11.6} />
+                      </Link>
+                    )}
+                  </DivWrapper>
                   <Tags>
                     {tags.map((tag) => (
                       <span key={tag}>{tag}</span>

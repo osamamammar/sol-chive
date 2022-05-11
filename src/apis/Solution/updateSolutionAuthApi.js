@@ -16,8 +16,8 @@ export const updateSolutionAuthApi = async ({
       tags: tags,
       mySolution: yourSolution,
       perfectSolution: perfectSolution,
-    }
-    // { withCredentials: true }
+    },
+    { withCredentials: true }
   );
   return data;
 };

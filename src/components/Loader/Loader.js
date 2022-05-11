@@ -1,9 +1,9 @@
 import React from "react";
 import { DivWrapper, LoaderSpinner } from "./Loader.styles";
 
-const Loader = () => {
+const Loader = ({ height }) => {
   return (
-    <DivWrapper>
+    <DivWrapper height={height}>
       <LoaderSpinner></LoaderSpinner>
     </DivWrapper>
   );

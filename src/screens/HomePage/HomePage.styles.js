@@ -5,7 +5,7 @@ export const MainContainer = styled.main`
   max-width: 1344px;
   margin-block: 0;
   margin-inline: auto;
-  min-height: calc(100vh - 104px);
+  min-height: calc(100vh - 108px);
   position: relative;
   inset-block-start: 24px;
   @media (max-width: 600px) {

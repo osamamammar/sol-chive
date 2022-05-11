@@ -58,7 +58,7 @@ const ProfilePage = () => {
     <>
       <ProfileHeader></ProfileHeader>
       {loading || InfoCardLoading ? (
-        <Loader></Loader>
+        <Loader height={"108px"}></Loader>
       ) : error || InfoCardError ? (
         <MainContainer>
           <ErrorMessage>{error || InfoCardError}</ErrorMessage>

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { blackPen, externalLink, trash } from "../../assets";
+import { BlackPen, externalLink, trash } from "../../assets";
 import { deleteOneSolutionForAuthActions } from "../../redux";
 import { checkAuth, diffDays } from "../../utils";
 import CTABtn from "../CTABtn/CTABtn";
@@ -74,12 +74,7 @@ const ProblemDetails = ({ data, solutionId }) => {
               rel="noreferrer noopener"
             >
               Edit
-              <img
-                src={blackPen}
-                alt="edit-icon"
-                width={"12"}
-                height={"11.56"}
-              />
+              <BlackPen width={10} height={11.6} />
             </Link>
 
             <CTABtn

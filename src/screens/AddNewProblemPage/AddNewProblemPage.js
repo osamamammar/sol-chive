@@ -20,8 +20,9 @@ import {
 
 const AddNewProblemPage = () => {
   const location = useLocation();
-  const { fromViewSolutionPage, solutionId } = location.state || {
+  const { fromViewSolutionPage, solutionId, fromHome } = location.state || {
     fromViewSolutionPage: false,
+    fromHome: false,
   };
 
   const { loading, data, error } = useSelector(
@@ -30,19 +31,19 @@ const AddNewProblemPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!data && fromViewSolutionPage) {
+    if (!data && (fromViewSolutionPage || fromHome)) {
       dispatch(getOneSolutionDetailsForAuthActions({ solutionId }));
     }
-  }, [data, dispatch, solutionId, fromViewSolutionPage]);
+  }, [data, dispatch, solutionId, fromViewSolutionPage, fromHome]);
 
   return (
     <>
       <ProfileHeader />
       <MainContainer>
         {loading ? (
-          <Loader />
+          <Loader height={"108px"} />
         ) : error ? (
-          <ErrorMessage>{error}</ErrorMessage>
+          <ErrorMessage insetBlockStart={"100px"}>{error}</ErrorMessage>
         ) : (
           <>
             <HeaderContainer>

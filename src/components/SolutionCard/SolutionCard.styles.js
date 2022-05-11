@@ -74,6 +74,28 @@ export const Tags = styled.p`
 `;
 export const SolvedDate = styled(ProblemSource)``;
 
+export const DivWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    padding-inline: 6.1px 5.7px;
+    padding-block: 5.9px;
+    border-radius: 7px;
+    background-color: var(--color-primary);
+    > svg {
+      color: var(--color-yellow);
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+`;
+
 export const ViewLinkWrapper = styled.div`
   display: flex;
   justify-content: space-between;

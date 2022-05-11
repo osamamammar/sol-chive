@@ -72,6 +72,9 @@ export const DescriptionWrapper = styled.div`
     padding-block: 5px;
     font-size: 14px;
     border-radius: 6px;
+    > svg {
+      color: var(--color-primary);
+    }
   }
 `;
 

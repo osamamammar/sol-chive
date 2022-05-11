@@ -10,7 +10,7 @@ export const MainContainer = styled.main`
   align-items: start;
   justify-items: center;
   margin-inline: auto;
-  min-height: calc(100vh - 104px);
+  min-height: calc(100vh - 108px);
 
   @media (max-width: 1080px) {
     grid-template-columns: 1fr;
@@ -20,7 +20,7 @@ export const DivWrapper = styled.div`
   position: relative;
 `;
 export const NoResultsContainer = styled.main`
-  min-height: calc(100vh - 103px);
+  min-height: calc(100vh - 104px);
 `;
 export const SectionContainer = styled.section`
   position: relative;

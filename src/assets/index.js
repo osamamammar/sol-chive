@@ -12,7 +12,7 @@ export { default as home } from "./images/home.svg";
 export { default as profilePictureSmall } from "./images/profilePicture-small.png";
 export { default as menu } from "./images/menu.svg";
 export { default as cross } from "./images/cross.svg";
-export { default as blackPen } from "./images/black-pen.svg";
+export { ReactComponent as BlackPen } from "./images/black-pen.svg";
 export { default as addNew } from "./images/add.svg";
 export { default as scrollToTop } from "./images/scrollToTop.svg";
 export { default as btnSubmit } from "./images/btn-submit.svg";

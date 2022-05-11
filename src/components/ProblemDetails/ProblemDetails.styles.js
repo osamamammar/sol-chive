@@ -42,6 +42,7 @@ export const DivWrapper = styled.div`
     padding-inline: 14px;
     padding-block: 3px;
     color: var(--color-yellow);
+
     :hover {
       text-decoration: underline;
     }
@@ -56,5 +57,8 @@ export const DivWrapper = styled.div`
     border-radius: 6px;
     font-size: 12px;
     min-width: 81.94px;
+    > svg {
+      color: var(--color-primary);
+    }
   }
 `;

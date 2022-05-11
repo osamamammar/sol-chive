@@ -52,7 +52,7 @@ const HomePage = () => {
           <Alert delay="2000">{location.state?.success}</Alert>
         )}
         {loading ? (
-          <Loader></Loader>
+          <Loader height={"108px"}></Loader>
         ) : error ? (
           <ErrorMessage>{error}</ErrorMessage>
         ) : (

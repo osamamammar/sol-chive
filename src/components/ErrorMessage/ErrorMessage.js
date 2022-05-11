@@ -7,6 +7,7 @@ const ErrorMessage = ({
   marginBlockStart,
   marginBlockEnd,
   width,
+  insetBlockStart,
 }) => {
   return (
     <DivWrapper
@@ -14,6 +15,7 @@ const ErrorMessage = ({
       marginBlockStart={marginBlockStart}
       marginBlockEnd={marginBlockEnd}
       width={width}
+      insetBlockStart={insetBlockStart}
     >
       <TextError>{children}</TextError>
     </DivWrapper>

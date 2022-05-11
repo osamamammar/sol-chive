@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { blackPen, profilePic } from "../../assets";
+import { BlackPen, profilePic } from "../../assets";
 import {
   AsideContainer,
   BodyDescription,
@@ -52,13 +52,9 @@ const ProfileInfoCard = ({ data, buttonDisplay }) => {
           </BodyDescription>
         </SolvedWrapper>
         {buttonDisplay === "true" ? (
-          <Link
-            to={"/edit-info"}
-            className="edit_info btn"
-            rel="noreferrer noopener"
-          >
+          <Link to={"/edit-info"} className="edit_info btn">
             Edit info
-            <img src={blackPen} alt="pen-icon" width={12} height={12} />
+            <BlackPen width={12} height={12} />
           </Link>
         ) : null}
       </DescriptionWrapper>
