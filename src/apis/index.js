@@ -13,3 +13,6 @@ export { updateSolutionAuthApi } from "./Solution/updateSolutionAuthApi";
 //USER APIS
 export { getUserProfileCardApi } from "./User/getUserProfileCardApi";
 export { getBasicInfoApi } from "./User/getBasicInfoApi";
+export { getSettingsDataApi } from "./User/getSettingsDataApi";
+export { updateSettingsDataApi } from "./User/updateSettingsDataApi";
+export { updateAvatarApi } from "./User/updateAvatarApi";
