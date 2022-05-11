@@ -1,0 +1,10 @@
+import axios from "axios";
+
+export const updateSettingsDataApi = async () => {
+  const { data } = await axios.patch(
+    `${process.env.REACT_APP_API_URL}/user/update-avatar`,
+    { withCredentials: true }
+  );
+
+  return data;
+};
