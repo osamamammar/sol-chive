@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const useCopyURL = () => {
+const useCopyURL = ({ email }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyURL = () => {
     const el = document.createElement("input");
-    el.value = window.location.href;
+    el.value = `${window.location.href}/${email}`;
     document.body.appendChild(el);
     el.select();
     document.execCommand("copy");

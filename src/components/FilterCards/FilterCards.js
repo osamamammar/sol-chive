@@ -13,8 +13,8 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import { checkAuth } from "../../utils";
 
-const FilterCards = ({ title, addNewBtn, homePage, data }) => {
-  const [handelCopyURL, copied] = useCopyURL();
+const FilterCards = ({ title, addNewBtn, homePage, data, email }) => {
+  const [handelCopyURL, copied] = useCopyURL({ email });
   const location = useLocation();
   const navigate = useNavigate();
   const Auth = checkAuth("isLoggedIn");

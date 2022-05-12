@@ -9,7 +9,8 @@ export const getUserProfileCardApi = async ({ email }) => {
 
 export const getAuthUserProfileCardApi = async () => {
   const { data } = await axios.get(
-    `${process.env.REACT_APP_API_URL}/user/profile`
+    `${process.env.REACT_APP_API_URL}/user/profile`,
+    { withCredentials: true }
   );
   return data;
 };

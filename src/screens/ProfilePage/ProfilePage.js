@@ -15,7 +15,7 @@ import {
 } from "../../components";
 import {
   getAllSolutionsForAuthUserActions,
-  getUserProfileCardActions,
+  getAuthUserProfileCardActions,
 } from "../../redux";
 import { MainContainer } from "../SearchResultPage/SearchResultPage.styles";
 
@@ -36,10 +36,10 @@ const ProfilePage = () => {
     loading: InfoCardLoading,
     data: InfoCardData,
     error: InfoCardError,
-  } = useSelector((state) => state.getUserProfileCard);
+  } = useSelector((state) => state.getAuthUserProfileCard);
 
   const dispatch = useDispatch();
-  const email = "osamaammar29@gmail.com";
+
   useEffect(() => {
     Promise.all([
       dispatch(
@@ -51,9 +51,9 @@ const ProfilePage = () => {
           perfectsolution,
         })
       ),
-      dispatch(getUserProfileCardActions({ email })),
+      dispatch(getAuthUserProfileCardActions()),
     ]);
-  }, [dispatch, email, page, sortbydate, source, tag, perfectsolution]);
+  }, [dispatch, page, sortbydate, source, tag, perfectsolution]);
 
   return (
     <>
@@ -62,7 +62,9 @@ const ProfilePage = () => {
         <Loader height={"108px"}></Loader>
       ) : (error && !error.code === 404) || InfoCardError ? (
         <MainContainer>
-          <ErrorMessage>{error.message || InfoCardError}</ErrorMessage>
+          <ErrorMessage>
+            {(error && error.message) || InfoCardError}
+          </ErrorMessage>
         </MainContainer>
       ) : (
         data &&
@@ -73,7 +75,11 @@ const ProfilePage = () => {
               data={InfoCardData}
             ></ProfileInfoCard>
             <SolutionCardsContainer marginBlockStart={`marginBlockStart`}>
-              <FilterCards title={"Library"} data={data}></FilterCards>
+              <FilterCards
+                title={"Library"}
+                data={data}
+                email={InfoCardData && InfoCardData.email}
+              ></FilterCards>
               <SolutionCard
                 data={data}
                 pathName={location.pathname}
