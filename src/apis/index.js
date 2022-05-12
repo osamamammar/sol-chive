@@ -7,8 +7,8 @@ export { getAllSolutionsForAuthUserApi } from "./Solution/getAllSolutionsForAuth
 export { getOneSolutionDetailsForAnonymousApi } from "./Solution/getOneSolutionDetailsForAnonymousApi";
 export { getOneSolutionDetailsForAuthApi } from "./Solution/getOneSolutionDetailsForAuthApi";
 export { deleteOneSolutionForAuthApi } from "./Solution/deleteOneSolutionForAuthApi";
-export { addNewSolutionAuthApi } from "./Solution/addNewSolutionAuthApi";
 export { updateSolutionAuthApi } from "./Solution/updateSolutionAuthApi";
+export { addNewSolutionAuthApi } from "./Solution/addNewSolutionAuthApi";
 
 //USER APIS
 export {
