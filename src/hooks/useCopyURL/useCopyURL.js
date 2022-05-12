@@ -5,7 +5,7 @@ const useCopyURL = ({ email }) => {
 
   const handleCopyURL = () => {
     const el = document.createElement("input");
-    el.value = `${window.location.href}/${email}`;
+    el.value = `${window.location.origin}/search/${email}`;
     document.body.appendChild(el);
     el.select();
     document.execCommand("copy");
