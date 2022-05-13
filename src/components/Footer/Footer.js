@@ -18,7 +18,7 @@ const Footer = () => {
           rel="noreferrer noopener"
           target={`_blank`}
         >
-          Github
+          osamamammar
           <FooterIcon
             src={githubIcon}
             alt="github-icon"
